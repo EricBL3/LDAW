@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ericb', function () {
+    echo json_encode(["message"=>"Eric B"]);
+});
+
+Route::get('/jan', function () {
+    echo json_encode(["message"=>"Jan"]);
+});
+
+Route::get('/erict', function () {
+    echo json_encode(["message"=>"Eric T"]);
+});
