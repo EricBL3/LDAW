@@ -18,13 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/ericb', function () {
-    echo json_encode(["message"=>"Eric B"]);
+    return view('ericb');
 });
 
 Route::get('/jan', function () {
-    echo json_encode(["message"=>"Jan"]);
+    return view('jan');
 });
 
 Route::get('/erict', function () {
-    echo json_encode(["message"=>"Eric T"]);
+    return view('erict');
 });
