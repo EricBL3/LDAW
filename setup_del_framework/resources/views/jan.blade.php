@@ -7,13 +7,22 @@
     <title>Jan Limpens</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
+<style>
+  img{
+    width: 20%;
+    border-radius: 5%;
+    border: 2px solid black;   
+  }
+</style>
 <body>
     <a class="btn btn-primary" href="{{ url('/') }}">Regresar</a>
 
     <div class="text-center">
-        <h2> Jan Limpens Gutiérrez </h2>
-        <h2> A01704365 </h2>
+        <img src="/images/janfoto.jpg" class="img-fluid">
+        <h2>Jan Limpens Gutiérrez</h2>
+        <h3>A01704365</h3>
     </div>
+
 
     <div class="accordion col-md-6 mx-auto" id="accordionExample">
     <div class="card">
