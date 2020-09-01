@@ -8,12 +8,14 @@
     <title>Eric Buitrón</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <a class="btn btn-primary" href="{{ url('/') }}">Regresar</a>
 
     <div class="text-center">
+        <img src="/images/foto profesional.jpg" class="img-fluid">
         <h2>Eric Buitrón López</h2>
         <h3>A01704340</h3>
     </div>
