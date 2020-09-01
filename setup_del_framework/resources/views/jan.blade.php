@@ -11,14 +11,14 @@
   img{
     width: 20%;
     border-radius: 5%;
-    border: 2px solid black;   
+    border: 2px solid black;
   }
 </style>
 <body>
     <a class="btn btn-primary" href="{{ url('/') }}">Regresar</a>
 
     <div class="text-center">
-        <img src="/images/janfoto.jpg" class="img-fluid">
+        <img src="/images/fotoJan.jpg" class="img-fluid">
         <h2>Jan Limpens Gutiérrez</h2>
         <h3>A01704365</h3>
     </div>
