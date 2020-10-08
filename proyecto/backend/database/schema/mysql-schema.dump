@@ -1,0 +1,262 @@
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `consola` (
+  `idConsola` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombreConsola` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idConsola`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cuenta` (
+  `idCuenta` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idRol` int(10) unsigned NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `correoCuenta` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefonoCuenta` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `usuario` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contraseña` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idCuenta`),
+  UNIQUE KEY `cuenta_correocuenta_unique` (`correoCuenta`),
+  UNIQUE KEY `cuenta_usuario_unique` (`usuario`),
+  KEY `cuenta_idrol_foreign` (`idRol`),
+  CONSTRAINT `cuenta_idrol_foreign` FOREIGN KEY (`idRol`) REFERENCES `rol` (`idRol`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cuenta_juego` (
+  `idCuentaJuego` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idCuenta` int(10) unsigned NOT NULL,
+  `idJuego` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idCuentaJuego`),
+  KEY `cuenta_juego_idcuenta_foreign` (`idCuenta`),
+  KEY `cuenta_juego_idjuego_foreign` (`idJuego`),
+  CONSTRAINT `cuenta_juego_idcuenta_foreign` FOREIGN KEY (`idCuenta`) REFERENCES `cuenta` (`idCuenta`) ON DELETE CASCADE,
+  CONSTRAINT `cuenta_juego_idjuego_foreign` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `desarrollador` (
+  `idDesarrollador` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombreDesarrollador` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idDesarrollador`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `genero` (
+  `idGenero` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombreGenero` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idGenero`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `juego` (
+  `idJuego` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idTitulo` int(10) unsigned NOT NULL,
+  `condiciones` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `urlImagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idJuego`),
+  KEY `juego_idtitulo_foreign` (`idTitulo`),
+  CONSTRAINT `juego_idtitulo_foreign` FOREIGN KEY (`idTitulo`) REFERENCES `titulo` (`idTitulo`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oferta` (
+  `idOferta` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idCuentaEnviar` int(10) unsigned NOT NULL,
+  `idCuentaRecibir` int(10) unsigned NOT NULL,
+  `idJuegoPorEnviar` int(10) unsigned NOT NULL,
+  `idJuegoPorRecibir` int(10) unsigned NOT NULL,
+  `estado` enum('pendiente','aceptada','rechazada','terminada') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idOferta`),
+  KEY `oferta_idcuentaenviar_foreign` (`idCuentaEnviar`),
+  KEY `oferta_idcuentarecibir_foreign` (`idCuentaRecibir`),
+  KEY `oferta_idjuegoporenviar_foreign` (`idJuegoPorEnviar`),
+  KEY `oferta_idjuegoporrecibir_foreign` (`idJuegoPorRecibir`),
+  CONSTRAINT `oferta_idcuentaenviar_foreign` FOREIGN KEY (`idCuentaEnviar`) REFERENCES `cuenta` (`idCuenta`) ON DELETE CASCADE,
+  CONSTRAINT `oferta_idcuentarecibir_foreign` FOREIGN KEY (`idCuentaRecibir`) REFERENCES `cuenta` (`idCuenta`) ON DELETE CASCADE,
+  CONSTRAINT `oferta_idjuegoporenviar_foreign` FOREIGN KEY (`idJuegoPorEnviar`) REFERENCES `juego` (`idJuego`) ON DELETE CASCADE,
+  CONSTRAINT `oferta_idjuegoporrecibir_foreign` FOREIGN KEY (`idJuegoPorRecibir`) REFERENCES `juego` (`idJuego`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `privilegio` (
+  `idPrivilegio` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombrePrivilegio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idPrivilegio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `publisher` (
+  `idPublisher` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombrePublisher` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idPublisher`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `recibiria_titulo` (
+  `idRecibiriaTitulo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idTitulo` int(10) unsigned NOT NULL,
+  `idJuego` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idRecibiriaTitulo`),
+  KEY `recibiria_titulo_idtitulo_foreign` (`idTitulo`),
+  KEY `recibiria_titulo_idjuego_foreign` (`idJuego`),
+  CONSTRAINT `recibiria_titulo_idjuego_foreign` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`) ON DELETE CASCADE,
+  CONSTRAINT `recibiria_titulo_idtitulo_foreign` FOREIGN KEY (`idTitulo`) REFERENCES `titulo` (`idTitulo`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rol` (
+  `idRol` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombreRol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idRol`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rol_privilegio` (
+  `idRolPrivilegio` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idRol` int(10) unsigned NOT NULL,
+  `idPrivilegio` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idRolPrivilegio`),
+  KEY `rol_privilegio_idrol_foreign` (`idRol`),
+  KEY `rol_privilegio_idprivilegio_foreign` (`idPrivilegio`),
+  CONSTRAINT `rol_privilegio_idprivilegio_foreign` FOREIGN KEY (`idPrivilegio`) REFERENCES `privilegio` (`idPrivilegio`) ON DELETE CASCADE,
+  CONSTRAINT `rol_privilegio_idrol_foreign` FOREIGN KEY (`idRol`) REFERENCES `rol` (`idRol`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `titulo` (
+  `idTitulo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombreTitulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idGenero` int(10) unsigned NOT NULL,
+  `idPublisher` int(10) unsigned NOT NULL,
+  `idConsola` int(10) unsigned NOT NULL,
+  `idDesarrollador` int(10) unsigned NOT NULL,
+  `edicion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `version` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fechaLanzamiento` date NOT NULL,
+  `urlImagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`idTitulo`),
+  KEY `titulo_idgenero_foreign` (`idGenero`),
+  KEY `titulo_idpublisher_foreign` (`idPublisher`),
+  KEY `titulo_idconsola_foreign` (`idConsola`),
+  KEY `titulo_iddesarrollador_foreign` (`idDesarrollador`),
+  CONSTRAINT `titulo_idconsola_foreign` FOREIGN KEY (`idConsola`) REFERENCES `consola` (`idConsola`) ON DELETE CASCADE,
+  CONSTRAINT `titulo_iddesarrollador_foreign` FOREIGN KEY (`idDesarrollador`) REFERENCES `desarrollador` (`idDesarrollador`) ON DELETE CASCADE,
+  CONSTRAINT `titulo_idgenero_foreign` FOREIGN KEY (`idGenero`) REFERENCES `genero` (`idGenero`) ON DELETE CASCADE,
+  CONSTRAINT `titulo_idpublisher_foreign` FOREIGN KEY (`idPublisher`) REFERENCES `publisher` (`idPublisher`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1);
+INSERT INTO `migrations` VALUES (2,'2014_10_12_100000_create_password_resets_table',1);
+INSERT INTO `migrations` VALUES (3,'2019_08_19_000000_create_failed_jobs_table',1);
+INSERT INTO `migrations` VALUES (4,'2020_10_08_181200_create_table_privilegios',1);
+INSERT INTO `migrations` VALUES (5,'2020_10_08_181323_create_table_rol',1);
+INSERT INTO `migrations` VALUES (6,'2020_10_08_181644_create_table_rol_privilegio',1);
+INSERT INTO `migrations` VALUES (7,'2020_10_08_182133_create_table_cuenta',1);
+INSERT INTO `migrations` VALUES (8,'2020_10_08_183826_create_table_desarrollador',1);
+INSERT INTO `migrations` VALUES (9,'2020_10_08_183914_create_table_genero',1);
+INSERT INTO `migrations` VALUES (10,'2020_10_08_183944_create_table_publisher',1);
+INSERT INTO `migrations` VALUES (11,'2020_10_08_184048_create_table_consola',1);
+INSERT INTO `migrations` VALUES (12,'2020_10_08_184123_create_table_titulo',1);
+INSERT INTO `migrations` VALUES (13,'2020_10_08_185417_create_table_juego',1);
+INSERT INTO `migrations` VALUES (14,'2020_10_08_190300_create_table_recibiria_titulo',1);
+INSERT INTO `migrations` VALUES (15,'2020_10_08_190619_create_table_cuenta_juego',1);
+INSERT INTO `migrations` VALUES (16,'2020_10_08_190710_create_table_oferta',1);
