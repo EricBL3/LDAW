@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oferta;
+use App\Http\Resources\OfertaCollection;
+use Illuminate\Support\Facades\DB;
+
+
 use Illuminate\Http\Request;
 
 class OfertaController extends Controller
@@ -14,7 +18,7 @@ class OfertaController extends Controller
      */
     public function index()
     {
-        //
+        return new OfertaCollection(Oferta::all());
     }
 
     /**
@@ -34,9 +38,16 @@ class OfertaController extends Controller
      * @param  \App\Models\Oferta  $oferta
      * @return \Illuminate\Http\Response
      */
-    public function show(Oferta $oferta)
+    public function show($oferta)
     {
-        //
+        return DB::table('oferta')->leftJoin('cuenta', 'oferta.idCuentaRecibir', '=','cuenta.id')
+                                  ->leftJoin('juego', 'oferta.idJuegoPorRecibir', '=','juego.idJuego')
+                                  ->leftJoin('titulo', 'juego.idTitulo', '=','titulo.idTitulo')
+                                  ->leftJoin('consola', 'titulo.idConsola', '=','consola.idConsola')
+                                  ->leftJoin('genero', 'titulo.idGenero', '=','genero.idGenero')
+                                  ->leftJoin('desarrollador', 'titulo.idDesarrollador', '=','desarrollador.idDesarrollador')
+                                  ->leftJoin('publisher', 'titulo.idPublisher', '=','publisher.idPublisher')
+                                   -> where('idJuegoPorEnviar', '=', $oferta) -> get();
     }
 
     /**

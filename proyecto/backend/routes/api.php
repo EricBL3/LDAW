@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTAuthController;
+use App\Http\Controllers\OfertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,6 @@ Route::group([
     Route::post('refresh', [JWTAuthController::class, 'refresh']);
     Route::get('profile', [JWTAuthController::class, 'profile']);
 });
+
+Route::resource('ofertas', OfertaController::class);
+
