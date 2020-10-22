@@ -216,6 +216,8 @@ export default function RegistrarForm(props) {
         if(!valores.correoCuenta)
             errores.correoCuenta = true;
         validate("telefonoCuenta", valores['telefonoCuenta']);
+        if(!valores.telefonoCuenta)
+            errores.telefonoCuenta = true;
         validate("usuario", valores['usuario']);
         if(!valores.usuario)
             errores.usuario = true;
@@ -301,7 +303,7 @@ export default function RegistrarForm(props) {
                         </div>
 
                         <div>
-                            <FormControl error={errores.telefonoCuenta} className={classes.item} >
+                            <FormControl error={errores.telefonoCuenta} className={classes.item} required>
                                 <InputLabel htmlFor="telefonoCuenta">Teléfono: </InputLabel>
                                 <Input id="telefonoCuenta" name="telefonoCuenta" 
                                     onChange={handleChange} 

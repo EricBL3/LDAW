@@ -42,16 +42,33 @@ export default function IniciarSesionForm(props) {
                 console.log(res)
                 Cookies.set('jwt', res.data['access_token']);
 
-                
+                axios.get('http://localhost:8000/api/auth/profile', {headers: {"Authorization": "Bearer "+Cookies.get('jwt')}})
+                .then( res => {
+                    console.log(res);
+                    switch(res.data['idRol'])
+                    {
+                        case 1:
+                            console.log("preparando")
+                            Cookies.set('rol', 'admin');
+                        break;
+                        case 2:
+                            Cookies.set('rol', 'general');
+                        break;
+                    }
 
-                props.handleClose();
-                if(props.history.location['pathname'] == "/")
-                {
-                    props.history.push("/");
-                    window.location.reload();
-                }
-                else
-                    props.history.push("/");
+                    props.handleClose();
+                    if(props.history.location['pathname'] == "/")
+                    {
+                        props.history.push("/");
+                        window.location.reload();
+                    }
+                    else
+                        props.history.push("/");
+
+                })
+                .catch(err => {
+                    console.log(err);
+                })
             })
             .catch(err => {
                 console.log(err)

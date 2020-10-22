@@ -95,6 +95,7 @@ export default function Navbar(props) {
             .then(res => {
                 console.log(res);
                 Cookies.remove('jwt');
+                Cookies.remove('rol');
                 if(props.history.location['pathname'] == "/")
                     window.location.reload();
                 else
@@ -114,6 +115,7 @@ export default function Navbar(props) {
     };
 
     return (
+        
         <div className={classes.root}>
         {!conSesion ? 
             <AppBar position="static">
@@ -161,7 +163,11 @@ export default function Navbar(props) {
                     >
                     <MenuItem onClick={handleClose}>Mis Juegos</MenuItem>
                     <MenuItem onClick={handleClose}>Mis Ofertas</MenuItem>
-                    <MenuItem onClick={handleClose}>Cuentas</MenuItem>
+                    {Cookies.get('rol') == 'admin' ?
+                        <MenuItem onClick={handleClose}>Cuentas</MenuItem>
+                    :
+                        <></>
+                    }
                     <MenuItem onClick={handleCerrarSesion}>Cerrar Sesión</MenuItem>
                     </Menu>
 
@@ -177,7 +183,11 @@ export default function Navbar(props) {
                     <div id="botonesWeb" className={classes.botonesWeb}>
                         <Button style={{marginLeft: "10%"}} variant="contained" color="primary">Mis Juegos</Button>
                         <Button variant="contained" color="primary">Mis Ofertas</Button>
-                        <Button variant="contained" color="primary">Cuentas</Button>
+                        {Cookies.get('rol') == 'admin' ?
+                            <Button variant="contained" color="primary">Cuentas</Button>
+                        :
+                            <></>
+                        }
                         <Button onClick={handleCerrarSesion}  variant="contained" color="primary">Cerrar Sesión</Button>
                     </div>
                 </Toolbar>

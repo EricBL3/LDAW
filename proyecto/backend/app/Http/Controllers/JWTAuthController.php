@@ -31,7 +31,7 @@ class JWTAuthController extends Controller
             'idRol' => 'required',
             'nombre' => 'required|string',
             'correoCuenta' => 'required|email|unique:cuenta|max:100',
-            'telefonoCuenta' => 'nullable|string|size:10',
+            'telefonoCuenta' => 'required|string|size:10',
             'usuario' => 'required|string|unique:cuenta',
             'password' => 'required|confirmed|string|min:6',
         ]);
