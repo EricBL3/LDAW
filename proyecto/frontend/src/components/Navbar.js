@@ -14,15 +14,7 @@ import IniciarSesionForm from './IniciarSesionForm';
 import axios from 'axios';
 import RegistrarForm from './RegistrarForm';
 
-function isEmail(correo)
-{
-    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(correo);
-}
 
-function isNullOrWhitespace(input)
-{
-    return !input || !input.trim();
-}
 
 
 const useStyles = makeStyles((theme) => ({
@@ -75,8 +67,7 @@ export default function Navbar(props) {
     const [registrarOpen, setRegistrarOpen] = React.useState(false);
 
     useEffect(() => {
-        console.log(props.history)
-        //console.log(Cookies.get('jwt'));
+        console.log(Cookies.get('jwt'))
         setConSesion(Cookies.get('jwt') ? true : false); //ignoren esto, luego lo cambio
     }, [])
 

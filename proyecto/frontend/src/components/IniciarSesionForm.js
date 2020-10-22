@@ -41,9 +41,15 @@ export default function IniciarSesionForm(props) {
             .then(res => {
                 console.log(res)
                 Cookies.set('jwt', res.data['access_token']);
+
+                
+
                 props.handleClose();
                 if(props.history.location['pathname'] == "/")
+                {
+                    props.history.push("/");
                     window.location.reload();
+                }
                 else
                     props.history.push("/");
             })
