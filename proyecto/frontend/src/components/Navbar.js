@@ -10,6 +10,19 @@ import HomeIcon from '@material-ui/icons/Home';
 import Cookies from 'js-cookie'
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import IniciarSesionForm from './IniciarSesionForm';
+import axios from 'axios';
+import RegistrarForm from './RegistrarForm';
+
+function isEmail(correo)
+{
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(correo);
+}
+
+function isNullOrWhitespace(input)
+{
+    return !input || !input.trim();
+}
 
 
 const useStyles = makeStyles((theme) => ({
@@ -58,9 +71,48 @@ export default function Navbar(props) {
     const classes = useStyles();
     const [conSesion, setConSesion] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [iniciarSesionOpen, setIniciarSesionOpen] = React.useState(false);
+    const [registrarOpen, setRegistrarOpen] = React.useState(false);
+
     useEffect(() => {
-        setConSesion(Cookies.get('jwt') ? true : true); //ignoren esto, luego lo cambio
+        console.log(props.history)
+        //console.log(Cookies.get('jwt'));
+        setConSesion(Cookies.get('jwt') ? true : false); //ignoren esto, luego lo cambio
     }, [])
+
+    const handleIniciarSesionOpen = () => {
+        setIniciarSesionOpen(true);
+        setAnchorEl(null);
+    }
+
+    const handleIniciarSesionClose = () => {
+        setIniciarSesionOpen(false);
+    }
+
+    const handleRegistrarOpen = () => {
+        setIniciarSesionOpen(false);
+        setRegistrarOpen(true);
+    }
+
+    const handleRegistrarClose = () => {
+        setRegistrarOpen(false);
+    }
+
+    const handleCerrarSesion = () => {
+        setAnchorEl(null);
+        axios.post('http://localhost:8000/api/auth/logout', null, {headers: {"Accept": "application/json", "Authorization": "Bearer "+Cookies.get('jwt')}})
+            .then(res => {
+                console.log(res);
+                Cookies.remove('jwt');
+                if(props.history.location['pathname'] == "/")
+                    window.location.reload();
+                else
+                    props.history.push("/");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -86,7 +138,7 @@ export default function Navbar(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                     >
-                    <MenuItem onClick={handleClose}>Iniciar Sesión</MenuItem>
+                    <MenuItem onClick={handleIniciarSesionOpen}>Iniciar Sesión</MenuItem>
                     </Menu>
 
                     {/*BOTONES WEB */}
@@ -98,7 +150,7 @@ export default function Navbar(props) {
                     </Typography>
                     <div className={classes.botonesWeb}>
                         <div></div>
-                        <Button   variant="contained" color="primary">Iniciar Sesión</Button>
+                        <Button onClick={handleIniciarSesionOpen}  variant="contained" color="primary">Iniciar Sesión</Button>
                     </div>
                 </Toolbar>
             </AppBar>
@@ -119,7 +171,7 @@ export default function Navbar(props) {
                     <MenuItem onClick={handleClose}>Mis Juegos</MenuItem>
                     <MenuItem onClick={handleClose}>Mis Ofertas</MenuItem>
                     <MenuItem onClick={handleClose}>Cuentas</MenuItem>
-                    <MenuItem onClick={handleClose}>Cerrar Sesión</MenuItem>
+                    <MenuItem onClick={handleCerrarSesion}>Cerrar Sesión</MenuItem>
                     </Menu>
 
 
@@ -135,11 +187,26 @@ export default function Navbar(props) {
                         <Button style={{marginLeft: "10%"}} variant="contained" color="primary">Mis Juegos</Button>
                         <Button variant="contained" color="primary">Mis Ofertas</Button>
                         <Button variant="contained" color="primary">Cuentas</Button>
-                        <Button  variant="contained" color="primary">Cerrar Sesión</Button>
+                        <Button onClick={handleCerrarSesion}  variant="contained" color="primary">Cerrar Sesión</Button>
                     </div>
                 </Toolbar>
             </AppBar>
+
+            
         }
+            <IniciarSesionForm 
+                open={iniciarSesionOpen} 
+                handleOpen={handleIniciarSesionOpen} 
+                handleClose={handleIniciarSesionClose}
+                registrarOpen={handleRegistrarOpen}
+                history={props.history}
+            />
+            <RegistrarForm
+                open={registrarOpen}
+                handleOpen={handleRegistrarOpen}
+                handleClose={handleRegistrarClose}
+                history={props.history}
+            />
         </div>
     );
 }

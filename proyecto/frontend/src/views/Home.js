@@ -6,7 +6,7 @@ const Home = (props) => {
     
     return(
         <div >
-        <Navbar titulo="Home" />
+        <Navbar titulo="Home" history={props.history}/>
         </div>
     );
 }
