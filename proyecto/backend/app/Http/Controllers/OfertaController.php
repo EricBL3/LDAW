@@ -57,9 +57,13 @@ class OfertaController extends Controller
      * @param  \App\Models\Oferta  $oferta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Oferta $oferta)
+    public function update(Request $request, Oferta $idOferta)
     {
-        //
+        $request->validate([
+            'estado' => 'required',
+        ]);
+        $query = DB::table('oferta')->where('idOferta', $idOferta)->update(['estado'=> $request->get('estado')]);
+        return $query;
     }
 
     /**
