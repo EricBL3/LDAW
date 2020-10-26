@@ -50,6 +50,8 @@ class OfertaController extends Controller
                                    -> where('idJuegoPorEnviar', '=', $oferta) -> get();
     }
 
+    
+
     /**
      * Update the specified resource in storage.
      *
@@ -60,9 +62,11 @@ class OfertaController extends Controller
     public function update(Request $request, Oferta $idOferta)
     {
         $request->validate([
+            'idOferta' => 'required',
             'estado' => 'required',
         ]);
-        $query = DB::table('oferta')->where('idOferta', $idOferta)->update(['estado'=> $request->get('estado')]);
+       $query = DB::table('oferta')->where('idOferta', $request->get('idOferta'))->update(['estado'=> $request->get('estado')]);
+        
         return $query;
     }
 

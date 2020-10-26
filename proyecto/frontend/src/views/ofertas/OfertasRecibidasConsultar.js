@@ -6,13 +6,34 @@ import CardContent from '@material-ui/core/CardContent';
 import Cookies from 'js-cookie'
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Dialog, DialogContent, DialogTitle, Grid, DialogContentText, DialogActions } from '@material-ui/core';
+import { Dialog, DialogContent, DialogTitle, Grid, DialogContentText, DialogActions, ListItemSecondaryAction } from '@material-ui/core';
+import Alert from '@material-ui/lab/Alert';
 
+
+function EstadoOferta (props) {
+
+  if(props.estadoOferta === 'aceptada'){
+      return <Alert severity="success">Oferta Aceptada!</Alert>
+  } else if (props.estadoOferta === 'terminada') {
+    return <Alert severity="warning">Oferta Terminada!</Alert>
+  } else if (props.estadoOferta === 'pendiente') {
+    return <Alert severity="info">Oferta Pendiente</Alert>
+  }  else if (props.estadoOferta === 'rechazada') {
+    return  <Alert severity="error">Oferta Rechazada!</Alert>
+  }
+
+}
 
 function Botones(props){
 
   const[open, setOpen] = useState({acceptOpen: false, rejectOpen: false, terminateOpen: false});
   const[json, setJson] = useState({idOferta: props.idOferta, estado: ""});
+  const [conSesion, setConSesion] = useState(false);
+
+  useEffect(() => {
+    console.log(Cookies.get('jwt'))
+    setConSesion(Cookies.get('jwt') ? true : false); //ignoren esto, luego lo cambio
+}, [])
 
   const handleDialogOpenAccept = () => {
     setOpen({acceptOpen: true});
@@ -38,9 +59,37 @@ function Botones(props){
 
   const AceptarOferta = () => {
     json.estado = "aceptada"
-    console.log(json);
+    console.log(json.idOferta);
 
-    axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+Cookies.get('jwt')}})
+    axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          });
+    setOpen({acceptOpen: false});
+  }
+
+  const RechazarOferta = () => {
+    json.estado = "rechazada"
+    console.log(json.idOferta);
+
+    axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          });
+    setOpen({rejectOpen: false});
+  }
+
+  const TerminarOferta = () => {
+    json.estado = "terminada"
+    console.log(json.idOferta);
+
+    axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
           .then(res => {
             console.log(res)
           })
@@ -48,7 +97,7 @@ function Botones(props){
             console.log(err)
           });
 
-
+    setOpen({terminateOpen: false});
   }
 
   if(props.estadoOferta === 'pendiente'){
@@ -95,7 +144,7 @@ function Botones(props){
           <Button onClick={handleDialogCloseReject}  color="primary">
             No
           </Button>
-          <Button onClick={handleDialogCloseReject} color="primary">
+          <Button onClick={RechazarOferta} color="primary">
             Si
           </Button>
         </DialogActions>
@@ -126,7 +175,7 @@ function Botones(props){
             <Button onClick={handleDialogCloseTerminate}  color="primary">
               No
             </Button>
-            <Button onClick={handleDialogCloseTerminate} color="primary">
+            <Button onClick={TerminarOferta} color="primary">
               Si
             </Button>
           </DialogActions>
@@ -166,6 +215,9 @@ export default function OfertasRecibidasConsultar(props) {
               <CardContent>
                 <Typography variant="h5" gutterBottom>
                     {oferta.nombreTitulo}
+                </Typography>
+                <Typography variant="body2">
+                  <EstadoOferta estadoOferta={oferta.estado}/>
                 </Typography>
                 <Typography variant="body2">
                  Propietario: {oferta.usuario}
