@@ -26,7 +26,7 @@ function EstadoOferta (props) {
 
 function Botones(props){
 
-  const[open, setOpen] = useState({acceptOpen: false, rejectOpen: false, terminateOpen: false});
+  const[open, setOpen] = useState({acceptOpen: false, rejectOpen: false, terminateOpen: false, infoOpen: false});
   const[json, setJson] = useState({idOferta: props.idOferta, estado: ""});
   const [conSesion, setConSesion] = useState(false);
 
@@ -34,6 +34,14 @@ function Botones(props){
     console.log(Cookies.get('jwt'))
     setConSesion(Cookies.get('jwt') ? true : false); //ignoren esto, luego lo cambio
 }, [])
+
+const handleDialogOpenInfo = () => {
+  setOpen({infoOpen: true});
+}
+
+const handleDialogCloseInfo = () => {
+  setOpen({infoOpen: false});
+}
 
   const handleDialogOpenAccept = () => {
     setOpen({acceptOpen: true});
@@ -152,7 +160,7 @@ function Botones(props){
       </div>
       
     )
-  } else {
+  } else if(props.estadoOferta === 'rechazada'){
     return (
 
       <div>
@@ -183,6 +191,45 @@ function Botones(props){
       </div>
       
     )
+  } else if(props.estadoOferta === 'aceptada') {
+      return (
+        <div>
+          <CardActions>
+            <Button color="primary" onClick={handleDialogOpenInfo} variant="outlined" size="small">Info de contacto</Button>
+          </CardActions>
+
+            <Dialog
+            open={open.infoOpen}
+            keepMounted
+            onClose={handleDialogCloseInfo}
+            >
+            <DialogTitle>INFORMACION DE CONTACTO DEL INTERCAMBIO</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                <div>
+                  Usuario: {props.usuario}
+                </div>
+                <div>
+                  Correo: {props.correo}
+                </div>
+                <div>
+                  Telefono: {props.telefono}
+                </div>
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleDialogCloseInfo}  color="primary">
+                Aceptar
+              </Button>
+            </DialogActions>
+            </Dialog>
+        </div>
+      )
+  } else {
+    return (  
+    <CardActions>
+      <Button variant="outlined" size="small">OFERTA TERMINADA</Button>
+    </CardActions>)
   }
 }
 
@@ -234,8 +281,11 @@ export default function OfertasRecibidasConsultar(props) {
                 <Typography variant="body2">
                   Publisher: {oferta.nombrePublisher}
                 </Typography>
+                <Typography variant="body2">
+                  Condiciones: {oferta.condiciones}
+                </Typography>
               </CardContent>
-              <Botones estadoOferta={oferta.estado} idOferta={oferta.idOferta}/>
+              <Botones estadoOferta={oferta.estado} idOferta={oferta.idOferta} usuario={oferta.usuario} telefono={oferta.telefonoCuenta} correo={oferta.correoCuenta}/>
             </Card>
             </Grid>
             ))}
