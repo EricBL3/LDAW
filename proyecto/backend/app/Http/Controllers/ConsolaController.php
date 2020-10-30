@@ -61,4 +61,8 @@ class ConsolaController extends Controller
     {
         //
     }
+    public function getConsola(){
+        $consola=Consola::select('idConsola','nombreConsola')->get();
+        return $consola;
+    }
 }

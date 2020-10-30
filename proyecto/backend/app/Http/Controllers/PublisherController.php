@@ -61,4 +61,8 @@ class PublisherController extends Controller
     {
         //
     }
+    public function getPublisher(){
+        $publisher=Publisher::select('idPublisher','nombrePublisher')->get();
+        return $publisher;
+    }
 }

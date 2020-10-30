@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Desarrollador extends Model
 {
+    protected $table = 'desarrollador';
+
     use HasFactory;
 
     protected $fillable = [

@@ -14,7 +14,7 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -60,5 +60,9 @@ class GeneroController extends Controller
     public function destroy(Genero $genero)
     {
         //
+    }
+    public function getGenero(){
+        $generos=Genero::select('idGenero','nombreGenero')->get();
+        return $generos;
     }
 }

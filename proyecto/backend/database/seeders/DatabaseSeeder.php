@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Publisher;
+use App\Models\Titulo;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            ConsolaSeeder::class,
+            GeneroSeeder::class,
+            PublisherSeeder::class,
+            DesarrolladorSeeder::class,
+        ]);
+        Titulo::factory()->count(20)->create();
     }
 }

@@ -61,4 +61,8 @@ class DesarrolladorController extends Controller
     {
         //
     }
+    public function getDesarrollador(){
+        $desarrollador=Desarrollador::select('idDesarrollador','nombreDesarrollador')->get();
+        return $desarrollador;
+    }
 }
