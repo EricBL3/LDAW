@@ -91,7 +91,7 @@ export default function Navbar(props) {
 
     const handleCerrarSesion = () => {
         setAnchorEl(null);
-        axios.post('http://localhost:8000/api/auth/logout', null, {headers: {"Accept": "application/json", "Authorization": "Bearer "+Cookies.get('jwt')}})
+        axios.post('http://localhost:8000/api/auth/logout', null, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
             .then(res => {
                 console.log(res);
                 Cookies.remove('jwt');

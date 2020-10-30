@@ -71,10 +71,12 @@ const handleDialogCloseInfo = () => {
 
     axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
           .then(res => {
-            console.log(res)
+            console.log(res);
+            window.location.reload();
           })
           .catch(err => {
-            console.log(err)
+            console.log(err);
+            window.location.reload();
           });
     setOpen({acceptOpen: false});
   }
@@ -85,12 +87,15 @@ const handleDialogCloseInfo = () => {
 
     axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
           .then(res => {
-            console.log(res)
+            console.log(res);
+            window.location.reload();
           })
           .catch(err => {
-            console.log(err)
+            console.log(err);
+            window.location.reload();
           });
     setOpen({rejectOpen: false});
+
   }
 
   const TerminarOferta = () => {
@@ -99,13 +104,17 @@ const handleDialogCloseInfo = () => {
 
     axios.put('http://localhost:8000/api/ofertas/' + json.idOferta, json, {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
           .then(res => {
-            console.log(res)
+            console.log(res);
+            window.location.reload();
           })
           .catch(err => {
-            console.log(err)
+            console.log(err);
+            window.location.reload();
           });
 
     setOpen({terminateOpen: false});
+
+   
   }
 
   if(props.estadoOferta === 'pendiente'){
