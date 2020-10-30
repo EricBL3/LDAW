@@ -121,9 +121,8 @@ class TituloController extends Controller
             ->select('nombreTitulo', 'urlImagen', 'nombreGenero', 'nombreDesarrollador', 'nombrePublisher', 'nombreConsola')
             ->where('nombreGenero', $comparadorGenero,$strGenero)
             ->where('nombreConsola', $comparadorConsola,$strConsola)
-            ->where('nombreConsola', $comparadorConsola,$strConsola)
-            ->where('nombreConsola', $comparadorPublisher,$strPublisher)
-            ->where('nombreConsola', $comparadorDesarrollador,$strDesarrollador)
+            ->where('nombrePublisher', $comparadorPublisher,$strPublisher)
+            ->where('nombredesarrollador', $comparadorDesarrollador,$strDesarrollador)
             ->where('nombreTitulo', $comparadorTitulo, '%'.$strTitulo.'%')
             ->get();
 
