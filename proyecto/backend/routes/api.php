@@ -8,6 +8,8 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\DesarrolladorController;
 use App\Http\Controllers\ConsolaController;
+use App\Http\Controllers\OfertaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -61,4 +63,6 @@ Route::group([
 ], function ($router){
     Route::get('getDesarrollador', [DesarrolladorController::class, 'getDesarrollador']);
 });
+
+Route::resource('ofertas', OfertaController::class);
 

@@ -23,7 +23,6 @@
         <h3>A01704365</h3>
     </div>
 
-
     <div class="accordion col-md-6 mx-auto" id="accordionExample">
     <div class="card">
         <div class="card-header text-center" id="heading">
@@ -122,4 +121,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </body>
+
 </html>
