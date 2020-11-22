@@ -97,6 +97,9 @@ export const Buscartitulo = () => {
                 setDesarrollador(response.data);
             })
     }
+    const mostrarDetalles = (idTituloMostrar) =>{
+        window.location.href = "http://localhost:3000/detalleTitulo/"+idTituloMostrar;
+    }
 
     useEffect(() => {
         axios.get(baseURL + 'titulo/getTitulo/' + busqueda.busqueda + '-' + busqueda.genero + '-' + busqueda.consola + '-' + busqueda.publisher + '-' + busqueda.desarrollador)
@@ -139,7 +142,7 @@ export const Buscartitulo = () => {
                             />
                         </CardContent>
                         <Box align="right">
-                            <Button variant="contained">Detalles</Button>
+                            <Button onClick={()=>mostrarDetalles(titulo.idTitulo)} variant="contained">Detalles</Button>
                         </Box>
                     </Card>
                 </Grid>

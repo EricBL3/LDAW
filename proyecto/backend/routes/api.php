@@ -8,6 +8,7 @@ use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\DesarrolladorController;
 use App\Http\Controllers\ConsolaController;
+use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\OfertaController;
 
 /*
@@ -38,6 +39,14 @@ Route::group([
 ], function ($router){
     Route::get('getTitulo/{titulo?}', [TituloController::class, 'getTitulo']);
     Route::get('getData', [TituloController::class, 'getData']);
+    Route::get('mostrarTitulo/{idTitulo}', [TituloController::class, 'mostrarTitulo']);
+
+});
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'juego'
+], function ($router){
+    Route::get('listarJuegos/{idTitulo}', [JuegoController::class, 'listarJuegos']);
 });
 Route::group([
     'middleware' => 'api',

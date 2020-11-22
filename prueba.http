@@ -1,4 +1,12 @@
-POST http://localhost:8000/api/auth/logout HTTP/1.1
+POST http://localhost:8000/api/auth/register HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9yZWZyZXNoIiwiaWF0IjoxNjAyODAxMDE5LCJleHAiOjE2MDI4MDQ4MDQsIm5iZiI6MTYwMjgwMTIwNCwianRpIjoiZ1BzZmdubTN3WThHOFRjciIsInN1YiI6MiwicHJ2IjoiZjcxNmIzZTA0NjdhMGFmZjRiZDhlZDZkOTQ3NmZlNjk3NTBhMzNjZSJ9.JqJ9CbVK3St5FXpetV2O4fCPcMTAgsKO3OY9BRvVln4
+
+{
+    "idRol" : 1,
+    "nombre" : " Eric Torres",
+    "correoCuenta" : "eric@gmail.com",
+    "telefonoCuenta" : "4422198977",
+    "usuario" : "eric27",
+    "password" : "erictorres27",
+}

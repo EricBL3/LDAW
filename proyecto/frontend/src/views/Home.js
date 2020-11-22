@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Mensaje from '../components/Mensaje'
-import Buscartitulo from '../components/BuscarTitulo/Buscartitulo';
+import Buscartitulo from './BuscarTitulo/Buscartitulo';
 const Home = (props) => {
     const args = props.location.search;
     
