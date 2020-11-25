@@ -85,6 +85,12 @@ class CuentaController extends Controller
         $cuenta->telefonoCuenta = $request->input("telefonoCuenta");
         $cuenta->usuario = $request->input("usuario");
 
+        if(strcmp($request->input("password"), "") != 0)
+        {
+            $request->validate(['password' => 'required|confirmed|string|min:6',]);
+            $cuenta->password = bcrypt($request->input("password"));
+        }
+
         $cuenta->save();
     }
 
