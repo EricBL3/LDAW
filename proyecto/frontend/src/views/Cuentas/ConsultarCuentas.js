@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { Paper, makeStyles, Container, Typography, Button, Icon, Fab, Tooltip } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
@@ -6,6 +6,7 @@ import TablaCuentas from "./TablaCuentas";
 import Mensaje from "../../components/Mensaje";
 import RegistrarForm from "../../components/RegistrarForm";
 import EditarForm from "./EditarForm";
+import Cookies from 'js-cookie'
 
 const useStyle = makeStyles(theme => ({
     pageContent:{
@@ -46,6 +47,14 @@ const ConsultarCuentas = (props) => {
     const [editarOpen, setEditarOpen] = React.useState(false);
     const [valoresEditar, setValoresEditar] = React.useState(valoresIniciales);
     const args = props.location.search;
+
+    useEffect ( () => {
+        if(Cookies.get('rol') != 'admin')
+        {
+            props.history.goBack();
+        }
+
+    }, []);
 
     const handleRegistrarOpen = () => {
         setRegistrarOpen(true);
