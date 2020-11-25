@@ -276,11 +276,17 @@ export default function TablaCuentas(props) {
                             <IconButton
                                 color="primary"
                                 aria-label="edit"
-                                onClick={() =>
-                                props.history.push(
-                                    "/cuentas/editar/" + cuenta.id
-                                )
-                                }
+                                onClick={() => {
+                                    axios.get('http://localhost:8000/api/cuentas/'+cuenta.id,  {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
+                                    .then(res => {
+                                        console.log(res)
+                                        props.setCuentaEditar(res.data);
+                                    })
+                                    .catch(err => {
+                                        console.log(err);
+                                    })
+                                    props.handleEditarOpen();
+                                }}
                             >
                                 <EditIcon />
                             </IconButton>

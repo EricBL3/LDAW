@@ -5,6 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import TablaCuentas from "./TablaCuentas";
 import Mensaje from "../../components/Mensaje";
 import RegistrarForm from "../../components/RegistrarForm";
+import EditarForm from "./EditarForm";
 
 const useStyle = makeStyles(theme => ({
     pageContent:{
@@ -27,10 +28,23 @@ const useStyle = makeStyles(theme => ({
     }
 }))
 
+const valoresIniciales = {
+    'id': 0,
+    'idRol': 2,
+    'nombre': '',
+    'correoCuenta': '',
+    'telefonoCuenta': '',
+    'usuario': '',
+    'password': '',
+    'password_confirmation': ''
+}
+
 
 const ConsultarCuentas = (props) => {
     const classes = useStyle();
     const [registrarOpen, setRegistrarOpen] = React.useState(false);
+    const [editarOpen, setEditarOpen] = React.useState(false);
+    const [valoresEditar, setValoresEditar] = React.useState(valoresIniciales);
     const args = props.location.search;
 
     const handleRegistrarOpen = () => {
@@ -40,6 +54,15 @@ const ConsultarCuentas = (props) => {
 
     const handleRegistrarClose = () => {
         setRegistrarOpen(false);
+    }
+
+    const handleEditarOpen = () => {
+        setEditarOpen(true);
+        console.log(props.history.location)
+    }
+
+    const handleEditarClose = () => {
+        setEditarOpen(false);
     }
 
     return (
@@ -58,7 +81,10 @@ const ConsultarCuentas = (props) => {
                 </Tooltip>
                 </div>
                 <div>
-                    <TablaCuentas history={props.history}/>
+                    <TablaCuentas 
+                        history={props.history} setCuentaEditar={setValoresEditar} handleEditarOpen={handleEditarOpen} 
+                        handleRegistrarOpen={handleRegistrarOpen}
+                    />
                 </div>
             </Paper>
 
@@ -70,10 +96,26 @@ const ConsultarCuentas = (props) => {
                 admin={true}
             />
 
+            <EditarForm
+                open={editarOpen}
+                handleOpen={handleEditarOpen}
+                handleClose={handleEditarClose}
+                history={props.history}
+                valores={valoresEditar}
+                setValores={setValoresEditar}
+                idCuenta={valoresEditar.id}
+            />
+
             <Mensaje
                 success={args.includes("registrarse") ? args.slice(-1) : -1} 
                 mensajeExito={"La cuenta se registró de manera exitosa."}
                 mensajeError={"Hubo un error al registrar la cuenta en el sistema."}
+            />
+
+            <Mensaje
+                success={args.includes("editar") ? args.slice(-1) : -1} 
+                mensajeExito={"La cuenta se editó de manera exitosa."}
+                mensajeError={"Hubo un error al editar la cuenta en el sistema."}
             />
 
             <Mensaje

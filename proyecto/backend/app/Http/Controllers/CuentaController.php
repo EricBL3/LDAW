@@ -36,9 +36,9 @@ class CuentaController extends Controller
      * @param  \App\Models\Cuenta  $cuenta
      * @return \Illuminate\Http\Response
      */
-    public function show(Cuenta $cuenta)
+    public function show($id)
     {
-        //
+        return Cuenta::findOrFail($id);
     }
 
     /**
@@ -48,9 +48,44 @@ class CuentaController extends Controller
      * @param  \App\Models\Cuenta  $cuenta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cuenta $cuenta)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'idRol' => 'required',
+            'nombre' => 'required|string',
+            
+            'telefonoCuenta' => 'required|string|size:10',
+            
+        ]);
+
+
+        $cuenta = Cuenta::find($id);
+
+        if(strcmp($cuenta->correoCuenta, $request->input("correoCuenta")) != 0)
+        {
+            $request->validate(['correoCuenta' => 'required|email|unique:cuenta|max:100',]);
+        }
+        else
+        {
+            $request->validate(['correoCuenta' => 'required|email|max:100',]);
+        }
+
+        if(strcmp($cuenta->usuario, $request->input("usuario")) != 0)
+        {
+            $request->validate(['usuario' => 'required|string|unique:cuenta',]);
+        }
+        else
+        {
+            $request->validate(['usuario' => 'required|string',]);
+        }
+
+        $cuenta->idRol = $request->input("idRol");
+        $cuenta->nombre = $request->input("nombre");
+        $cuenta->correoCuenta = $request->input("correoCuenta");
+        $cuenta->telefonoCuenta = $request->input("telefonoCuenta");
+        $cuenta->usuario = $request->input("usuario");
+
+        $cuenta->save();
     }
 
     /**
