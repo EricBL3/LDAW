@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cuenta;
 use Illuminate\Http\Request;
-
+use App\Http\Resources\CuentaCollection;
+use App\Http\Resources\Cuenta as CuentaResource;
+use Illuminate\Support\Facades\DB;
 class CuentaController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class CuentaController extends Controller
      */
     public function index()
     {
-        //
+        return DB::table('cuenta')->leftJoin('rol', 'cuenta.idRol', '=', 'rol.idRol')->select('cuenta.*', 'rol.nombreRol')->get();
     }
 
     /**
@@ -57,8 +59,8 @@ class CuentaController extends Controller
      * @param  \App\Models\Cuenta  $cuenta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cuenta $cuenta)
+    public function destroy($id)
     {
-        //
+        Cuenta::destroy($id);
     }
 }

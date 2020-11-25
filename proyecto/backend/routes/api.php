@@ -10,6 +10,7 @@ use App\Http\Controllers\DesarrolladorController;
 use App\Http\Controllers\ConsolaController;
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\OfertaController;
+use App\Http\Controllers\CuentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,4 +75,5 @@ Route::group([
 });
 
 Route::resource('ofertas', OfertaController::class);
+Route::resource('cuentas', CuentaController::class);
 
