@@ -6,12 +6,14 @@ import theme from './theme.config'
 import Home from './views/Home';
 import OfertasRecibidas from './views/ofertas/OfertasRecibidas';
 import { DetalleTitulo } from './views/DetalleTitulo/DetalleTitulo';
+import ConsultarCuentas from './views/Cuentas/ConsultarCuentas';
 
 function App() {
   return (
     <ThemeProvider theme={theme} >
       <Router>
         <Route path="/" exact={true} component={Home}/>
+        <Route path="/cuentas" exact={true} component={ConsultarCuentas}/>
         <Route path="/detalleTitulo/:tituloId" exact={true} component={DetalleTitulo}/>
         <Route path="/misJuegos/:idJuego([0-9]*)/ofertasRecibidas" exact={true} component={OfertasRecibidas}/>
       </Router>

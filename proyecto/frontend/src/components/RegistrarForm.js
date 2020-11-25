@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {Modal, IconButton, Button, Tooltip, TextField, Grid, Typography, Link, FormControl, FormHelperText
-        , Input, InputLabel} from '@material-ui/core';
+        , Input, InputLabel, MenuItem, Select} from '@material-ui/core';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import axios from 'axios';
 import Cookies from 'js-cookie'
@@ -236,11 +236,16 @@ export default function RegistrarForm(props) {
         
             axios.post('http://localhost:8000/api/auth/register', valores, {headers: {"Accept": "application/json"}})
                 .then(res => {
-                    console.log(res)
+                    console.log(props.history.location)
                     props.handleClose();
                     if(props.history.location['pathname'] == "/")
                     {
                         props.history.push("/?registrarse=1");
+                        window.location.reload();
+                    }
+                    else if(props.admin)
+                    {
+                        props.history.push("/cuentas?registrarse=1");
                         window.location.reload();
                     }
                     else
@@ -251,6 +256,11 @@ export default function RegistrarForm(props) {
                     if(props.history.location['pathname'] == "/")
                     {
                         props.history.push("/?registrarse=0");
+                        window.location.reload();
+                    }
+                    else if(props.admin)
+                    {
+                        props.history.push("/cuentas?registrarse=0");
                         window.location.reload();
                     }
                     else
@@ -350,8 +360,27 @@ export default function RegistrarForm(props) {
                             </FormControl>
                         </div>
 
+                        {props.admin?
+                            <div>
+                                <FormControl className={classes.formControl} className={classes.item} required>
+                                    <InputLabel id="demo-simple-select-label">Rol</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        name="idRol"
+                                        value={valores.idRol}
+                                        onChange={handleChange}
+                                        >
+                                        <MenuItem value={1}>Administrador</MenuItem>
+                                        <MenuItem value={2}>Usuario Normal</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                        :
+                            <></>
+                        }
                         <Button className={classes.item} variant="contained" onClick={registrar} color="primary">
-                            Registrarse
+                            {props.admin ? 'Registrar' : 'Registrarse'}
                         </Button>
                     </form>
                 </center>

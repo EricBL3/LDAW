@@ -25,7 +25,7 @@ const OfertasRecibidas = (props) => {
   const classes = useStyle();
     return (
       <div>
-        <Navbar/>        
+        <Navbar history={props.history}/>        
         <Container>
           <Paper className={classes.title}>
                <Typography variant="h4" >OFERTAS RECIBIDAS</Typography> 
