@@ -11,6 +11,7 @@ use App\Http\Controllers\ConsolaController;
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\OfertaController;
 use App\Http\Controllers\CuentaController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,4 @@ Route::get('/ofertasEnviadas/{idCuentaEnviar}', 'App\Http\Controllers\OfertaCont
 
 Route::resource('cuentas', CuentaController::class);
 
+Route::get("send-email/{email}", [EmailController::class, "sendEmail"]);

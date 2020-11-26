@@ -239,6 +239,13 @@ export default function RegistrarForm(props) {
             axios.post('http://localhost:8000/api/auth/register', valores, {headers: {"Accept": "application/json"}})
                 .then(res => {
                     console.log(props.history.location)
+                    axios.get('http://localhost:8000/api/send-email/'+valores.correoCuenta)
+                        .then(respuesta  => {
+                            console.log(respuesta)
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
                     props.handleClose();
                     if(props.history.location['pathname'] == "/")
                     {

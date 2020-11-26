@@ -222,6 +222,10 @@ export default function TablaCuentas(props) {
         setPage(0);
     };
 
+    const handleSetPage = (event, newPage) => {
+        setPage(newPage);
+      };
+
     const EliminarCuenta = (id) => {
         axios.delete('http://localhost:8000/api/cuentas/'+id,  {headers: {"Accept": "application/json", "Authorization": "Bearer "+ Cookies.get('jwt')}})
             .then(res => {
@@ -314,7 +318,7 @@ export default function TablaCuentas(props) {
             rowsPerPage={rowsPerPage}
             page={page}
             labelRowsPerPage="Cuentas por página"
-            onChangePage={setPage}
+            onChangePage={handleSetPage}
             onChangeRowsPerPage={handleChangeRowsPerPage}
             />
         </Paper>
