@@ -55,7 +55,7 @@ export default function IniciarSesionForm(props) {
                             Cookies.set('rol', 'general');
                         break;
                     }
-
+                    Cookies.set('idCuenta', res.data['id']);
                     props.handleClose();
                     if(props.history.location['pathname'] == "/")
                     {

@@ -50,6 +50,17 @@ class OfertaController extends Controller
                                    -> where('idJuegoPorEnviar', '=', $oferta) -> get();
     }
 
+    public function showOfertasEnviadas($idCuentaEnviar){
+        return DB::table('oferta')->leftJoin('cuenta', 'oferta.idCuentaRecibir', '=','cuenta.id')
+        ->leftJoin('juego', 'oferta.idJuegoPorRecibir', '=','juego.idJuego')
+        ->leftJoin('titulo', 'juego.idTitulo', '=','titulo.idTitulo')
+        ->leftJoin('consola', 'titulo.idConsola', '=','consola.idConsola')
+        ->leftJoin('genero', 'titulo.idGenero', '=','genero.idGenero')
+        ->leftJoin('desarrollador', 'titulo.idDesarrollador', '=','desarrollador.idDesarrollador')
+        ->leftJoin('publisher', 'titulo.idPublisher', '=','publisher.idPublisher')
+         -> where('idCuentaEnviar', '=', $idCuentaEnviar) -> get();
+    }
+
     
 
     /**
