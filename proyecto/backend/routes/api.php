@@ -65,4 +65,6 @@ Route::group([
 });
 
 Route::resource('ofertas', OfertaController::class);
+Route::get('/ofertasEnviadas/{idCuentaEnviar}', 'App\Http\Controllers\OfertaController@showOfertasEnviadas');
+
 
