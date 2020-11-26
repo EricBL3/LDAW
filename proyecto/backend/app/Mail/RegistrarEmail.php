@@ -28,6 +28,6 @@ class RegistrarEmail extends Mailable
      */
     public function build()
     {
-        return $this->from("a01704340@itesm.mx")->view('email-template');
+        return $this->from("a01704340@itesm.mx")->subject("Gracias por registrarte en JuegosLDAW")->view('email-template');
     }
 }
