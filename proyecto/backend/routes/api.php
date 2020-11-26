@@ -47,6 +47,8 @@ Route::group([
     'prefix' => 'juego'
 ], function ($router){
     Route::get('listarJuegos/{idTitulo}', [JuegoController::class, 'listarJuegos']);
+    Route::get('misJuegos/{idCuenta}', [JuegoController::class, 'misJuegos']);
+    Route::delete('borrarJuego/{idJuego}', [JuegoController::class, 'borrrarjuego']);
 });
 Route::group([
     'middleware' => 'api',

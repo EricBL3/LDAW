@@ -31,14 +31,14 @@ export const DetalleTitulo = (props) => {
         nombreTitulo: '',
         edicion: '',
         version: '',
-        url: '',
+        urlImagen: '',
     }
     const [values, setValues] = useState(initialValues);
     const [data, setData] = useState([]);
     const peticionGet = async () => {
         axios.get('http://localhost:8000/api/titulo/mostrarTitulo/' + match.params.tituloId, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
             .then(res => {
-                initialValues.url = res.data.urlImagen;
+                initialValues.urlImagen = res.data.urlImagen;
                 initialValues.nombreTitulo = res.data.nombreTitulo;
                 initialValues.edicion = res.data.edicion;
                 initialValues.version = res.data.version;
@@ -110,10 +110,11 @@ export const DetalleTitulo = (props) => {
                     <Box ml={3} mt={4}>
                         <Typography variant="h4">Versión:{values.version}</Typography>
                     </Box>
+                    {console.log(values)}
                 </Grid>
                 <Grid item xs={4} sm={6}>
                     <Box align="center" mt={9}>
-                        <img src={values.url} alt="imagenTitulo" height="250px" />
+                        <img src={values.urlImagen} alt="imagenTitulo" height="250px" />
                     </Box>
                 </Grid>
             </Grid>

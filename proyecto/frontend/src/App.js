@@ -6,6 +6,8 @@ import theme from './theme.config'
 import Home from './views/Home';
 import OfertasRecibidas from './views/ofertas/OfertasRecibidas';
 import { DetalleTitulo } from './views/DetalleTitulo/DetalleTitulo';
+import { MisJuegos } from './views/MisJuegos/MisJuegos';
+import { RegistrarJuego } from './views/RegistrarJuego/RegistrarJuego';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Router>
         <Route path="/" exact={true} component={Home}/>
         <Route path="/detalleTitulo/:tituloId" exact={true} component={DetalleTitulo}/>
+        <Route path="/misJuegos" exact={true} component={MisJuegos}/>
+        <Route path="/misjuegos/registrarJuego" exact={true} component={RegistrarJuego}/>
         <Route path="/misJuegos/:idJuego([0-9]*)/ofertasRecibidas" exact={true} component={OfertasRecibidas}/>
       </Router>
     </ThemeProvider>
