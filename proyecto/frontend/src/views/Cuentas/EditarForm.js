@@ -66,7 +66,9 @@ const erroresIniciales = {
 
 export default function RegistrarForm(props) {
     const classes = useStyles();
-    const [valores, setValores] = useState(valoresIniciales);
+    const valores = props.valores;
+    const setValores = props.setValores;
+    
     const [errores, setErrores] = useState(erroresIniciales);
 
 
@@ -141,7 +143,7 @@ export default function RegistrarForm(props) {
     }
 
     const validateContraseña = (password) => {
-        if(password.length < 6 | isNullOrWhitespace(password))
+        if(password.length < 6)
         {
             setErrores({
                 ...errores,
@@ -152,13 +154,13 @@ export default function RegistrarForm(props) {
         {
             setErrores({
                 ...errores,
-                'password': false
+                'password': false,
             })
         }
     }
 
     const validateConfirmarContraseña = (password_confirmation) => {
-        if(password_confirmation.length < 6 | (isNullOrWhitespace(password_confirmation) | password_confirmation != valores['password']))
+        if(password_confirmation.length > 0 & (password_confirmation.length < 6 | password_confirmation != valores['password']))
         {
             setErrores({
                 ...errores,
@@ -194,6 +196,7 @@ export default function RegistrarForm(props) {
         else if (campo == "password")
         {
             validateContraseña(value);
+            validateConfirmarContraseña(value);
         }
         else if (campo == "password_confirmation")
         {
@@ -223,12 +226,16 @@ export default function RegistrarForm(props) {
         validate("usuario", valores['usuario']);
         if(!valores.usuario)
             errores.usuario = true;
-        validate("password", valores['password']);
-        if(!valores.password)
-            errores.password = true;
-        validate("password_confirmation", valores['password_confirmation']);
-        if(!valores.password_confirmation)
-            errores.password_confirmation = true;
+        if(valores.password)
+        {
+            validate("password", valores['password']);
+            if(!valores.password)
+                errores.password = true;
+            validate("password_confirmation", valores['password_confirmation']);
+            if(!valores.password_confirmation)
+                errores.password_confirmation = true;
+        }
+        
         if(errores.nombre || errores.correoCuenta || errores.telefonoCuenta || errores.usuario || errores.password || errores.password_confirmation)
         {
             submit = false;
@@ -236,37 +243,19 @@ export default function RegistrarForm(props) {
         if(submit)
         {
         
-            axios.post('http://localhost:8000/api/auth/register', valores, {headers: {"Accept": "application/json"}})
+            axios.put('http://localhost:8000/api/cuentas/'+props.idCuenta, valores, {headers: {"Accept": "application/json"}})
                 .then(res => {
                     console.log(props.history.location)
                     props.handleClose();
-                    if(props.history.location['pathname'] == "/")
-                    {
-                        props.history.push("/?registrarse=1");
-                        window.location.reload();
-                    }
-                    else if(props.admin)
-                    {
-                        props.history.push("/cuentas?registrarse=1");
-                        window.location.reload();
-                    }
-                    else
-                        props.history.push("/?registrarse=1");
+                    props.history.push("/cuentas?editar=1");
+                    window.location.reload();
+
                 })
                 .catch(err => {
                     console.log(err)
-                    if(props.history.location['pathname'] == "/")
-                    {
-                        props.history.push("/?registrarse=0");
-                        window.location.reload();
-                    }
-                    else if(props.admin)
-                    {
-                        props.history.push("/cuentas?registrarse=0");
-                        window.location.reload();
-                    }
-                    else
-                        props.history.push("/?registrarse=0");
+                    props.history.push("/cuentas?editar=0");
+                    window.location.reload();
+
                 })
         }
     }
@@ -276,8 +265,8 @@ export default function RegistrarForm(props) {
             <Dialog
                     open={props.open}
                     onClose={props.handleClose}
-                    aria-labelledby="iniciar-sesion-title"
-                    aria-describedby="iniciar-sesion-form"
+                    aria-labelledby="editar-sesion-title"
+                    aria-describedby="editar-sesion-form"
                     className={classes.modal}
                 >
                 <center className={classes.paper}>
@@ -288,13 +277,13 @@ export default function RegistrarForm(props) {
                     </IconButton>
                     </Tooltip>
                     </div>
-                    <h2 id="iniciar-sesion-title">Registrar Nueva Cuenta</h2>
-                    <form id="iniciar-sesion-form" >
+                    <h2 id="editar-sesion-title">Editar Cuenta</h2>
+                    <form id="editar-sesion-form" >
                         <div>
                         
                             <FormControl error={errores.nombre} className={classes.item} required>
                                 <InputLabel htmlFor="nombre">Nombre: </InputLabel>
-                                <Input id="nombre" name="nombre" 
+                                <Input id="nombre" name="nombre" value={valores.nombre}
                                     onChange={handleChange} 
                                 />
                                 <FormHelperText style={{display: errores.nombre ? "block" : "none"}} id="component-error-text">
@@ -303,12 +292,11 @@ export default function RegistrarForm(props) {
                             </FormControl>
                         </div>
 
-                        Cuenta: {props.editar ? props.idCuenta : ''}
                         <div>
                             <FormControl error={errores.correoCuenta} className={classes.item} required >
                                 <InputLabel htmlFor="correoCuenta">Correo: </InputLabel>
                                 <Input type="email" id="correoCuenta" name="correoCuenta" 
-                                    onChange={handleChange} 
+                                    onChange={handleChange} value={valores.correoCuenta}
                                 />
                                 <FormHelperText style={{display: errores.correoCuenta ? "block" : "none"}}  id="component-error-text">
                                     El correo no es válido.
@@ -320,7 +308,7 @@ export default function RegistrarForm(props) {
                             <FormControl error={errores.telefonoCuenta} className={classes.item} required>
                                 <InputLabel htmlFor="telefonoCuenta">Teléfono: </InputLabel>
                                 <Input id="telefonoCuenta" name="telefonoCuenta" 
-                                    onChange={handleChange} 
+                                    onChange={handleChange} value={valores.telefonoCuenta}
                                 />
                                 <FormHelperText style={{display: errores.telefonoCuenta ? "block" : "none"}} id="component-error-text">
                                     El teléfono debe ser de 10 dígitos.
@@ -331,7 +319,7 @@ export default function RegistrarForm(props) {
                         <div>
                             <FormControl error={errores.usuario} className={classes.item} required>
                                 <InputLabel htmlFor="usuario">Usuario: </InputLabel>
-                                <Input id="usuario" name="usuario" 
+                                <Input id="usuario" name="usuario" value={valores.usuario}
                                     onChange={handleChange}  
                                 />
                                 <FormHelperText style={{display: errores.usuario ? "block" : "none"}} id="component-error-text">
@@ -341,8 +329,8 @@ export default function RegistrarForm(props) {
                         </div>
                         
                         <div>
-                            <FormControl error={errores.password} className={classes.item} required>    
-                                <InputLabel htmlFor="contraseña">Contraseña: </InputLabel>
+                            <FormControl error={errores.password} className={classes.item} >    
+                                <InputLabel htmlFor="contraseña">Cambiar Contraseña: </InputLabel>
                                 <Input type="password" id="contraseña" name="password"
                                     onChange={handleChange} 
                                 />
@@ -353,7 +341,7 @@ export default function RegistrarForm(props) {
                         </div>
 
                         <div>
-                            <FormControl error={errores.password_confirmation} className={classes.item} required>  
+                            <FormControl error={errores.password_confirmation} className={classes.item} >  
                                 <InputLabel htmlFor="password_confirmation">Confirmar Contraseña: </InputLabel>
                                 <Input type="password" id="password_confirmation" name="password_confirmation" 
                                     onChange={handleChange} 
@@ -364,27 +352,25 @@ export default function RegistrarForm(props) {
                             </FormControl>
                         </div>
 
-                        {props.admin?
-                            <div>
-                                <FormControl className={classes.formControl} className={classes.item} required>
-                                    <InputLabel id="demo-simple-select-label">Rol</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        name="idRol"
-                                        value={valores.idRol}
-                                        onChange={handleChange}
-                                        >
-                                        <MenuItem value={1}>Administrador</MenuItem>
-                                        <MenuItem value={2}>Usuario Normal</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </div>
-                        :
-                            <></>
-                        }
+
+                        <div>
+                            <FormControl className={classes.formControl} className={classes.item} required>
+                                <InputLabel id="demo-simple-select-label">Rol</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    name="idRol"
+                                    value={valores.idRol}
+                                    onChange={handleChange}
+                                    >
+                                    <MenuItem value={1}>Administrador</MenuItem>
+                                    <MenuItem value={2}>Usuario Normal</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+
                         <Button className={classes.item} variant="contained" onClick={registrar} color="primary">
-                            {props.admin ? 'Registrar' : 'Registrarse'}
+                            Editar
                         </Button>
                     </form>
                 </center>

@@ -61,4 +61,10 @@ class JuegoController extends Controller
     {
         //
     }
+    public function listarJuegos(int $idTitulo)
+    {
+        $juegos=Juego::where('idTitulo','=',$idTitulo)
+        ->get();
+        return $juegos;
+    }
 }

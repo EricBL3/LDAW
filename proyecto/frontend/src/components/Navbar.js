@@ -103,6 +103,12 @@ export default function Navbar(props) {
             })
             .catch(err => {
                 console.log(err);
+                Cookies.remove('jwt');
+                Cookies.remove('rol');
+                if(props.history.location['pathname'] == "/")
+                    window.location.reload();
+                else
+                    props.history.push("/");
             })
     }
 
@@ -113,6 +119,15 @@ export default function Navbar(props) {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleCuentasClick = (event) => {
+        handleClose();
+        props.history.push("/cuentas");
+    }
+    const handleMisofertas = (event) => {
+        handleClose();
+        props.history.push("/misOfertas/" + Cookies.get('idCuenta'));
+    }
 
     return (
         
@@ -164,7 +179,7 @@ export default function Navbar(props) {
                     <MenuItem onClick={handleClose}>Mis Juegos</MenuItem>
                     <MenuItem onClick={handleClose}>Mis Ofertas</MenuItem>
                     {Cookies.get('rol') == 'admin' ?
-                        <MenuItem onClick={handleClose}>Cuentas</MenuItem>
+                        <MenuItem onClick={handleCuentasClick}>Cuentas</MenuItem>
                     :
                         <></>
                     }
@@ -182,9 +197,9 @@ export default function Navbar(props) {
                     </Typography>
                     <div id="botonesWeb" className={classes.botonesWeb}>
                         <Button style={{marginLeft: "10%"}} variant="contained" color="primary">Mis Juegos</Button>
-                        <Button variant="contained" color="primary">Mis Ofertas</Button>
+                        <Button variant="contained" color="primary" onClick={handleMisofertas}>Mis Ofertas</Button>
                         {Cookies.get('rol') == 'admin' ?
-                            <Button variant="contained" color="primary">Cuentas</Button>
+                            <Button variant="contained" color="primary" onClick={handleCuentasClick}>Cuentas</Button>
                         :
                             <></>
                         }

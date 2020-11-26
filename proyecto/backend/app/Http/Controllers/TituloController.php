@@ -118,7 +118,7 @@ class TituloController extends Controller
             ->join('consola', 'consola.idConsola', '=', 'titulo.idConsola')
             ->join('desarrollador', 'desarrollador.idDesarrollador', '=', 'titulo.idDesarrollador')
             ->join('publisher', 'publisher.idPublisher', '=', 'titulo.idPublisher')
-            ->select('nombreTitulo', 'urlImagen', 'nombreGenero', 'nombreDesarrollador', 'nombrePublisher', 'nombreConsola')
+            ->select('nombreTitulo', 'urlImagen', 'nombreGenero', 'nombreDesarrollador', 'nombrePublisher', 'nombreConsola','idTitulo')
             ->where('nombreGenero', $comparadorGenero,$strGenero)
             ->where('nombreConsola', $comparadorConsola,$strConsola)
             ->where('nombrePublisher', $comparadorPublisher,$strPublisher)
@@ -141,5 +141,13 @@ class TituloController extends Controller
             ->where('nombreGenero', $comparadorPublisher, 'Acción')
             ->get();
         return $titulos;
+    }
+
+    public function mostrarTitulo( int $idTitulo)
+    {
+        $titulo = Titulo::where('idTitulo','=',$idTitulo)
+        ->select('idTitulo', 'nombreTitulo', 'edicion', 'version','urlImagen')
+        ->first();
+        return $titulo;
     }
 }
