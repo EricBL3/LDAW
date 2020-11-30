@@ -97,6 +97,10 @@ class CuentaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * 
+     * 
+     * @urlParam id int id of the account to delete.
+     * 
      * @param  \App\Models\Cuenta  $cuenta
      * @return \Illuminate\Http\Response
      */

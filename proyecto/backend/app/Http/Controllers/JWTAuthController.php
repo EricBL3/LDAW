@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Cuenta;
 
+/**
+ * @group JWT management
+ *
+ * APIs for registering users and JWT authentication.
+ */
 class JWTAuthController extends Controller
 {
     /**
@@ -23,6 +28,20 @@ class JWTAuthController extends Controller
     /**
      * Register a User.
      *
+     * This endpoint allows you to register a user in the system.
+     * 
+     * @unauthenticated
+     * 
+     * @bodyParam idRol int required id of the selected role (1 for admin, 2 for regular user).
+     * @bodyParam nombre string required name of the person that is registering in the platform.
+     * @bodyParam correoCuenta string required email that will be used for the new account.
+     * @bodyParam telefonoCuenta string required phone of the person registering to the platform.
+     * 
+     * @response {
+     *  "id": 1,
+     *  "respuesta": "hola",
+     * }
+     * 
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request)
@@ -52,6 +71,9 @@ class JWTAuthController extends Controller
     /**
      * Get a JWT via given credentials.
      *
+     * This endpoint will return the JWT token needed to make any other request to the API.
+     * 
+     * @unauthenticated
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
@@ -75,6 +97,11 @@ class JWTAuthController extends Controller
     /**
      * Get the authenticated User.
      *
+     * This endpoint will return the profile of the user that signed in to the application.
+     * 
+     * @authenticated
+     * 
+     * 
      * @return \Illuminate\Http\JsonResponse
      */
     public function profile()
@@ -85,6 +112,9 @@ class JWTAuthController extends Controller
     /**
      * Log the user out (Invalidate the token).
      *
+     * This endpoint will logout the user and invalidate the JWT token.
+     * 
+     * @authenticated
      * @return \Illuminate\Http\JsonResponse
      */
     public function logout()
@@ -97,6 +127,9 @@ class JWTAuthController extends Controller
     /**
      * Refresh a token.
      *
+     * This endpoint will refresh the JWT token of the signed in user.
+     * 
+     * @authenticated
      * @return \Illuminate\Http\JsonResponse
      */
     public function refresh()
