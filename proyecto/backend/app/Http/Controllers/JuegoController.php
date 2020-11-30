@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Juego;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException;
 
 class JuegoController extends Controller
 {
@@ -63,8 +65,34 @@ class JuegoController extends Controller
     }
     public function listarJuegos(int $idTitulo)
     {
-        $juegos=Juego::where('idTitulo','=',$idTitulo)
-        ->get();
+        $juegos = Juego::where('idTitulo', '=', $idTitulo)
+            ->get();
         return $juegos;
+    }
+    public function misJuegos(int $idCuenta)
+    {
+        $juegos = Juego::join('cuenta_juego', 'juego.idJuego', '=', 'cuenta_juego.idJuego')
+            ->where('cuenta_juego.idCuenta', '=', $idCuenta)
+            ->join('titulo', 'juego.idTitulo', '=', 'titulo.idTitulo')
+            ->join('consola', 'titulo.idConsola', '=', 'consola.idConsola')
+            ->select('juego.idJuego', 'titulo.idTitulo', 'juego.urlImagen', 'cuenta_juego.idCuenta', 'titulo.nombreTitulo', 'juego.condiciones', 'consola.nombreConsola')
+            ->get();
+        return $juegos;
+    }
+    public function borrrarjuego(int $idjuego)
+    {
+        DB::beginTransaction();
+        try {
+            Juego::where('idjuego', $idjuego)->delete();
+            DB::commit();
+            return response()->json([
+                'message' => 'Juego eliminado con exito',
+            ], 201);
+        } catch (QueryException $err) {
+            DB::rollBack();
+            return response()->json([
+                'message' => 'Error al eliminar usuario',
+            ], 202);
+        }
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArchivoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTAuthController;
@@ -42,6 +43,7 @@ Route::group([
     Route::get('getTitulo/{titulo?}', [TituloController::class, 'getTitulo']);
     Route::get('getData', [TituloController::class, 'getData']);
     Route::get('mostrarTitulo/{idTitulo}', [TituloController::class, 'mostrarTitulo']);
+    Route::get('getTitulos', [TituloController::class, 'getTitulos']);
 
 });
 Route::group([
@@ -49,6 +51,8 @@ Route::group([
     'prefix' => 'juego'
 ], function ($router){
     Route::get('listarJuegos/{idTitulo}', [JuegoController::class, 'listarJuegos']);
+    Route::get('misJuegos/{idCuenta}', [JuegoController::class, 'misJuegos']);
+    Route::delete('borrarJuego/{idJuego}', [JuegoController::class, 'borrrarjuego']);
 });
 Route::group([
     'middleware' => 'api',
@@ -74,7 +78,14 @@ Route::group([
 ], function ($router){
     Route::get('getDesarrollador', [DesarrolladorController::class, 'getDesarrollador']);
 });
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'archivos'
+], function ($router){
+    Route::post('upload', [ArchivoController::class, 'upload']);
+    Route::get('dowload', [ArchivoController::class, 'dowload']);
 
+});
 Route::resource('ofertas', OfertaController::class);
 Route::get('/ofertasEnviadas/{idCuentaEnviar}', 'App\Http\Controllers\OfertaController@showOfertasEnviadas');
 
