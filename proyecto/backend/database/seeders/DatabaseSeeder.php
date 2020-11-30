@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             GeneroSeeder::class,
             PublisherSeeder::class,
             DesarrolladorSeeder::class,
+            RolSeeder::class
         ]);
         Titulo::factory()->count(20)->create();
     }

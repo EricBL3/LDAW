@@ -150,4 +150,8 @@ class TituloController extends Controller
         ->first();
         return $titulo;
     }
+    public function getTitulos(){
+        $titulo=Titulo::select('idTitulo','nombreTitulo')->get();
+        return $titulo;
+    }
 }

@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { Link } from 'react-router-dom';
 import { typography } from '@material-ui/system';
-const id = "1";
+const id = Cookies.get('idCuenta');
 const styles = makeStyles(theme => ({
     Card: {
         height: 400,

@@ -128,6 +128,11 @@ export default function Navbar(props) {
         handleClose();
         props.history.push("/misOfertas/" + Cookies.get('idCuenta'));
     }
+    const handleMisJuegos = (event) => {
+        handleClose();
+        props.history.push("/misJuegos");
+    }
+
 
     return (
         
@@ -196,7 +201,7 @@ export default function Navbar(props) {
                         {props.titulo}
                     </Typography>
                     <div id="botonesWeb" className={classes.botonesWeb}>
-                        <Button style={{marginLeft: "10%"}} variant="contained" color="primary">Mis Juegos</Button>
+                        <Button style={{marginLeft: "10%"}} variant="contained" color="primary" onClick={handleMisJuegos}>Mis Juegos</Button>
                         <Button variant="contained" color="primary" onClick={handleMisofertas}>Mis Ofertas</Button>
                         {Cookies.get('rol') == 'admin' ?
                             <Button variant="contained" color="primary" onClick={handleCuentasClick}>Cuentas</Button>
