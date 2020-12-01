@@ -10,123 +10,192 @@
     ],
     "info": {
         "name": "JuegosLDAW",
-        "_postman_id": "56116626-5f73-4d90-a4aa-376af7b5d70d",
+        "_postman_id": "4f65139e-af95-4247-90d5-5511c50dfe31",
         "description": "Documentaci\u00f3n del API de JuegosLDAW",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
+            "name": "Account management",
+            "description": "\nAPIs for retrieving and updating accounts.",
+            "item": [
+                {
+                    "name": "Display a listing of the accounts in the system.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cuentas",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cuentas\/:cuenta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
+                            "variable": [
+                                {
+                                    "id": "cuenta",
+                                    "key": "cuenta",
+                                    "value": "2",
+                                    "description": "id of the account to show."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cuentas\/:cuenta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
+                            "variable": [
+                                {
+                                    "id": "cuenta",
+                                    "key": "cuenta",
+                                    "value": "2",
+                                    "description": "id of the account to show."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"idRol\": 2,\n    \"nombre\": \"Eric edited\",\n    \"correoCuenta\": \"ericb@gmail.com\",\n    \"telefonoCuenta\": \"4428718364\",\n    \"usuario\": \"eric_bl3\",\n    \"password\": \"eric1234\",\n    \"password_confirmation\": \"eric1234\"\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cuentas\/:cuenta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
+                            "variable": [
+                                {
+                                    "id": "cuenta",
+                                    "key": "cuenta",
+                                    "value": "15",
+                                    "description": "id of the account to delete."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Email",
+            "description": "\nAPIs for sending an email.",
+            "item": [
+                {
+                    "name": "Send an email of registration to a recipient",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/send-email\/:email",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/send-email\/:email",
+                            "variable": [
+                                {
+                                    "id": "email",
+                                    "key": "email",
+                                    "value": "eric%40gmail.com",
+                                    "description": "email of the recipient."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Endpoints",
             "description": "",
             "item": [
-                {
-                    "name": "Login using the given user ID \/ email.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "_dusk\/login\/:userId\/:guard",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/_dusk\/login\/:userId\/:guard",
-                            "variable": [
-                                {
-                                    "id": "userId",
-                                    "key": "userId",
-                                    "value": "reiciendis",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "guard",
-                                    "key": "guard",
-                                    "value": "quae",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Log the user out of the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "_dusk\/logout\/:guard",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/_dusk\/logout\/:guard",
-                            "variable": [
-                                {
-                                    "id": "guard",
-                                    "key": "guard",
-                                    "value": "repellendus",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Retrieve the authenticated user identifier and class name.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "_dusk\/user\/:guard",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/_dusk\/user\/:guard",
-                            "variable": [
-                                {
-                                    "id": "guard",
-                                    "key": "guard",
-                                    "value": "repellendus",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
                 {
                     "name": "api\/titulo\/getTitulo\/{titulo?}",
                     "request": {
@@ -140,7 +209,7 @@
                                 {
                                     "id": "titulo",
                                     "key": "titulo",
-                                    "value": "deleniti",
+                                    "value": "quia",
                                     "description": ""
                                 }
                             ]
@@ -200,7 +269,7 @@
                                 {
                                     "id": "idTitulo",
                                     "key": "idTitulo",
-                                    "value": "qui",
+                                    "value": "consectetur",
                                     "description": ""
                                 }
                             ]
@@ -260,7 +329,7 @@
                                 {
                                     "id": "idTitulo",
                                     "key": "idTitulo",
-                                    "value": "dignissimos",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -294,7 +363,7 @@
                                 {
                                     "id": "idCuenta",
                                     "key": "idCuenta",
-                                    "value": "deserunt",
+                                    "value": "laudantium",
                                     "description": ""
                                 }
                             ]
@@ -328,7 +397,7 @@
                                 {
                                     "id": "idJuego",
                                     "key": "idJuego",
-                                    "value": "quod",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -570,7 +639,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "autem",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -604,7 +673,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "maxime",
+                                    "value": "fugit",
                                     "description": ""
                                 }
                             ]
@@ -638,7 +707,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "nobis",
+                                    "value": "animi",
                                     "description": ""
                                 }
                             ]
@@ -692,226 +761,6 @@
                         "description": ""
                     },
                     "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cuentas",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cuentas",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cuentas\/:cuenta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
-                            "variable": [
-                                {
-                                    "id": "cuenta",
-                                    "key": "cuenta",
-                                    "value": "distinctio",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cuentas\/:cuenta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
-                            "variable": [
-                                {
-                                    "id": "cuenta",
-                                    "key": "cuenta",
-                                    "value": "velit",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/cuentas\/:cuenta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/cuentas\/:cuenta",
-                            "variable": [
-                                {
-                                    "id": "cuenta",
-                                    "key": "cuenta",
-                                    "value": "occaecati",
-                                    "description": ""
-                                },
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "18",
-                                    "description": "id of the account to delete."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/send-email\/{email}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/send-email\/:email",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/send-email\/:email",
-                            "variable": [
-                                {
-                                    "id": "email",
-                                    "key": "email",
-                                    "value": "veniam",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "\/",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "\/",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/\/"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
                 }
             ]
         },
@@ -942,7 +791,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"idRol\": 8,\n    \"nombre\": \"quod\",\n    \"correoCuenta\": \"est\",\n    \"telefonoCuenta\": \"sequi\"\n}"
+                            "raw": "{\n    \"idRol\": 1,\n    \"nombre\": \"Eric\",\n    \"correoCuenta\": \"eric@gmail.com\",\n    \"telefonoCuenta\": \"4428718934\",\n    \"usuario\": \"eric_bl\",\n    \"password\": \"eric123\",\n    \"password_confirmation\": \"eric123\"\n}"
                         },
                         "description": "This endpoint allows you to register a user in the system.",
                         "auth": {
@@ -972,7 +821,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"correoCuenta\": \"eric@gmail.com\",\n    \"password\": \"eric123\"\n}"
+                        },
                         "description": "This endpoint will return the JWT token needed to make any other request to the API.",
                         "auth": {
                             "type": "noauth"
@@ -1062,6 +914,18 @@
         }
     ],
     "auth": {
-        "type": "bearer"
+        "type": "apikey",
+        "apikey": [
+            {
+                "key": "in",
+                "value": "header",
+                "type": "string"
+            },
+            {
+                "key": "key",
+                "value": "Authorization",
+                "type": "string"
+            }
+        ]
     }
 }
