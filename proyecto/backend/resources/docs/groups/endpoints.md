@@ -11,11 +11,11 @@
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/titulo/getTitulo/quia"
+    "http://localhost:8000/api/titulo/getTitulo/nostrum"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -467,7 +467,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-titulo-getTitulo--titulo--"></code></pre>
 </div>
-<form id="form-GETapi-titulo-getTitulo--titulo--" data-method="GET" data-path="api/titulo/getTitulo/{titulo?}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulo--titulo--', this);">
+<form id="form-GETapi-titulo-getTitulo--titulo--" data-method="GET" data-path="api/titulo/getTitulo/{titulo?}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulo--titulo--', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -501,7 +501,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -663,7 +663,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-titulo-getData"></code></pre>
 </div>
-<form id="form-GETapi-titulo-getData" data-method="GET" data-path="api/titulo/getData" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getData', this);">
+<form id="form-GETapi-titulo-getData" data-method="GET" data-path="api/titulo/getData" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getData', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -687,11 +687,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/titulo/mostrarTitulo/consectetur"
+    "http://localhost:8000/api/titulo/mostrarTitulo/expedita"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1136,7 +1136,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-titulo-mostrarTitulo--idTitulo-"></code></pre>
 </div>
-<form id="form-GETapi-titulo-mostrarTitulo--idTitulo-" data-method="GET" data-path="api/titulo/mostrarTitulo/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-mostrarTitulo--idTitulo-', this);">
+<form id="form-GETapi-titulo-mostrarTitulo--idTitulo-" data-method="GET" data-path="api/titulo/mostrarTitulo/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-mostrarTitulo--idTitulo-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -1170,7 +1170,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1277,7 +1277,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-titulo-getTitulos"></code></pre>
 </div>
-<form id="form-GETapi-titulo-getTitulos" data-method="GET" data-path="api/titulo/getTitulos" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulos', this);">
+<form id="form-GETapi-titulo-getTitulos" data-method="GET" data-path="api/titulo/getTitulos" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulos', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -1301,11 +1301,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/juego/listarJuegos/omnis"
+    "http://localhost:8000/api/juego/listarJuegos/quia"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1750,7 +1750,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-juego-listarJuegos--idTitulo-"></code></pre>
 </div>
-<form id="form-GETapi-juego-listarJuegos--idTitulo-" data-method="GET" data-path="api/juego/listarJuegos/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-listarJuegos--idTitulo-', this);">
+<form id="form-GETapi-juego-listarJuegos--idTitulo-" data-method="GET" data-path="api/juego/listarJuegos/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-listarJuegos--idTitulo-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -1780,11 +1780,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/juego/misJuegos/laudantium"
+    "http://localhost:8000/api/juego/misJuegos/fuga"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2229,7 +2229,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-juego-misJuegos--idCuenta-"></code></pre>
 </div>
-<form id="form-GETapi-juego-misJuegos--idCuenta-" data-method="GET" data-path="api/juego/misJuegos/{idCuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-misJuegos--idCuenta-', this);">
+<form id="form-GETapi-juego-misJuegos--idCuenta-" data-method="GET" data-path="api/juego/misJuegos/{idCuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-misJuegos--idCuenta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2259,11 +2259,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/juego/borrarJuego/et"
+    "http://localhost:8000/api/juego/borrarJuego/commodi"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2284,7 +2284,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-juego-borrarJuego--idJuego-"></code></pre>
 </div>
-<form id="form-DELETEapi-juego-borrarJuego--idJuego-" data-method="DELETE" data-path="api/juego/borrarJuego/{idJuego}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-juego-borrarJuego--idJuego-', this);">
+<form id="form-DELETEapi-juego-borrarJuego--idJuego-" data-method="DELETE" data-path="api/juego/borrarJuego/{idJuego}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-juego-borrarJuego--idJuego-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2318,7 +2318,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2373,7 +2373,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-genero-getGenero"></code></pre>
 </div>
-<form id="form-GETapi-genero-getGenero" data-method="GET" data-path="api/genero/getGenero" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-genero-getGenero', this);">
+<form id="form-GETapi-genero-getGenero" data-method="GET" data-path="api/genero/getGenero" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-genero-getGenero', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2401,7 +2401,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2452,7 +2452,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-consola-getConsola"></code></pre>
 </div>
-<form id="form-GETapi-consola-getConsola" data-method="GET" data-path="api/consola/getConsola" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-consola-getConsola', this);">
+<form id="form-GETapi-consola-getConsola" data-method="GET" data-path="api/consola/getConsola" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-consola-getConsola', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2480,7 +2480,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2559,7 +2559,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-publisher-getPublisher"></code></pre>
 </div>
-<form id="form-GETapi-publisher-getPublisher" data-method="GET" data-path="api/publisher/getPublisher" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-publisher-getPublisher', this);">
+<form id="form-GETapi-publisher-getPublisher" data-method="GET" data-path="api/publisher/getPublisher" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-publisher-getPublisher', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2587,7 +2587,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2650,7 +2650,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-desarrollador-getDesarrollador"></code></pre>
 </div>
-<form id="form-GETapi-desarrollador-getDesarrollador" data-method="GET" data-path="api/desarrollador/getDesarrollador" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-desarrollador-getDesarrollador', this);">
+<form id="form-GETapi-desarrollador-getDesarrollador" data-method="GET" data-path="api/desarrollador/getDesarrollador" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-desarrollador-getDesarrollador', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2678,7 +2678,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2699,7 +2699,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-archivos-upload"></code></pre>
 </div>
-<form id="form-POSTapi-archivos-upload" data-method="POST" data-path="api/archivos/upload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-archivos-upload', this);">
+<form id="form-POSTapi-archivos-upload" data-method="POST" data-path="api/archivos/upload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-archivos-upload', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2727,7 +2727,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2754,7 +2754,7 @@ Hola
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-archivos-dowload"></code></pre>
 </div>
-<form id="form-GETapi-archivos-dowload" data-method="GET" data-path="api/archivos/dowload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-archivos-dowload', this);">
+<form id="form-GETapi-archivos-dowload" data-method="GET" data-path="api/archivos/dowload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-archivos-dowload', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2782,7 +2782,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2810,7 +2810,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-ofertas"></code></pre>
 </div>
-<form id="form-GETapi-ofertas" data-method="GET" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas', this);">
+<form id="form-GETapi-ofertas" data-method="GET" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2838,7 +2838,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2859,7 +2859,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-ofertas"></code></pre>
 </div>
-<form id="form-POSTapi-ofertas" data-method="POST" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-ofertas', this);">
+<form id="form-POSTapi-ofertas" data-method="POST" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-ofertas', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2883,11 +2883,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/ofertas/et"
+    "http://localhost:8000/api/ofertas/odio"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2914,7 +2914,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-ofertas--oferta-"></code></pre>
 </div>
-<form id="form-GETapi-ofertas--oferta-" data-method="GET" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas--oferta-', this);">
+<form id="form-GETapi-ofertas--oferta-" data-method="GET" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas--oferta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -2944,11 +2944,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/ofertas/fugit"
+    "http://localhost:8000/api/ofertas/reiciendis"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2969,7 +2969,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-PUTapi-ofertas--oferta-"></code></pre>
 </div>
-<form id="form-PUTapi-ofertas--oferta-" data-method="PUT" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-ofertas--oferta-', this);">
+<form id="form-PUTapi-ofertas--oferta-" data-method="PUT" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-ofertas--oferta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -3003,11 +3003,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/ofertas/animi"
+    "http://localhost:8000/api/ofertas/distinctio"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3028,7 +3028,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-ofertas--oferta-"></code></pre>
 </div>
-<form id="form-DELETEapi-ofertas--oferta-" data-method="DELETE" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-ofertas--oferta-', this);">
+<form id="form-DELETEapi-ofertas--oferta-" data-method="DELETE" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-ofertas--oferta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -3058,11 +3058,11 @@ fetch(url, {
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/ofertasEnviadas/et"
+    "http://localhost:8000/api/ofertasEnviadas/libero"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3089,7 +3089,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-ofertasEnviadas--idCuentaEnviar-"></code></pre>
 </div>
-<form id="form-GETapi-ofertasEnviadas--idCuentaEnviar-" data-method="GET" data-path="api/ofertasEnviadas/{idCuentaEnviar}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertasEnviadas--idCuentaEnviar-', this);">
+<form id="form-GETapi-ofertasEnviadas--idCuentaEnviar-" data-method="GET" data-path="api/ofertasEnviadas/{idCuentaEnviar}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertasEnviadas--idCuentaEnviar-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>

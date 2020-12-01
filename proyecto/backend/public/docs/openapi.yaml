@@ -16,7 +16,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -72,7 +72,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -124,7 +124,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -191,7 +191,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -229,7 +229,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -277,7 +277,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -329,7 +329,7 @@ paths:
                         value: ''
                     present:
                         summary: 'When the value is present'
-                        value: quia
+                        value: nostrum
     /api/titulo/getData:
         get:
             summary: ''
@@ -339,7 +339,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -392,7 +392,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -435,7 +435,7 @@ paths:
                 in: path
                 name: idTitulo
                 description: ''
-                example: consectetur
+                example: expedita
                 required: true
                 schema:
                     type: string
@@ -448,7 +448,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -506,7 +506,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -549,7 +549,7 @@ paths:
                 in: path
                 name: idTitulo
                 description: ''
-                example: omnis
+                example: quia
                 required: true
                 schema:
                     type: string
@@ -562,7 +562,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -605,7 +605,7 @@ paths:
                 in: path
                 name: idCuenta
                 description: ''
-                example: laudantium
+                example: fuga
                 required: true
                 schema:
                     type: string
@@ -618,7 +618,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -643,7 +643,7 @@ paths:
                 in: path
                 name: idJuego
                 description: ''
-                example: et
+                example: commodi
                 required: true
                 schema:
                     type: string
@@ -656,7 +656,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -701,7 +701,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -745,7 +745,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -796,7 +796,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -843,7 +843,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -872,7 +872,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -908,7 +908,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -946,7 +946,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -975,7 +975,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1012,7 +1012,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1040,7 +1040,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1065,7 +1065,7 @@ paths:
                 in: path
                 name: oferta
                 description: ''
-                example: et
+                example: odio
                 required: true
                 schema:
                     type: string
@@ -1078,7 +1078,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1112,7 +1112,7 @@ paths:
                 in: path
                 name: idCuentaEnviar
                 description: ''
-                example: et
+                example: libero
                 required: true
                 schema:
                     type: string
@@ -1258,7 +1258,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1297,7 +1297,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -
@@ -1340,7 +1340,7 @@ paths:
                     in: header
                     name: Authorization
                     description: ''
-                    example: 'Bearer + JWT_token'
+                    example: 'Bearer JWT_token'
                     schema:
                         type: string
                 -

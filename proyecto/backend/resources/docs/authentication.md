@@ -1,6 +1,6 @@
 # Authenticating requests
 
-This API is authenticated by sending a **`Authorization`** header with the value **`"Bearer + JWT_token"`**.
+To authenticate requests, include a **`Authorization`** header with the value **`"Bearer JWT_token"`**.
 
 All authenticated endpoints are marked with a `requires authentication` badge in the documentation below.
 

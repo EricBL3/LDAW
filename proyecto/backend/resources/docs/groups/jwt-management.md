@@ -194,7 +194,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -222,7 +222,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-auth-logout"></code></pre>
 </div>
-<form id="form-POSTapi-auth-logout" data-method="POST" data-path="api/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-logout', this);">
+<form id="form-POSTapi-auth-logout" data-method="POST" data-path="api/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-logout', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -250,7 +250,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -280,7 +280,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-auth-refresh"></code></pre>
 </div>
-<form id="form-POSTapi-auth-refresh" data-method="POST" data-path="api/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-refresh', this);">
+<form id="form-POSTapi-auth-refresh" data-method="POST" data-path="api/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-refresh', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -308,7 +308,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -343,7 +343,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-auth-profile"></code></pre>
 </div>
-<form id="form-GETapi-auth-profile" data-method="GET" data-path="api/auth/profile" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-auth-profile', this);">
+<form id="form-GETapi-auth-profile" data-method="GET" data-path="api/auth/profile" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-auth-profile', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>

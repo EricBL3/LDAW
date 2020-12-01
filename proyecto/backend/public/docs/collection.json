@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "JuegosLDAW",
-        "_postman_id": "4f65139e-af95-4247-90d5-5511c50dfe31",
+        "_postman_id": "39d3f5a2-b969-4403-b4e4-7ecd777bc168",
         "description": "Documentaci\u00f3n del API de JuegosLDAW",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -129,7 +129,7 @@
                                 {
                                     "id": "cuenta",
                                     "key": "cuenta",
-                                    "value": "15",
+                                    "value": "5",
                                     "description": "id of the account to delete."
                                 }
                             ]
@@ -209,7 +209,7 @@
                                 {
                                     "id": "titulo",
                                     "key": "titulo",
-                                    "value": "quia",
+                                    "value": "nostrum",
                                     "description": ""
                                 }
                             ]
@@ -269,7 +269,7 @@
                                 {
                                     "id": "idTitulo",
                                     "key": "idTitulo",
-                                    "value": "consectetur",
+                                    "value": "expedita",
                                     "description": ""
                                 }
                             ]
@@ -329,7 +329,7 @@
                                 {
                                     "id": "idTitulo",
                                     "key": "idTitulo",
-                                    "value": "omnis",
+                                    "value": "quia",
                                     "description": ""
                                 }
                             ]
@@ -363,7 +363,7 @@
                                 {
                                     "id": "idCuenta",
                                     "key": "idCuenta",
-                                    "value": "laudantium",
+                                    "value": "fuga",
                                     "description": ""
                                 }
                             ]
@@ -397,7 +397,7 @@
                                 {
                                     "id": "idJuego",
                                     "key": "idJuego",
-                                    "value": "et",
+                                    "value": "commodi",
                                     "description": ""
                                 }
                             ]
@@ -639,7 +639,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "et",
+                                    "value": "odio",
                                     "description": ""
                                 }
                             ]
@@ -673,7 +673,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "fugit",
+                                    "value": "reiciendis",
                                     "description": ""
                                 }
                             ]
@@ -707,7 +707,7 @@
                                 {
                                     "id": "oferta",
                                     "key": "oferta",
-                                    "value": "animi",
+                                    "value": "distinctio",
                                     "description": ""
                                 }
                             ]
@@ -741,7 +741,7 @@
                                 {
                                     "id": "idCuentaEnviar",
                                     "key": "idCuentaEnviar",
-                                    "value": "et",
+                                    "value": "libero",
                                     "description": ""
                                 }
                             ]

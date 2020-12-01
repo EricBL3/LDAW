@@ -16,7 +16,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -44,7 +44,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-send-email--email-"></code></pre>
 </div>
-<form id="form-GETapi-send-email--email-" data-method="GET" data-path="api/send-email/{email}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-send-email--email-', this);">
+<form id="form-GETapi-send-email--email-" data-method="GET" data-path="api/send-email/{email}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-send-email--email-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>

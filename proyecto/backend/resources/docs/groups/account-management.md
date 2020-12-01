@@ -16,7 +16,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -277,7 +277,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-cuentas"></code></pre>
 </div>
-<form id="form-GETapi-cuentas" data-method="GET" data-path="api/cuentas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-cuentas', this);">
+<form id="form-GETapi-cuentas" data-method="GET" data-path="api/cuentas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-cuentas', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -305,7 +305,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -340,7 +340,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-cuentas--cuenta-"></code></pre>
 </div>
-<form id="form-GETapi-cuentas--cuenta-" data-method="GET" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-cuentas--cuenta-', this);">
+<form id="form-GETapi-cuentas--cuenta-" data-method="GET" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-cuentas--cuenta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -374,7 +374,7 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -405,7 +405,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-PUTapi-cuentas--cuenta-"></code></pre>
 </div>
-<form id="form-PUTapi-cuentas--cuenta-" data-method="PUT" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-cuentas--cuenta-', this);">
+<form id="form-PUTapi-cuentas--cuenta-" data-method="PUT" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-cuentas--cuenta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
@@ -476,11 +476,11 @@ confirmed password of the account being registered.</p>
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/cuentas/15"
+    "http://localhost:8000/api/cuentas/5"
 );
 
 let headers = {
-    "Authorization": "Bearer + JWT_token",
+    "Authorization": "Bearer JWT_token",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -501,7 +501,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-cuentas--cuenta-"></code></pre>
 </div>
-<form id="form-DELETEapi-cuentas--cuenta-" data-method="DELETE" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer + JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-cuentas--cuenta-', this);">
+<form id="form-DELETEapi-cuentas--cuenta-" data-method="DELETE" data-path="api/cuentas/{cuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-cuentas--cuenta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
