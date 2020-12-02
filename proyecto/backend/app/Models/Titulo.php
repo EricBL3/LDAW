@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Titulo extends Model
 {
     protected $table = 'titulo';
+    protected $primaryKey  = 'idTitulo';
+
     use HasFactory;
 
     public function genero()
@@ -25,5 +27,9 @@ class Titulo extends Model
     public function consola()
     {
         return $this->belongsTo(Consola::class,'idTitulo', 'idConsola');
+    }
+    public function juegos()
+    {
+        return $this->hasMany(Juego::class,'idTitulo','idJuego');
     }
 }

@@ -6,10 +6,11 @@ import Cookies from 'js-cookie'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { Link } from 'react-router-dom';
 import { typography } from '@material-ui/system';
+import GetAppIcon from '@material-ui/icons/GetApp';
 const id = Cookies.get('idCuenta');
 const styles = makeStyles(theme => ({
     Card: {
-        height: 400,
+        height: 450,
         width: 340,
         padding: 10,
         marginLeft: 50,
@@ -25,8 +26,8 @@ const styles = makeStyles(theme => ({
     selects: {
         width: "60%"
     },
-    button:{
-        textTransform:'none'
+    button: {
+        textTransform: 'none'
     },
     tittle: {
         padding: theme.spacing(0.5),
@@ -40,15 +41,15 @@ export const MisJuegos = () => {
     const classes = styles()
     const [data, setData] = useState([]);
 
-    const peticionDeletejuego= async (idJuego) =>{
-        axios.delete('http://localhost:8000/api/juego/borrarJuego/'+ idJuego, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
-        .then(res => {
-            console.log(res.data);
-            window.location.reload();
-        })
-        .catch(err => {
-            console.log(err);
-        })
+    const peticionDeletejuego = async (idJuego) => {
+        axios.delete('http://localhost:8000/api/juego/borrarJuego/' + idJuego, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
+            .then(res => {
+                console.log(res.data);
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
     const peticionGetMisJuegos = async () => {
         axios.get('http://localhost:8000/api/juego/misJuegos/' + id, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
@@ -59,6 +60,24 @@ export const MisJuegos = () => {
                 console.log(err);
             })
     }
+    const descargarImagen =(props) =>{
+        const nombre =props.split('/');
+        axios({
+            url:"http://localhost:8000/api/archivos/dowload/"+nombre[1],
+            method: 'GET',
+            responseType: 'blob',
+        }).then((response) => {
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href=url;
+            const arr =props.split('.');
+            console.log(arr);
+            link.setAttribute('download', 'imagen.'+arr[1]);
+            document.body.appendChild(link);
+            link.click();
+        });
+    }
+
     useEffect(() => {
         peticionGetMisJuegos();
         setData(data);
@@ -76,7 +95,7 @@ export const MisJuegos = () => {
     } else {
         result = <Grid container spacing="3">
             {data.map((juego) => (
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={4}>
                     <Card className={classes.Card} style={{ backgroundColor: '#78C1CC' }}>
                         <Box color="white" mb={1} style={{ backgroundColor: '#2D484D' }} padding={1}>
                             <Grid container>
@@ -87,7 +106,7 @@ export const MisJuegos = () => {
                                 </Grid>
                                 <Grid item xs={6} sm={2}>
                                     <Box mt={1.5}>
-                                        <Button onClick={()=>peticionDeletejuego(juego.idJuego)} className={classes.button} size="small" variant="contained" color="secondary">Eliminar</Button>
+                                        <Button onClick={() => peticionDeletejuego(juego.idJuego)} className={classes.button} size="small" variant="contained" color="secondary">Eliminar</Button>
                                     </Box>
                                 </Grid>
                                 <Grid item xs={6} sm={1}>
@@ -109,18 +128,20 @@ export const MisJuegos = () => {
                                         <Typography variant="subtitle2">{juego.nombreConsola}</Typography>
                                         <Typography variant="h6">Condiciones:</Typography>
                                         <Typography variant="subtitle2">{juego.condiciones}</Typography>
+                                        <Typography variant="h6">Imagen:</Typography>
+                                        <GetAppIcon onClick={()=>descargarImagen(juego.pathImagen)} style={{ fontSize: 30 }}></GetAppIcon>
                                     </Box>
                                 </Grid>
                             </Grid>
                             <Box mt={1}>
                                 <Typography variant="subtitle1">Titulos que acepto para intercambio:</Typography>
-                                <Typography variant="subtitle2">1.- Lorem</Typography>
-                                <Typography variant="subtitle2">2.- Lorem</Typography>
-                                <Typography variant="subtitle2">3.- Lorem</Typography>
+                                <Typography variant="subtitle2">1: {juego.tituloRecibir1}</Typography>
+                                <Typography variant="subtitle2">2: {juego.tituloRecibir2}</Typography>
+                                <Typography variant="subtitle2">3: {juego.tituloRecibir3}</Typography>
                             </Box>
                         </CardContent>
                         <Box align="center">
-                            <Button className={classes.button}  variant="contained">Ver ofertas</Button>
+                            <Button className={classes.button} variant="contained">Ver ofertas</Button>
                         </Box>
                     </Card>
                 </Grid>

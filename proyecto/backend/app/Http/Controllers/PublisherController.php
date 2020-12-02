@@ -61,6 +61,14 @@ class PublisherController extends Controller
     {
         //
     }
+    /**
+     * Get publisher.
+     *
+     * This endpoint allows you to retrive all the publishers in the system.
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getPublisher(){
         $publisher=Publisher::select('idPublisher','nombrePublisher')->get();
         return $publisher;

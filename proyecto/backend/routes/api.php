@@ -53,6 +53,8 @@ Route::group([
     Route::get('listarJuegos/{idTitulo}', [JuegoController::class, 'listarJuegos']);
     Route::get('misJuegos/{idCuenta}', [JuegoController::class, 'misJuegos']);
     Route::delete('borrarJuego/{idJuego}', [JuegoController::class, 'borrrarjuego']);
+    Route::post('registrarJuego/{idCuenta}', [JuegoController::class, 'registrarJuego']);
+
 });
 Route::group([
     'middleware' => 'api',
@@ -83,7 +85,7 @@ Route::group([
     'prefix' => 'archivos'
 ], function ($router){
     Route::post('upload', [ArchivoController::class, 'upload']);
-    Route::get('dowload', [ArchivoController::class, 'dowload']);
+    Route::get('dowload/{ruta}', [ArchivoController::class, 'dowload']);
 
 });
 Route::resource('ofertas', OfertaController::class);

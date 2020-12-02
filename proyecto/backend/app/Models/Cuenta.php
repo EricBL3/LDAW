@@ -58,4 +58,9 @@ class Cuenta extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function juegos()
+    {
+        return $this->belongsToMany(Juego::class,'cuenta_juego','idCuenta', 'idJuego');
+    }
+
 }

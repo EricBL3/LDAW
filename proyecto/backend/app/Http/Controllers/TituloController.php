@@ -79,6 +79,23 @@ class TituloController extends Controller
     {
         //
     }
+    /**
+     * Get filter titles
+     * 
+     * Display the specified titles under the search parameter.
+     *
+     * @bodyParam busqueda string required string to make the search of the titles.
+     * @response {
+     *  "idTitulo": 1,
+     *  "nombreTitulo": "",
+     *  "nombreGenero": "",
+     *  "nombreDesarrollador: "",
+     *  "nombrePublisher": "",
+     *  "nombreConsola": "",
+     *  "urlImagen": "",
+     * }
+     */
+
     public function getTitulo(String $busqueda = '')
     {
 
@@ -143,6 +160,21 @@ class TituloController extends Controller
         return $titulos;
     }
 
+    /**
+     * Get title
+     * 
+     * Display the specified title.
+     *
+     * @bodyParam idTitulo int required id of the selected title.
+     * @response {
+     *  "idTitulo": 1,
+     *  "nombreTitulo": "",
+     *  "edicion": "",
+     *  "version": "",
+     *  "urlImagen": "",
+     * }
+     */
+
     public function mostrarTitulo( int $idTitulo)
     {
         $titulo = Titulo::where('idTitulo','=',$idTitulo)
@@ -150,6 +182,15 @@ class TituloController extends Controller
         ->first();
         return $titulo;
     }
+
+    /**
+     * Get titles.
+     *
+     * This endpoint allows you to retrive all the titles in the system.
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getTitulos(){
         $titulo=Titulo::select('idTitulo','nombreTitulo')->get();
         return $titulo;
