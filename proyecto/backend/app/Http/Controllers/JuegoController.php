@@ -65,7 +65,7 @@ class JuegoController extends Controller
     }
     public function listarJuegos(int $idTitulo)
     {
-        $juegos = Juego::where('idTitulo', '=', $idTitulo)
+        $juegos = DB::table('juego')->leftJoin('cuenta_juego', 'juego.idJuego', '=', 'cuenta_juego.idJuego')->where('idTitulo', '=', $idTitulo)
             ->get();
         return $juegos;
     }

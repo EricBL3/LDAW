@@ -29,9 +29,25 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'idCuentaEnviar' => 'required',
+            'idCuentaRecibir' => 'required',
+            'idJuegoPorEnviar' => 'required',
+            'idJuegoPorRecibir' => 'required',
+            'estado' => 'required'        
+        ]);
+
+        $oferta = Oferta::create($request->all());
+
+        return (new OfertaCollection($oferta))
+            ->response()
+            ->setStatusCode(201);
     }
 
+     public function getIdCuentaOtro($idJuego){
+        return DB::table('cuenta_juego')->where('idJuego', '=', $idJuego)->select('idCuenta')->get();
+     }
     /**
      * Display the specified resource.
      *

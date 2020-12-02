@@ -15,11 +15,11 @@ class Oferta extends Model
 
     protected $fillable = [
 
-        'idOferta',
         'idCuentaEnviar',
         'idCuentaRecibir',
         'idJuegoPorEnviar',
         'idJuegoPorRecibir',
-        'estado',
+        'estado'
+        
     ];
 }

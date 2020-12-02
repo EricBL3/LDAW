@@ -86,8 +86,11 @@ Route::group([
     Route::get('dowload', [ArchivoController::class, 'dowload']);
 
 });
+
 Route::resource('ofertas', OfertaController::class);
 Route::get('/ofertasEnviadas/{idCuentaEnviar}', 'App\Http\Controllers\OfertaController@showOfertasEnviadas');
+Route::get('/getIdCuenta/{idJuego}', 'App\Http\Controllers\OfertaController@getidCuentaOtro');
+Route::get('misJuegos/{idCuenta}', [JuegoController::class, 'misJuegos']);
 
 Route::resource('cuentas', CuentaController::class);
 
