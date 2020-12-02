@@ -14,12 +14,10 @@ class ActualizarJuegosTable extends Migration
     public function up()
     {
         Schema::table('juego', function (Blueprint $table) {
-            $table->unsignedInteger('idTituloRecibir1')->nullable();
-            $table->foreign('idTituloRecibir1')->references('idTitulo')->on('titulo')->onDelete('cascade');
-            $table->unsignedInteger('idTituloRecibir2')->nullable();
-            $table->foreign('idTituloRecibir2')->references('idTitulo')->on('titulo')->onDelete('cascade');
-            $table->unsignedInteger('idTituloRecibir3')->nullable();
-            $table->foreign('idTituloRecibir3')->references('idTitulo')->on('titulo')->onDelete('cascade');
+            $table->renameColumn('urlImagen', 'pathImagen');
+            $table->string('tituloRecibir1');
+            $table->string('tituloRecibir2');
+            $table->string('tituloRecibir3');
         });
     }
 

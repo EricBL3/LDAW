@@ -61,6 +61,15 @@ class GeneroController extends Controller
     {
         //
     }
+    /**
+     * Get gender.
+     *
+     * This endpoint allows you to retrive all the genders in the system.
+     * 
+     * 
+     * @return \Illuminate\Http\JsonResponse
+     */
+
     public function getGenero(){
         $generos=Genero::select('idGenero','nombreGenero')->get();
         return $generos;
