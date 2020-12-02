@@ -109,7 +109,7 @@ class JuegoController extends Controller
             DB::commit();
             return response()->json([
                 'message' => 'Juego eliminado con exito',
-            ], 201);
+            ], 200);
         } catch (QueryException $err) {
             DB::rollBack();
             return response()->json([

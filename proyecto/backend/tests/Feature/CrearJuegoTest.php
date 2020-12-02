@@ -20,7 +20,7 @@ class CrearJuegoTest extends TestCase
         $a = "/images/imagen";
         $b = $a . $faker->numberBetween($min = 1, $max =5);
         $c= $b. ".jpg";
-        $id = 1;
+        $id = 7;
         $response = $this->postJson('/api/juego/registrarJuego/'.$id, [
             'idTitulo' => $faker->numberBetween($min = 1, $max = 20),
             'condiciones' => $faker->colorName(),
@@ -31,7 +31,7 @@ class CrearJuegoTest extends TestCase
         ]);
         $response->assertStatus(201)
         ->assertJson([
-            'message' => 'Juego registrado con exito',
+            'message' => "Successfully registered",
         ]);
     }
 }
