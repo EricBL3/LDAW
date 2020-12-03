@@ -143,7 +143,8 @@ export const MisJuegos = (props) => {
                             </Box>
                         </CardContent>
                         <Box align="center">
-                            <Button className={classes.button} variant="contained">Ver ofertas</Button>
+                            <Button className={classes.button} onClick={() => props.history.push("/misJuegos/"+juego.idJuego+"/ofertasRecibidas")} 
+                                variant="contained">Ver ofertas</Button>
                         </Box>
                     </Card>
                 </Grid>
