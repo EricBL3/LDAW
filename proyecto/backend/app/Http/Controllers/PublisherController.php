@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
 
+/**
+ * @group Publisher management
+ *
+ * APIs for managing publishers.
+ */
 class PublisherController extends Controller
 {
     /**

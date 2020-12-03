@@ -8,11 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
-
+/**
+ * @group Offer management
+ *
+ * APIs for managing offers.
+ */
 class OfertaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the offers in the system.
      *
      * @authenticated
      * 
@@ -24,7 +28,7 @@ class OfertaController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created offer.
      *
      * @authenticated
      * 
@@ -53,7 +57,7 @@ class OfertaController extends Controller
         return DB::table('cuenta_juego')->where('idJuego', '=', $idJuego)->select('idCuenta')->get();
      }
     /**
-     * Display the spacified offer.
+     * Display the specified offer.
      *
      * @urlParam oferta int required id of the game you are about to offer to show. Example: 2
      * 
@@ -121,14 +125,4 @@ class OfertaController extends Controller
         return $query;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *@hideFromAPIDocumentation
-     * @param  \App\Models\Oferta  $oferta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Oferta $oferta)
-    {
-        //
-    }
 }

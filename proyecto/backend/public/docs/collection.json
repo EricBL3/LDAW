@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "JuegosLDAW",
-        "_postman_id": "39d3f5a2-b969-4403-b4e4-7ecd777bc168",
+        "_postman_id": "c19ff8de-cbeb-45de-828f-8c6489a666ea",
         "description": "Documentaci\u00f3n del API de JuegosLDAW",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -129,7 +129,7 @@
                                 {
                                     "id": "cuenta",
                                     "key": "cuenta",
-                                    "value": "5",
+                                    "value": "4",
                                     "description": "id of the account to delete."
                                 }
                             ]
@@ -147,6 +147,70 @@
                         ],
                         "body": null,
                         "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Console management",
+            "description": "\nAPIs for managing consoles.",
+            "item": [
+                {
+                    "name": "Get consoles.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/consola\/getConsola",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/consola\/getConsola"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrive all the consoles in the system."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Developer management",
+            "description": "\nAPIs for managing developers.",
+            "item": [
+                {
+                    "name": "Get developers.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/desarrollador\/getDesarrollador",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/desarrollador\/getDesarrollador"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrive all the developers in the system."
                     },
                     "response": []
                 }
@@ -193,23 +257,52 @@
             ]
         },
         {
-            "name": "Endpoints",
-            "description": "",
+            "name": "File management",
+            "description": "\nAPIs for managing files.",
             "item": [
                 {
-                    "name": "api\/titulo\/getTitulo\/{titulo?}",
+                    "name": "Upload a File.",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/titulo\/getTitulo\/:titulo",
+                            "path": "api\/archivos\/upload",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/getTitulo\/:titulo",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/archivos\/upload"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"file\": \"est\"\n}"
+                        },
+                        "description": "This endpoint allows you to upload a file in the system."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Download a File.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/archivos\/dowload\/:ruta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/archivos\/dowload\/:ruta",
                             "variable": [
                                 {
-                                    "id": "titulo",
-                                    "key": "titulo",
-                                    "value": "nostrum",
+                                    "id": "ruta",
+                                    "key": "ruta",
+                                    "value": "dolor",
                                     "description": ""
                                 }
                             ]
@@ -225,99 +318,22 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/titulo\/getData",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/titulo\/getData",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/getData"
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"sunt\"\n}"
                         },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
+                        "description": "This endpoint allows you to download a file stored in the system."
                     },
                     "response": []
-                },
+                }
+            ]
+        },
+        {
+            "name": "Game management",
+            "description": "\nAPIs for adding, consulting and deleting games.",
+            "item": [
                 {
-                    "name": "api\/titulo\/mostrarTitulo\/{idTitulo}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/titulo\/mostrarTitulo\/:idTitulo",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/mostrarTitulo\/:idTitulo",
-                            "variable": [
-                                {
-                                    "id": "idTitulo",
-                                    "key": "idTitulo",
-                                    "value": "expedita",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/titulo\/getTitulos",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/titulo\/getTitulos",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/getTitulos"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/juego\/listarJuegos\/{idTitulo}",
+                    "name": "Show a specific game",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -329,8 +345,14 @@
                                 {
                                     "id": "idTitulo",
                                     "key": "idTitulo",
-                                    "value": "quia",
+                                    "value": "natus",
                                     "description": ""
+                                },
+                                {
+                                    "id": "itTitulo",
+                                    "key": "itTitulo",
+                                    "value": "13",
+                                    "description": "id to make the search of the titles."
                                 }
                             ]
                         },
@@ -346,12 +368,12 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
+                        "description": "Displays the specified game of a title."
                     },
                     "response": []
                 },
                 {
-                    "name": "api\/juego\/misJuegos\/{idCuenta}",
+                    "name": "Get my games",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -363,8 +385,8 @@
                                 {
                                     "id": "idCuenta",
                                     "key": "idCuenta",
-                                    "value": "fuga",
-                                    "description": ""
+                                    "value": "1",
+                                    "description": "string to make the search of the titles."
                                 }
                             ]
                         },
@@ -380,12 +402,12 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
+                        "description": "Display the specified games of an account."
                     },
                     "response": []
                 },
                 {
-                    "name": "api\/juego\/borrarJuego\/{idJuego}",
+                    "name": "Delete game",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -397,8 +419,14 @@
                                 {
                                     "id": "idJuego",
                                     "key": "idJuego",
-                                    "value": "commodi",
+                                    "value": "temporibus",
                                     "description": ""
+                                },
+                                {
+                                    "id": "idjuego",
+                                    "key": "idjuego",
+                                    "value": "7",
+                                    "description": "int to make the removal of the game."
                                 }
                             ]
                         },
@@ -414,12 +442,55 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
+                        "description": "Delete an specified game of the systme."
                     },
                     "response": []
                 },
                 {
-                    "name": "api\/genero\/getGenero",
+                    "name": "Register game",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/juego\/registrarJuego\/:idCuenta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/juego\/registrarJuego\/:idCuenta",
+                            "variable": [
+                                {
+                                    "id": "idCuenta",
+                                    "key": "idCuenta",
+                                    "value": "doloremque",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"condiciones\": 12,\n    \"urlImagen\": \"sed\",\n    \"correoCuenta\": \"corrupti\",\n    \"telefonoCuenta\": \"consectetur\"\n}"
+                        },
+                        "description": "Register a game in the system."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Genre management",
+            "description": "\nAPIs for managing the genre for games.",
+            "item": [
+                {
+                    "name": "Get gender.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -440,325 +511,7 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/consola\/getConsola",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/consola\/getConsola",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/consola\/getConsola"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/publisher\/getPublisher",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/publisher\/getPublisher",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/publisher\/getPublisher"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/desarrollador\/getDesarrollador",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/desarrollador\/getDesarrollador",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/desarrollador\/getDesarrollador"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/archivos\/upload",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/archivos\/upload",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/archivos\/upload"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/archivos\/dowload",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/archivos\/dowload",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/archivos\/dowload"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertas",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertas",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertas\/:oferta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas\/:oferta",
-                            "variable": [
-                                {
-                                    "id": "oferta",
-                                    "key": "oferta",
-                                    "value": "odio",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertas\/:oferta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas\/:oferta",
-                            "variable": [
-                                {
-                                    "id": "oferta",
-                                    "key": "oferta",
-                                    "value": "reiciendis",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertas\/:oferta",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas\/:oferta",
-                            "variable": [
-                                {
-                                    "id": "oferta",
-                                    "key": "oferta",
-                                    "value": "distinctio",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "api\/ofertasEnviadas\/{idCuentaEnviar}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "api\/ofertasEnviadas\/:idCuentaEnviar",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertasEnviadas\/:idCuentaEnviar",
-                            "variable": [
-                                {
-                                    "id": "idCuentaEnviar",
-                                    "key": "idCuentaEnviar",
-                                    "value": "libero",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
+                        "description": "This endpoint allows you to retrive all the genders in the system."
                     },
                     "response": []
                 }
@@ -907,6 +660,319 @@
                         ],
                         "body": null,
                         "description": "This endpoint will return the profile of the user that signed in to the application."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Offer management",
+            "description": "\nAPIs for managing offers.",
+            "item": [
+                {
+                    "name": "Display a listing of the offers in the system.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ofertas",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Store a newly created offer.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ofertas",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified offer.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ofertas\/:oferta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas\/:oferta",
+                            "variable": [
+                                {
+                                    "id": "oferta",
+                                    "key": "oferta",
+                                    "value": "2",
+                                    "description": "id of the game you are about to offer to show."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the offer status",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ofertas\/:oferta",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertas\/:oferta",
+                            "variable": [
+                                {
+                                    "id": "oferta",
+                                    "key": "oferta",
+                                    "value": "perferendis",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "cuenta",
+                                    "key": "cuenta",
+                                    "value": "2",
+                                    "description": "id of the account that sent the offers, and wants to consult them."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"idOferta\": 2,\n    \"estado\": \"aceptada\"\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the offers that an account has sent.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ofertasEnviadas\/:idCuentaEnviar",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/ofertasEnviadas\/:idCuentaEnviar",
+                            "variable": [
+                                {
+                                    "id": "idCuentaEnviar",
+                                    "key": "idCuentaEnviar",
+                                    "value": "quis",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "cuenta",
+                                    "key": "cuenta",
+                                    "value": "2",
+                                    "description": "id of the account that sent the offers, and wants to consult them."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Publisher management",
+            "description": "\nAPIs for managing publishers.",
+            "item": [
+                {
+                    "name": "Get publisher.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/publisher\/getPublisher",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/publisher\/getPublisher"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrive all the publishers in the system."
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Title management",
+            "description": "\nAPIs for consulting titles.",
+            "item": [
+                {
+                    "name": "Get filter titles",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/titulo\/getTitulo\/:titulo",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/getTitulo\/:titulo",
+                            "variable": [
+                                {
+                                    "id": "titulo",
+                                    "key": "titulo",
+                                    "value": "enim",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"busqueda\": \"explicabo\"\n}"
+                        },
+                        "description": "Display the specified titles under the search parameter."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get title",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/titulo\/mostrarTitulo\/:idTitulo",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/mostrarTitulo\/:idTitulo",
+                            "variable": [
+                                {
+                                    "id": "idTitulo",
+                                    "key": "idTitulo",
+                                    "value": "suscipit",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"idTitulo\": 4\n}"
+                        },
+                        "description": "Display the specified title."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get titles.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/titulo\/getTitulos",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/titulo\/getTitulos"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to retrive all the titles in the system."
                     },
                     "response": []
                 }

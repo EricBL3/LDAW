@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Genero;
 use Illuminate\Http\Request;
-
+/**
+ * @group Genre management
+ *
+ * APIs for managing the genre for games.
+ */
 class GeneroController extends Controller
 {
     /**

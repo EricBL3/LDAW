@@ -11,62 +11,33 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\VarDumper\VarDumper;
 
+/**
+ * @group Game management
+ *
+ * APIs for adding, consulting and deleting games.
+ */
+
 class JuegoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
+     * Show a specific game
+     * 
+     * Displays the specified game of a title.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @urlParam itTitulo int required id to make the search of the titles.
+     * 
+     * @response {
+     *  "idJuego": 1,
+     *  "idTitulo": 1,
+     *  "condiciones": "nuevo",
+     *  "pathImagen: "Archivos/miImagen.png",
+     *  "tituloRecibir1": "halo 5",
+     *  "tituloRecibir2": "minecraft",
+     *  "tituloRecibir3": "call of duty",
+     * }
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Juego  $juego
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Juego $juego)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Juego  $juego
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Juego $juego)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Juego  $juego
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Juego $juego)
-    {
-        //
-    }
     public function listarJuegos(int $idTitulo)
     {
         $juegos = Juego::where('idTitulo', '=', $idTitulo)
@@ -78,7 +49,7 @@ class JuegoController extends Controller
      * 
      * Display the specified games of an account.
      *
-     * @bodyParam idCuenta int required string to make the search of the titles.
+     * @urlParam idCuenta int required string to make the search of the titles. Example: 1
      * 
      * @return \Illuminate\Http\Response
      */
@@ -97,7 +68,7 @@ class JuegoController extends Controller
      * 
      * Delete an specified game of the systme.
      *
-     * @bodyParam idjuego int required int to make the removal of the game.
+     * @urlParam idjuego int required int to make the removal of the game.
      * 
      * @return \Illuminate\Http\Response
      */

@@ -43,7 +43,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 1 2020</li>
+            <li>Last updated: December 3 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -539,2360 +539,11 @@ fetch(url, {
 <input type="number" name="cuenta" data-endpoint="DELETEapi-cuentas--cuenta-" data-component="url" required  hidden>
 <br>
 id of the account to delete.</p>
-</form><h1>Email</h1>
-<p>APIs for sending an email.</p>
-<h2>Send an email of registration to a recipient</h2>
+</form><h1>Console management</h1>
+<p>APIs for managing consoles.</p>
+<h2>Get consoles.</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/send-email/eric@gmail.com"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Success! Your E-mail has been sent."
-}</code></pre>
-<div id="execution-results-GETapi-send-email--email-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-send-email--email-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-send-email--email-"></code></pre>
-</div>
-<div id="execution-error-GETapi-send-email--email-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-send-email--email-"></code></pre>
-</div>
-<form id="form-GETapi-send-email--email-" data-method="GET" data-path="api/send-email/{email}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-send-email--email-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/send-email/{email}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-send-email--email-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-send-email--email-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="email" data-endpoint="GETapi-send-email--email-" data-component="url" required  hidden>
-<br>
-email of the recipient.</p>
-</form><h1>Endpoints</h1>
-<h2>api/titulo/getTitulo/{titulo?}</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/titulo/getTitulo/nostrum"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Undefined offset: 1",
-    "exception": "ErrorException",
-    "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\TituloController.php",
-    "line": 100,
-    "trace": [
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\TituloController.php",
-            "line": 100,
-            "function": "handleError",
-            "class": "Illuminate\\Foundation\\Bootstrap\\HandleExceptions",
-            "type": "-&gt;"
-        },
-        {
-            "function": "getTitulo",
-            "class": "App\\Http\\Controllers\\TituloController",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
-            "line": 54,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
-            "line": 45,
-            "function": "callAction",
-            "class": "Illuminate\\Routing\\Controller",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 255,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\ControllerDispatcher",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 197,
-            "function": "runController",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 691,
-            "function": "run",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 103,
-            "function": "handleRequest",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 55,
-            "function": "handleRequestUsingNamedLimiter",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 693,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 668,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 634,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 623,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 166,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-            "line": 87,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fruitcake\\Cors\\HandleCors",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 141,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 110,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 324,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 305,
-            "function": "callLaravelOrLumenRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 76,
-            "function": "makeApiCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 51,
-            "function": "makeResponseCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 41,
-            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 236,
-            "function": "__invoke",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 172,
-            "function": "iterateThroughStrategies",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 127,
-            "function": "fetchResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 118,
-            "function": "processRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 73,
-            "function": "processRoutes",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "function": "handle",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 37,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-            "line": 40,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 95,
-            "function": "unwrapIfClosure",
-            "class": "Illuminate\\Container\\Util",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 39,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-            "line": 596,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 136,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Command\\Command.php",
-            "line": 258,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 121,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 920,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 266,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 142,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
-            "line": 93,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-            "line": 129,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "-&gt;"
-        }
-    ]
-}</code></pre>
-<div id="execution-results-GETapi-titulo-getTitulo--titulo--" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-getTitulo--titulo--"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-titulo-getTitulo--titulo--"></code></pre>
-</div>
-<div id="execution-error-GETapi-titulo-getTitulo--titulo--" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-titulo-getTitulo--titulo--"></code></pre>
-</div>
-<form id="form-GETapi-titulo-getTitulo--titulo--" data-method="GET" data-path="api/titulo/getTitulo/{titulo?}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulo--titulo--', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/titulo/getTitulo/{titulo?}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-titulo-getTitulo--titulo--" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-getTitulo--titulo--" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>titulo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="titulo" data-endpoint="GETapi-titulo-getTitulo--titulo--" data-component="url"  hidden>
-<br>
-</p>
-</form>
-<h2>api/titulo/getData</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/titulo/getData"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">[
-    {
-        "idTitulo": 1,
-        "nombreTitulo": "De-engineered executive knowledgeuser",
-        "urlImagen": "\/images\/imagen3.jpg",
-        "nombreGenero": "Deportes",
-        "nombreDesarrollador": "Bethesda",
-        "nombrePublisher": "Nintendo",
-        "nombreConsola": "PlayStation5"
-    },
-    {
-        "idTitulo": 2,
-        "nombreTitulo": "Implemented directional processimprovement",
-        "urlImagen": "\/images\/imagen1.jpg",
-        "nombreGenero": "Aventura",
-        "nombreDesarrollador": "Bethesda",
-        "nombrePublisher": "Capcom",
-        "nombreConsola": "XboxOne"
-    },
-    {
-        "idTitulo": 3,
-        "nombreTitulo": "Self-enabling holistic contingency",
-        "urlImagen": "\/images\/imagen2.jpg",
-        "nombreGenero": "Miedo",
-        "nombreDesarrollador": "RockStar games",
-        "nombrePublisher": "Bioware",
-        "nombreConsola": "Xbox360"
-    },
-    {
-        "idTitulo": 4,
-        "nombreTitulo": "Persistent optimal firmware",
-        "urlImagen": "\/images\/imagen2.jpg",
-        "nombreGenero": "Deportes",
-        "nombreDesarrollador": "Bethesda",
-        "nombrePublisher": "SEGA",
-        "nombreConsola": "PlayStation5"
-    },
-    {
-        "idTitulo": 6,
-        "nombreTitulo": "Cross-group exuding knowledgebase",
-        "urlImagen": "\/images\/imagen3.jpg",
-        "nombreGenero": "Plataformas",
-        "nombreDesarrollador": "Frostbite",
-        "nombrePublisher": "Nintendo",
-        "nombreConsola": "SeriesX"
-    },
-    {
-        "idTitulo": 8,
-        "nombreTitulo": "Quality-focused 24\/7 extranet",
-        "urlImagen": "\/images\/imagen4.jpg",
-        "nombreGenero": "Plataformas",
-        "nombreDesarrollador": "Crytek",
-        "nombrePublisher": "Sony",
-        "nombreConsola": "PlayStation5"
-    },
-    {
-        "idTitulo": 12,
-        "nombreTitulo": "Customer-focused 3rdgeneration contingency",
-        "urlImagen": "\/images\/imagen2.jpg",
-        "nombreGenero": "Aventura",
-        "nombreDesarrollador": "Crytek",
-        "nombrePublisher": "Electronic Arts",
-        "nombreConsola": "XboxOne"
-    },
-    {
-        "idTitulo": 13,
-        "nombreTitulo": "User-friendly foreground projection",
-        "urlImagen": "\/images\/imagen3.jpg",
-        "nombreGenero": "Plataformas",
-        "nombreDesarrollador": "RockStar games",
-        "nombrePublisher": "Activision Blizzard",
-        "nombreConsola": "Xbox360"
-    },
-    {
-        "idTitulo": 14,
-        "nombreTitulo": "Phased 4thgeneration intranet",
-        "urlImagen": "\/images\/imagen5.jpg",
-        "nombreGenero": "Aventura",
-        "nombreDesarrollador": "Bethesda",
-        "nombrePublisher": "Bioware",
-        "nombreConsola": "XboxOne"
-    },
-    {
-        "idTitulo": 15,
-        "nombreTitulo": "Fundamental zeroadministration alliance",
-        "urlImagen": "\/images\/imagen4.jpg",
-        "nombreGenero": "RPG",
-        "nombreDesarrollador": "havok",
-        "nombrePublisher": "Electronic Arts",
-        "nombreConsola": "PlayStation4"
-    },
-    {
-        "idTitulo": 16,
-        "nombreTitulo": "Multi-lateral zerodefect knowledgebase",
-        "urlImagen": "\/images\/imagen2.jpg",
-        "nombreGenero": "Plataformas",
-        "nombreDesarrollador": "RockStar games",
-        "nombrePublisher": "SEGA",
-        "nombreConsola": "Xbox360"
-    },
-    {
-        "idTitulo": 17,
-        "nombreTitulo": "Customer-focused motivating contingency",
-        "urlImagen": "\/images\/imagen5.jpg",
-        "nombreGenero": "RPG",
-        "nombreDesarrollador": "From Software",
-        "nombrePublisher": "Ubisoft",
-        "nombreConsola": "Xbox360"
-    },
-    {
-        "idTitulo": 18,
-        "nombreTitulo": "Ergonomic content-based throughput",
-        "urlImagen": "\/images\/imagen1.jpg",
-        "nombreGenero": "Estrategia",
-        "nombreDesarrollador": "Frostbite",
-        "nombrePublisher": "Bioware",
-        "nombreConsola": "SeriesX"
-    },
-    {
-        "idTitulo": 19,
-        "nombreTitulo": "Inverse systematic challenge",
-        "urlImagen": "\/images\/imagen1.jpg",
-        "nombreGenero": "Plataformas",
-        "nombreDesarrollador": "From Software",
-        "nombrePublisher": "Bioware",
-        "nombreConsola": "XboxOne"
-    },
-    {
-        "idTitulo": 20,
-        "nombreTitulo": "Persevering radical matrices",
-        "urlImagen": "\/images\/imagen1.jpg",
-        "nombreGenero": "Aventura",
-        "nombreDesarrollador": "Activision",
-        "nombrePublisher": "SEGA",
-        "nombreConsola": "PlayStation5"
-    }
-]</code></pre>
-<div id="execution-results-GETapi-titulo-getData" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-getData"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-titulo-getData"></code></pre>
-</div>
-<div id="execution-error-GETapi-titulo-getData" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-titulo-getData"></code></pre>
-</div>
-<form id="form-GETapi-titulo-getData" data-method="GET" data-path="api/titulo/getData" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getData', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/titulo/getData</code></b>
-</p>
-<p>
-<label id="auth-GETapi-titulo-getData" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-getData" data-component="header"></label>
-</p>
-</form>
-<h2>api/titulo/mostrarTitulo/{idTitulo}</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/titulo/mostrarTitulo/expedita"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Argument 1 passed to App\\Http\\Controllers\\TituloController::mostrarTitulo() must be of the type int, string given",
-    "exception": "TypeError",
-    "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\TituloController.php",
-    "line": 146,
-    "trace": [
-        {
-            "function": "mostrarTitulo",
-            "class": "App\\Http\\Controllers\\TituloController",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
-            "line": 54,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
-            "line": 45,
-            "function": "callAction",
-            "class": "Illuminate\\Routing\\Controller",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 255,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\ControllerDispatcher",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 197,
-            "function": "runController",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 691,
-            "function": "run",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 103,
-            "function": "handleRequest",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 55,
-            "function": "handleRequestUsingNamedLimiter",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 693,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 668,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 634,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 623,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 166,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-            "line": 87,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fruitcake\\Cors\\HandleCors",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 141,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 110,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 324,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 305,
-            "function": "callLaravelOrLumenRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 76,
-            "function": "makeApiCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 51,
-            "function": "makeResponseCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 41,
-            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 236,
-            "function": "__invoke",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 172,
-            "function": "iterateThroughStrategies",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 127,
-            "function": "fetchResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 118,
-            "function": "processRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 73,
-            "function": "processRoutes",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "function": "handle",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 37,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-            "line": 40,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 95,
-            "function": "unwrapIfClosure",
-            "class": "Illuminate\\Container\\Util",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 39,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-            "line": 596,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 136,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Command\\Command.php",
-            "line": 258,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 121,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 920,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 266,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 142,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
-            "line": 93,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-            "line": 129,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "-&gt;"
-        }
-    ]
-}</code></pre>
-<div id="execution-results-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-mostrarTitulo--idTitulo-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-titulo-mostrarTitulo--idTitulo-"></code></pre>
-</div>
-<div id="execution-error-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-titulo-mostrarTitulo--idTitulo-"></code></pre>
-</div>
-<form id="form-GETapi-titulo-mostrarTitulo--idTitulo-" data-method="GET" data-path="api/titulo/mostrarTitulo/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-mostrarTitulo--idTitulo-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/titulo/mostrarTitulo/{idTitulo}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-mostrarTitulo--idTitulo-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>idTitulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="idTitulo" data-endpoint="GETapi-titulo-mostrarTitulo--idTitulo-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>api/titulo/getTitulos</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/titulo/getTitulos"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">[
-    {
-        "idTitulo": 1,
-        "nombreTitulo": "De-engineered executive knowledgeuser"
-    },
-    {
-        "idTitulo": 2,
-        "nombreTitulo": "Implemented directional processimprovement"
-    },
-    {
-        "idTitulo": 3,
-        "nombreTitulo": "Self-enabling holistic contingency"
-    },
-    {
-        "idTitulo": 4,
-        "nombreTitulo": "Persistent optimal firmware"
-    },
-    {
-        "idTitulo": 5,
-        "nombreTitulo": "Automated empowering emulation"
-    },
-    {
-        "idTitulo": 6,
-        "nombreTitulo": "Cross-group exuding knowledgebase"
-    },
-    {
-        "idTitulo": 7,
-        "nombreTitulo": "Compatible foreground help-desk"
-    },
-    {
-        "idTitulo": 8,
-        "nombreTitulo": "Quality-focused 24\/7 extranet"
-    },
-    {
-        "idTitulo": 9,
-        "nombreTitulo": "Reverse-engineered object-oriented moderator"
-    },
-    {
-        "idTitulo": 10,
-        "nombreTitulo": "Ergonomic national workforce"
-    },
-    {
-        "idTitulo": 11,
-        "nombreTitulo": "Optimized multimedia concept"
-    },
-    {
-        "idTitulo": 12,
-        "nombreTitulo": "Customer-focused 3rdgeneration contingency"
-    },
-    {
-        "idTitulo": 13,
-        "nombreTitulo": "User-friendly foreground projection"
-    },
-    {
-        "idTitulo": 14,
-        "nombreTitulo": "Phased 4thgeneration intranet"
-    },
-    {
-        "idTitulo": 15,
-        "nombreTitulo": "Fundamental zeroadministration alliance"
-    },
-    {
-        "idTitulo": 16,
-        "nombreTitulo": "Multi-lateral zerodefect knowledgebase"
-    },
-    {
-        "idTitulo": 17,
-        "nombreTitulo": "Customer-focused motivating contingency"
-    },
-    {
-        "idTitulo": 18,
-        "nombreTitulo": "Ergonomic content-based throughput"
-    },
-    {
-        "idTitulo": 19,
-        "nombreTitulo": "Inverse systematic challenge"
-    },
-    {
-        "idTitulo": 20,
-        "nombreTitulo": "Persevering radical matrices"
-    }
-]</code></pre>
-<div id="execution-results-GETapi-titulo-getTitulos" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-getTitulos"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-titulo-getTitulos"></code></pre>
-</div>
-<div id="execution-error-GETapi-titulo-getTitulos" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-titulo-getTitulos"></code></pre>
-</div>
-<form id="form-GETapi-titulo-getTitulos" data-method="GET" data-path="api/titulo/getTitulos" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulos', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/titulo/getTitulos</code></b>
-</p>
-<p>
-<label id="auth-GETapi-titulo-getTitulos" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-getTitulos" data-component="header"></label>
-</p>
-</form>
-<h2>api/juego/listarJuegos/{idTitulo}</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/juego/listarJuegos/quia"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Argument 1 passed to App\\Http\\Controllers\\JuegoController::listarJuegos() must be of the type int, string given",
-    "exception": "TypeError",
-    "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\JuegoController.php",
-    "line": 66,
-    "trace": [
-        {
-            "function": "listarJuegos",
-            "class": "App\\Http\\Controllers\\JuegoController",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
-            "line": 54,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
-            "line": 45,
-            "function": "callAction",
-            "class": "Illuminate\\Routing\\Controller",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 255,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\ControllerDispatcher",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 197,
-            "function": "runController",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 691,
-            "function": "run",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 103,
-            "function": "handleRequest",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 55,
-            "function": "handleRequestUsingNamedLimiter",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 693,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 668,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 634,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 623,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 166,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-            "line": 87,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fruitcake\\Cors\\HandleCors",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 141,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 110,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 324,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 305,
-            "function": "callLaravelOrLumenRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 76,
-            "function": "makeApiCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 51,
-            "function": "makeResponseCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 41,
-            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 236,
-            "function": "__invoke",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 172,
-            "function": "iterateThroughStrategies",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 127,
-            "function": "fetchResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 118,
-            "function": "processRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 73,
-            "function": "processRoutes",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "function": "handle",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 37,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-            "line": 40,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 95,
-            "function": "unwrapIfClosure",
-            "class": "Illuminate\\Container\\Util",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 39,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-            "line": 596,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 136,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Command\\Command.php",
-            "line": 258,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 121,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 920,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 266,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 142,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
-            "line": 93,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-            "line": 129,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "-&gt;"
-        }
-    ]
-}</code></pre>
-<div id="execution-results-GETapi-juego-listarJuegos--idTitulo-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-juego-listarJuegos--idTitulo-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-juego-listarJuegos--idTitulo-"></code></pre>
-</div>
-<div id="execution-error-GETapi-juego-listarJuegos--idTitulo-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-juego-listarJuegos--idTitulo-"></code></pre>
-</div>
-<form id="form-GETapi-juego-listarJuegos--idTitulo-" data-method="GET" data-path="api/juego/listarJuegos/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-listarJuegos--idTitulo-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/juego/listarJuegos/{idTitulo}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-juego-listarJuegos--idTitulo-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-juego-listarJuegos--idTitulo-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>idTitulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="idTitulo" data-endpoint="GETapi-juego-listarJuegos--idTitulo-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>api/juego/misJuegos/{idCuenta}</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/juego/misJuegos/fuga"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Argument 1 passed to App\\Http\\Controllers\\JuegoController::misJuegos() must be of the type int, string given",
-    "exception": "TypeError",
-    "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\JuegoController.php",
-    "line": 72,
-    "trace": [
-        {
-            "function": "misJuegos",
-            "class": "App\\Http\\Controllers\\JuegoController",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
-            "line": 54,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
-            "line": 45,
-            "function": "callAction",
-            "class": "Illuminate\\Routing\\Controller",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 255,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\ControllerDispatcher",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-            "line": 197,
-            "function": "runController",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 691,
-            "function": "run",
-            "class": "Illuminate\\Routing\\Route",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 127,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 103,
-            "function": "handleRequest",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-            "line": 55,
-            "function": "handleRequestUsingNamedLimiter",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 693,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 668,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 634,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-            "line": 623,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 166,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 128,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-            "line": 21,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-            "line": 87,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fruitcake\\Cors\\HandleCors",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 167,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-            "line": 103,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 141,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-            "line": 110,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 324,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 305,
-            "function": "callLaravelOrLumenRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 76,
-            "function": "makeApiCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 51,
-            "function": "makeResponseCall",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-            "line": 41,
-            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 236,
-            "function": "__invoke",
-            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 172,
-            "function": "iterateThroughStrategies",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
-            "line": 127,
-            "function": "fetchResponses",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 118,
-            "function": "processRoute",
-            "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-            "line": 73,
-            "function": "processRoutes",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "function": "handle",
-            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 37,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-            "line": 40,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 95,
-            "function": "unwrapIfClosure",
-            "class": "Illuminate\\Container\\Util",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-            "line": 39,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-            "line": 596,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 136,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Command\\Command.php",
-            "line": 258,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-            "line": 121,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 920,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 266,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
-            "line": 142,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
-            "line": 93,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-            "line": 129,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "-&gt;"
-        },
-        {
-            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "-&gt;"
-        }
-    ]
-}</code></pre>
-<div id="execution-results-GETapi-juego-misJuegos--idCuenta-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-juego-misJuegos--idCuenta-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-juego-misJuegos--idCuenta-"></code></pre>
-</div>
-<div id="execution-error-GETapi-juego-misJuegos--idCuenta-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-juego-misJuegos--idCuenta-"></code></pre>
-</div>
-<form id="form-GETapi-juego-misJuegos--idCuenta-" data-method="GET" data-path="api/juego/misJuegos/{idCuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-misJuegos--idCuenta-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/juego/misJuegos/{idCuenta}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-juego-misJuegos--idCuenta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-juego-misJuegos--idCuenta-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>idCuenta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="idCuenta" data-endpoint="GETapi-juego-misJuegos--idCuenta-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>api/juego/borrarJuego/{idJuego}</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/juego/borrarJuego/commodi"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-DELETEapi-juego-borrarJuego--idJuego-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-juego-borrarJuego--idJuego-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-juego-borrarJuego--idJuego-"></code></pre>
-</div>
-<div id="execution-error-DELETEapi-juego-borrarJuego--idJuego-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-juego-borrarJuego--idJuego-"></code></pre>
-</div>
-<form id="form-DELETEapi-juego-borrarJuego--idJuego-" data-method="DELETE" data-path="api/juego/borrarJuego/{idJuego}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-juego-borrarJuego--idJuego-', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-red">DELETE</small>
- <b><code>api/juego/borrarJuego/{idJuego}</code></b>
-</p>
-<p>
-<label id="auth-DELETEapi-juego-borrarJuego--idJuego-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="DELETEapi-juego-borrarJuego--idJuego-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>idJuego</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="idJuego" data-endpoint="DELETEapi-juego-borrarJuego--idJuego-" data-component="url" required  hidden>
-<br>
-</p>
-</form>
-<h2>api/genero/getGenero</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/genero/getGenero"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">[
-    {
-        "idGenero": 1,
-        "nombreGenero": "Acción"
-    },
-    {
-        "idGenero": 2,
-        "nombreGenero": "Aventura"
-    },
-    {
-        "idGenero": 3,
-        "nombreGenero": "Plataformas"
-    },
-    {
-        "idGenero": 4,
-        "nombreGenero": "Miedo"
-    },
-    {
-        "idGenero": 5,
-        "nombreGenero": "Deportes"
-    },
-    {
-        "idGenero": 6,
-        "nombreGenero": "RPG"
-    },
-    {
-        "idGenero": 7,
-        "nombreGenero": "Estrategia"
-    }
-]</code></pre>
-<div id="execution-results-GETapi-genero-getGenero" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-genero-getGenero"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-genero-getGenero"></code></pre>
-</div>
-<div id="execution-error-GETapi-genero-getGenero" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-genero-getGenero"></code></pre>
-</div>
-<form id="form-GETapi-genero-getGenero" data-method="GET" data-path="api/genero/getGenero" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-genero-getGenero', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/genero/getGenero</code></b>
-</p>
-<p>
-<label id="auth-GETapi-genero-getGenero" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-genero-getGenero" data-component="header"></label>
-</p>
-</form>
-<h2>api/consola/getConsola</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to retrive all the consoles in the system.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -2958,105 +609,11 @@ fetch(url, {
 <p>
 <label id="auth-GETapi-consola-getConsola" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-consola-getConsola" data-component="header"></label>
 </p>
-</form>
-<h2>api/publisher/getPublisher</h2>
+</form><h1>Developer management</h1>
+<p>APIs for managing developers.</p>
+<h2>Get developers.</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/publisher/getPublisher"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">[
-    {
-        "idPublisher": 1,
-        "nombrePublisher": "Nintendo"
-    },
-    {
-        "idPublisher": 2,
-        "nombrePublisher": "2k"
-    },
-    {
-        "idPublisher": 3,
-        "nombrePublisher": "Bungie"
-    },
-    {
-        "idPublisher": 4,
-        "nombrePublisher": "Microsoft"
-    },
-    {
-        "idPublisher": 5,
-        "nombrePublisher": "Activision Blizzard"
-    },
-    {
-        "idPublisher": 6,
-        "nombrePublisher": "Electronic Arts"
-    },
-    {
-        "idPublisher": 7,
-        "nombrePublisher": "Sony"
-    },
-    {
-        "idPublisher": 8,
-        "nombrePublisher": "SEGA"
-    },
-    {
-        "idPublisher": 9,
-        "nombrePublisher": "Bioware"
-    },
-    {
-        "idPublisher": 10,
-        "nombrePublisher": "Ubisoft"
-    },
-    {
-        "idPublisher": 11,
-        "nombrePublisher": "Capcom"
-    },
-    {
-        "idPublisher": 12,
-        "nombrePublisher": "Bandai Namco"
-    },
-    {
-        "idPublisher": 13,
-        "nombrePublisher": "Mojang"
-    }
-]</code></pre>
-<div id="execution-results-GETapi-publisher-getPublisher" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-publisher-getPublisher"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-publisher-getPublisher"></code></pre>
-</div>
-<div id="execution-error-GETapi-publisher-getPublisher" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-publisher-getPublisher"></code></pre>
-</div>
-<form id="form-GETapi-publisher-getPublisher" data-method="GET" data-path="api/publisher/getPublisher" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-publisher-getPublisher', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/publisher/getPublisher</code></b>
-</p>
-<p>
-<label id="auth-GETapi-publisher-getPublisher" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-publisher-getPublisher" data-component="header"></label>
-</p>
-</form>
-<h2>api/desarrollador/getDesarrollador</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to retrive all the developers in the system.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -3134,9 +691,63 @@ fetch(url, {
 <p>
 <label id="auth-GETapi-desarrollador-getDesarrollador" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-desarrollador-getDesarrollador" data-component="header"></label>
 </p>
-</form>
-<h2>api/archivos/upload</h2>
+</form><h1>Email</h1>
+<p>APIs for sending an email.</p>
+<h2>Send an email of registration to a recipient</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/send-email/eric@gmail.com"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Success! Your E-mail has been sent."
+}</code></pre>
+<div id="execution-results-GETapi-send-email--email-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-send-email--email-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-send-email--email-"></code></pre>
+</div>
+<div id="execution-error-GETapi-send-email--email-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-send-email--email-"></code></pre>
+</div>
+<form id="form-GETapi-send-email--email-" data-method="GET" data-path="api/send-email/{email}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-send-email--email-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/send-email/{email}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-send-email--email-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-send-email--email-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="GETapi-send-email--email-" data-component="url" required  hidden>
+<br>
+email of the recipient.</p>
+</form><h1>File management</h1>
+<p>APIs for managing files.</p>
+<h2>Upload a File.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to upload a file in the system.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -3150,9 +761,14 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "file": "est"
+}
+
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 <div id="execution-results-POSTapi-archivos-upload" hidden>
     <blockquote>Received response<span id="execution-response-status-POSTapi-archivos-upload"></span>:</blockquote>
@@ -3173,14 +789,22 @@ fetch(url, {
 <p>
 <label id="auth-POSTapi-archivos-upload" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="POSTapi-archivos-upload" data-component="header"></label>
 </p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>file</code></b>&nbsp;&nbsp;<small>required</small>     <i>optional</i> &nbsp;
+<input type="text" name="file" data-endpoint="POSTapi-archivos-upload" data-component="body"  hidden>
+<br>
+to store</p>
+
 </form>
-<h2>api/archivos/dowload</h2>
+<h2>Download a File.</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to download a file stored in the system.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/archivos/dowload"
+    "http://localhost:8000/api/archivos/dowload/dolor"
 );
 
 let headers = {
@@ -3189,126 +813,508 @@ let headers = {
     "Accept": "application/json",
 };
 
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">
-Hola</code></pre>
-<div id="execution-results-GETapi-archivos-dowload" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-archivos-dowload"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-archivos-dowload"></code></pre>
-</div>
-<div id="execution-error-GETapi-archivos-dowload" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-archivos-dowload"></code></pre>
-</div>
-<form id="form-GETapi-archivos-dowload" data-method="GET" data-path="api/archivos/dowload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-archivos-dowload', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/archivos/dowload</code></b>
-</p>
-<p>
-<label id="auth-GETapi-archivos-dowload" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-archivos-dowload" data-component="header"></label>
-</p>
-</form>
-<h2>Display a listing of the resource.</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertas"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
+let body = {
+    "name": "sunt"
+}
 
 fetch(url, {
     method: "GET",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
 <blockquote>
-<p>Example response (200):</p>
+<p>Example response (500):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "message": "The file \"E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\storage\\app\\Archivos\\dolor\" does not exist",
+    "exception": "Symfony\\Component\\HttpFoundation\\File\\Exception\\FileNotFoundException",
+    "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\http-foundation\\File\\File.php",
+    "line": 36,
+    "trace": [
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\http-foundation\\BinaryFileResponse.php",
+            "line": 89,
+            "function": "__construct",
+            "class": "Symfony\\Component\\HttpFoundation\\File\\File",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\http-foundation\\BinaryFileResponse.php",
+            "line": 51,
+            "function": "setFile",
+            "class": "Symfony\\Component\\HttpFoundation\\BinaryFileResponse",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php",
+            "line": 165,
+            "function": "__construct",
+            "class": "Symfony\\Component\\HttpFoundation\\BinaryFileResponse",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\app\\Http\\Controllers\\ArchivoController.php",
+            "line": 43,
+            "function": "download",
+            "class": "Illuminate\\Routing\\ResponseFactory",
+            "type": "-&gt;"
+        },
+        {
+            "function": "dowload",
+            "class": "App\\Http\\Controllers\\ArchivoController",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+            "line": 54,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+            "line": 45,
+            "function": "callAction",
+            "class": "Illuminate\\Routing\\Controller",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+            "line": 255,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+            "line": 197,
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 691,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 128,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+            "line": 41,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 127,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 103,
+            "function": "handleRequest",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 55,
+            "function": "handleRequestUsingNamedLimiter",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 103,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 693,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 668,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 634,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 623,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 166,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 128,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
+            "line": 87,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
+            "line": 57,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Fruitcake\\Cors\\HandleCors",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
+            "line": 57,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Fideloper\\Proxy\\TrustProxies",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 103,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 141,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 110,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 324,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 305,
+            "function": "callLaravelOrLumenRoute",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 76,
+            "function": "makeApiCall",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 51,
+            "function": "makeResponseCall",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 41,
+            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 236,
+            "function": "__invoke",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 172,
+            "function": "iterateThroughStrategies",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 127,
+            "function": "fetchResponses",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
+            "line": 118,
+            "function": "processRoute",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
+            "line": 73,
+            "function": "processRoutes",
+            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+            "type": "-&gt;"
+        },
+        {
+            "function": "handle",
+            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 37,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
+            "line": 40,
+            "function": "Illuminate\\Container\\{closure}",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 95,
+            "function": "unwrapIfClosure",
+            "class": "Illuminate\\Container\\Util",
+            "type": "::"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 39,
+            "function": "callBoundMethod",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
+            "line": 596,
+            "function": "call",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+            "line": 136,
+            "function": "call",
+            "class": "Illuminate\\Container\\Container",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Command\\Command.php",
+            "line": 258,
+            "function": "execute",
+            "class": "Illuminate\\Console\\Command",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+            "line": 121,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Command\\Command",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
+            "line": 920,
+            "function": "run",
+            "class": "Illuminate\\Console\\Command",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
+            "line": 266,
+            "function": "doRunCommand",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\symfony\\console\\Application.php",
+            "line": 142,
+            "function": "doRun",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
+            "line": 93,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
+            "line": 129,
+            "function": "run",
+            "class": "Illuminate\\Console\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "E:\\Escritorio\\Tec\\Semestre 5\\LDAW\\LDAW\\proyecto\\backend\\artisan",
+            "line": 37,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Console\\Kernel",
+            "type": "-&gt;"
+        }
+    ]
 }</code></pre>
-<div id="execution-results-GETapi-ofertas" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-ofertas"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-ofertas"></code></pre>
+<div id="execution-results-GETapi-archivos-dowload--ruta-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-archivos-dowload--ruta-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-archivos-dowload--ruta-"></code></pre>
 </div>
-<div id="execution-error-GETapi-ofertas" hidden>
+<div id="execution-error-GETapi-archivos-dowload--ruta-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-ofertas"></code></pre>
+    <pre><code id="execution-error-message-GETapi-archivos-dowload--ruta-"></code></pre>
 </div>
-<form id="form-GETapi-ofertas" data-method="GET" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas', this);">
+<form id="form-GETapi-archivos-dowload--ruta-" data-method="GET" data-path="api/archivos/dowload/{ruta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-archivos-dowload--ruta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/ofertas</code></b>
+ <b><code>api/archivos/dowload/{ruta}</code></b>
 </p>
 <p>
-<label id="auth-GETapi-ofertas" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertas" data-component="header"></label>
+<label id="auth-GETapi-archivos-dowload--ruta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-archivos-dowload--ruta-" data-component="header"></label>
 </p>
-</form>
-<h2>Store a newly created resource in storage.</h2>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>ruta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="ruta" data-endpoint="GETapi-archivos-dowload--ruta-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>name</code></b>&nbsp;&nbsp;<small>of</small>     <i>optional</i> &nbsp;
+<input type="text" name="name" data-endpoint="GETapi-archivos-dowload--ruta-" data-component="body"  hidden>
+<br>
+thte file required to dowload</p>
+
+</form><h1>Game management</h1>
+<p>APIs for adding, consulting and deleting games.</p>
+<h2>Show a specific game</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Displays the specified game of a title.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertas"
-);
-
-let headers = {
-    "Authorization": "Bearer JWT_token",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-ofertas" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-ofertas"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-ofertas"></code></pre>
-</div>
-<div id="execution-error-POSTapi-ofertas" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-ofertas"></code></pre>
-</div>
-<form id="form-POSTapi-ofertas" data-method="POST" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-ofertas', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/ofertas</code></b>
-</p>
-<p>
-<label id="auth-POSTapi-ofertas" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="POSTapi-ofertas" data-component="header"></label>
-</p>
-</form>
-<h2>Display the specified resource.</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertas/odio"
+    "http://localhost:8000/api/juego/listarJuegos/natus"
 );
 
 let headers = {
@@ -3325,40 +1331,54 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">
-[]</code></pre>
-<div id="execution-results-GETapi-ofertas--oferta-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-ofertas--oferta-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-ofertas--oferta-"></code></pre>
+{
+ "idJuego": 1,
+ "idTitulo": 1,
+ "condiciones": "nuevo",
+ "pathImagen: "Archivos/miImagen.png",
+ "tituloRecibir1": "halo 5",
+ "tituloRecibir2": "minecraft",
+ "tituloRecibir3": "call of duty",
+}</code></pre>
+<div id="execution-results-GETapi-juego-listarJuegos--idTitulo-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-juego-listarJuegos--idTitulo-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-juego-listarJuegos--idTitulo-"></code></pre>
 </div>
-<div id="execution-error-GETapi-ofertas--oferta-" hidden>
+<div id="execution-error-GETapi-juego-listarJuegos--idTitulo-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-ofertas--oferta-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-juego-listarJuegos--idTitulo-"></code></pre>
 </div>
-<form id="form-GETapi-ofertas--oferta-" data-method="GET" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas--oferta-', this);">
+<form id="form-GETapi-juego-listarJuegos--idTitulo-" data-method="GET" data-path="api/juego/listarJuegos/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-listarJuegos--idTitulo-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/ofertas/{oferta}</code></b>
+ <b><code>api/juego/listarJuegos/{idTitulo}</code></b>
 </p>
 <p>
-<label id="auth-GETapi-ofertas--oferta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertas--oferta-" data-component="header"></label>
+<label id="auth-GETapi-juego-listarJuegos--idTitulo-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-juego-listarJuegos--idTitulo-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>oferta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="oferta" data-endpoint="GETapi-ofertas--oferta-" data-component="url" required  hidden>
+<b><code>idTitulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="idTitulo" data-endpoint="GETapi-juego-listarJuegos--idTitulo-" data-component="url" required  hidden>
 <br>
 </p>
+<p>
+<b><code>itTitulo</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="itTitulo" data-endpoint="GETapi-juego-listarJuegos--idTitulo-" data-component="url" required  hidden>
+<br>
+id to make the search of the titles.</p>
 </form>
-<h2>Update the specified resource in storage.</h2>
+<h2>Get my games</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Display the specified games of an account.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertas/reiciendis"
+    "http://localhost:8000/api/juego/misJuegos/1"
 );
 
 let headers = {
@@ -3368,46 +1388,74 @@ let headers = {
 };
 
 fetch(url, {
-    method: "PUT",
+    method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-PUTapi-ofertas--oferta-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-ofertas--oferta-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-ofertas--oferta-"></code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "idJuego": 1,
+        "idTitulo": 6,
+        "tituloRecibir1": "Synchronised system-worthy info-mediaries",
+        "tituloRecibir2": "Multi-layered system-worthy contingency",
+        "tituloRecibir3": "Future-proofed maximized blockchain",
+        "urlImagen": "\/images\/imagen5.jpg",
+        "pathImagen": "Archivos\/lRlGGlTfBis26JbagXb43JmY7i8L5g5KBu8suRxD.png",
+        "idCuenta": 1,
+        "nombreTitulo": "Adaptive multimedia website",
+        "condiciones": "nuevo",
+        "nombreConsola": "Nintendo switch"
+    },
+    {
+        "idJuego": 2,
+        "idTitulo": 1,
+        "tituloRecibir1": "Synergistic value-added instructionset",
+        "tituloRecibir2": "Up-sized client-driven artificialintelligence",
+        "tituloRecibir3": "Streamlined homogeneous hardware",
+        "urlImagen": "\/images\/imagen3.jpg",
+        "pathImagen": "Archivos\/lXIPX6RhO5lI8vWxoUx7Dx4x9ob8SR9cEujyxL6t.png",
+        "idCuenta": 1,
+        "nombreTitulo": "Reverse-engineered hybrid instructionset",
+        "condiciones": "f",
+        "nombreConsola": "XboxOne"
+    }
+]</code></pre>
+<div id="execution-results-GETapi-juego-misJuegos--idCuenta-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-juego-misJuegos--idCuenta-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-juego-misJuegos--idCuenta-"></code></pre>
 </div>
-<div id="execution-error-PUTapi-ofertas--oferta-" hidden>
+<div id="execution-error-GETapi-juego-misJuegos--idCuenta-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-ofertas--oferta-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-juego-misJuegos--idCuenta-"></code></pre>
 </div>
-<form id="form-PUTapi-ofertas--oferta-" data-method="PUT" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-ofertas--oferta-', this);">
+<form id="form-GETapi-juego-misJuegos--idCuenta-" data-method="GET" data-path="api/juego/misJuegos/{idCuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-juego-misJuegos--idCuenta-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
 <p>
-<small class="badge badge-darkblue">PUT</small>
- <b><code>api/ofertas/{oferta}</code></b>
+<small class="badge badge-green">GET</small>
+ <b><code>api/juego/misJuegos/{idCuenta}</code></b>
 </p>
 <p>
-<small class="badge badge-purple">PATCH</small>
- <b><code>api/ofertas/{oferta}</code></b>
-</p>
-<p>
-<label id="auth-PUTapi-ofertas--oferta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="PUTapi-ofertas--oferta-" data-component="header"></label>
+<label id="auth-GETapi-juego-misJuegos--idCuenta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-juego-misJuegos--idCuenta-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>oferta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="oferta" data-endpoint="PUTapi-ofertas--oferta-" data-component="url" required  hidden>
+<b><code>idCuenta</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="idCuenta" data-endpoint="GETapi-juego-misJuegos--idCuenta-" data-component="url" required  hidden>
 <br>
-</p>
+string to make the search of the titles.</p>
 </form>
-<h2>Remove the specified resource from storage.</h2>
+<h2>Delete game</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Delete an specified game of the systme.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertas/distinctio"
+    "http://localhost:8000/api/juego/borrarJuego/temporibus"
 );
 
 let headers = {
@@ -3420,39 +1468,122 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-DELETEapi-ofertas--oferta-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-ofertas--oferta-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-ofertas--oferta-"></code></pre>
+<div id="execution-results-DELETEapi-juego-borrarJuego--idJuego-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-juego-borrarJuego--idJuego-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-juego-borrarJuego--idJuego-"></code></pre>
 </div>
-<div id="execution-error-DELETEapi-ofertas--oferta-" hidden>
+<div id="execution-error-DELETEapi-juego-borrarJuego--idJuego-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-ofertas--oferta-"></code></pre>
+    <pre><code id="execution-error-message-DELETEapi-juego-borrarJuego--idJuego-"></code></pre>
 </div>
-<form id="form-DELETEapi-ofertas--oferta-" data-method="DELETE" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-ofertas--oferta-', this);">
+<form id="form-DELETEapi-juego-borrarJuego--idJuego-" data-method="DELETE" data-path="api/juego/borrarJuego/{idJuego}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-juego-borrarJuego--idJuego-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
 <p>
 <small class="badge badge-red">DELETE</small>
- <b><code>api/ofertas/{oferta}</code></b>
+ <b><code>api/juego/borrarJuego/{idJuego}</code></b>
 </p>
 <p>
-<label id="auth-DELETEapi-ofertas--oferta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="DELETEapi-ofertas--oferta-" data-component="header"></label>
+<label id="auth-DELETEapi-juego-borrarJuego--idJuego-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="DELETEapi-juego-borrarJuego--idJuego-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>oferta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="oferta" data-endpoint="DELETEapi-ofertas--oferta-" data-component="url" required  hidden>
+<b><code>idJuego</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="idJuego" data-endpoint="DELETEapi-juego-borrarJuego--idJuego-" data-component="url" required  hidden>
 <br>
 </p>
+<p>
+<b><code>idjuego</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="idjuego" data-endpoint="DELETEapi-juego-borrarJuego--idJuego-" data-component="url" required  hidden>
+<br>
+int to make the removal of the game.</p>
 </form>
-<h2>api/ofertasEnviadas/{idCuentaEnviar}</h2>
+<h2>Register game</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Register a game in the system.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/ofertasEnviadas/libero"
+    "http://localhost:8000/api/juego/registrarJuego/doloremque"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "condiciones": 12,
+    "urlImagen": "sed",
+    "correoCuenta": "corrupti",
+    "telefonoCuenta": "consectetur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-juego-registrarJuego--idCuenta-" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-juego-registrarJuego--idCuenta-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-juego-registrarJuego--idCuenta-"></code></pre>
+</div>
+<div id="execution-error-POSTapi-juego-registrarJuego--idCuenta-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-juego-registrarJuego--idCuenta-"></code></pre>
+</div>
+<form id="form-POSTapi-juego-registrarJuego--idCuenta-" data-method="POST" data-path="api/juego/registrarJuego/{idCuenta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-juego-registrarJuego--idCuenta-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/juego/registrarJuego/{idCuenta}</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-juego-registrarJuego--idCuenta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>idCuenta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="idCuenta" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>condiciones</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="condiciones" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="body" required  hidden>
+<br>
+id of the selected role (1 for admin, 2 for regular user).</p>
+<p>
+<b><code>urlImagen</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="urlImagen" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="body" required  hidden>
+<br>
+name of the person that is registering in the platform.</p>
+<p>
+<b><code>correoCuenta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="correoCuenta" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="body" required  hidden>
+<br>
+email that will be used for the new account.</p>
+<p>
+<b><code>telefonoCuenta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="telefonoCuenta" data-endpoint="POSTapi-juego-registrarJuego--idCuenta-" data-component="body" required  hidden>
+<br>
+phone of the person registering to the platform.</p>
+
+</form><h1>Genre management</h1>
+<p>APIs for managing the genre for games.</p>
+<h2>Get gender.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to retrive all the genders in the system.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/genero/getGenero"
 );
 
 let headers = {
@@ -3468,32 +1599,54 @@ fetch(url, {
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">
-[]</code></pre>
-<div id="execution-results-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-ofertasEnviadas--idCuentaEnviar-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-ofertasEnviadas--idCuentaEnviar-"></code></pre>
+<pre><code class="language-json">[
+    {
+        "idGenero": 1,
+        "nombreGenero": "Acción"
+    },
+    {
+        "idGenero": 2,
+        "nombreGenero": "Aventura"
+    },
+    {
+        "idGenero": 3,
+        "nombreGenero": "Plataformas"
+    },
+    {
+        "idGenero": 4,
+        "nombreGenero": "Miedo"
+    },
+    {
+        "idGenero": 5,
+        "nombreGenero": "Deportes"
+    },
+    {
+        "idGenero": 6,
+        "nombreGenero": "RPG"
+    },
+    {
+        "idGenero": 7,
+        "nombreGenero": "Estrategia"
+    }
+]</code></pre>
+<div id="execution-results-GETapi-genero-getGenero" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-genero-getGenero"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-genero-getGenero"></code></pre>
 </div>
-<div id="execution-error-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>
+<div id="execution-error-GETapi-genero-getGenero" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-ofertasEnviadas--idCuentaEnviar-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-genero-getGenero"></code></pre>
 </div>
-<form id="form-GETapi-ofertasEnviadas--idCuentaEnviar-" data-method="GET" data-path="api/ofertasEnviadas/{idCuentaEnviar}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertasEnviadas--idCuentaEnviar-', this);">
+<form id="form-GETapi-genero-getGenero" data-method="GET" data-path="api/genero/getGenero" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-genero-getGenero', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/ofertasEnviadas/{idCuentaEnviar}</code></b>
+ <b><code>api/genero/getGenero</code></b>
 </p>
 <p>
-<label id="auth-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertasEnviadas--idCuentaEnviar-" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-<p>
-<b><code>idCuentaEnviar</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="idCuentaEnviar" data-endpoint="GETapi-ofertasEnviadas--idCuentaEnviar-" data-component="url" required  hidden>
-<br>
+<label id="auth-GETapi-genero-getGenero" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-genero-getGenero" data-component="header"></label>
 </p>
 </form><h1>JWT management</h1>
 <p>APIs for registering users and JWT authentication.</p>
@@ -3802,6 +1955,632 @@ fetch(url, {
 </p>
 <p>
 <label id="auth-GETapi-auth-profile" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-auth-profile" data-component="header"></label>
+</p>
+</form><h1>Offer management</h1>
+<p>APIs for managing offers.</p>
+<h2>Display a listing of the offers in the system.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/ofertas"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": []
+}</code></pre>
+<div id="execution-results-GETapi-ofertas" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-ofertas"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-ofertas"></code></pre>
+</div>
+<div id="execution-error-GETapi-ofertas" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-ofertas"></code></pre>
+</div>
+<form id="form-GETapi-ofertas" data-method="GET" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/ofertas</code></b>
+</p>
+<p>
+<label id="auth-GETapi-ofertas" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertas" data-component="header"></label>
+</p>
+</form>
+<h2>Store a newly created offer.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/ofertas"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-ofertas" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-ofertas"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-ofertas"></code></pre>
+</div>
+<div id="execution-error-POSTapi-ofertas" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-ofertas"></code></pre>
+</div>
+<form id="form-POSTapi-ofertas" data-method="POST" data-path="api/ofertas" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-ofertas', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/ofertas</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-ofertas" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="POSTapi-ofertas" data-component="header"></label>
+</p>
+</form>
+<h2>Display the specified offer.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/ofertas/2"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+[]</code></pre>
+<div id="execution-results-GETapi-ofertas--oferta-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-ofertas--oferta-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-ofertas--oferta-"></code></pre>
+</div>
+<div id="execution-error-GETapi-ofertas--oferta-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-ofertas--oferta-"></code></pre>
+</div>
+<form id="form-GETapi-ofertas--oferta-" data-method="GET" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertas--oferta-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/ofertas/{oferta}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-ofertas--oferta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertas--oferta-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>oferta</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="oferta" data-endpoint="GETapi-ofertas--oferta-" data-component="url" required  hidden>
+<br>
+id of the game you are about to offer to show.</p>
+</form>
+<h2>Update the offer status</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/ofertas/perferendis"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "idOferta": 2,
+    "estado": "aceptada"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-PUTapi-ofertas--oferta-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-ofertas--oferta-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-ofertas--oferta-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-ofertas--oferta-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-ofertas--oferta-"></code></pre>
+</div>
+<form id="form-PUTapi-ofertas--oferta-" data-method="PUT" data-path="api/ofertas/{oferta}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-ofertas--oferta-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/ofertas/{oferta}</code></b>
+</p>
+<p>
+<small class="badge badge-purple">PATCH</small>
+ <b><code>api/ofertas/{oferta}</code></b>
+</p>
+<p>
+<label id="auth-PUTapi-ofertas--oferta-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="PUTapi-ofertas--oferta-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>oferta</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="oferta" data-endpoint="PUTapi-ofertas--oferta-" data-component="url" required  hidden>
+<br>
+</p>
+<p>
+<b><code>cuenta</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="cuenta" data-endpoint="PUTapi-ofertas--oferta-" data-component="url" required  hidden>
+<br>
+id of the account that sent the offers, and wants to consult them.</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>idOferta</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="idOferta" data-endpoint="PUTapi-ofertas--oferta-" data-component="body" required  hidden>
+<br>
+id of the offer that you want to update</p>
+<p>
+<b><code>estado</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="estado" data-endpoint="PUTapi-ofertas--oferta-" data-component="body" required  hidden>
+<br>
+the new status of the offer, after being altered (1pendiente, aceptada, rechadaza, terminada).</p>
+
+</form>
+<h2>Display the offers that an account has sent.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/ofertasEnviadas/quis"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+[]</code></pre>
+<div id="execution-results-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-ofertasEnviadas--idCuentaEnviar-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-ofertasEnviadas--idCuentaEnviar-"></code></pre>
+</div>
+<div id="execution-error-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-ofertasEnviadas--idCuentaEnviar-"></code></pre>
+</div>
+<form id="form-GETapi-ofertasEnviadas--idCuentaEnviar-" data-method="GET" data-path="api/ofertasEnviadas/{idCuentaEnviar}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-ofertasEnviadas--idCuentaEnviar-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/ofertasEnviadas/{idCuentaEnviar}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-ofertasEnviadas--idCuentaEnviar-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-ofertasEnviadas--idCuentaEnviar-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>idCuentaEnviar</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="idCuentaEnviar" data-endpoint="GETapi-ofertasEnviadas--idCuentaEnviar-" data-component="url" required  hidden>
+<br>
+</p>
+<p>
+<b><code>cuenta</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="cuenta" data-endpoint="GETapi-ofertasEnviadas--idCuentaEnviar-" data-component="url" required  hidden>
+<br>
+id of the account that sent the offers, and wants to consult them.</p>
+</form><h1>Publisher management</h1>
+<p>APIs for managing publishers.</p>
+<h2>Get publisher.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to retrive all the publishers in the system.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/publisher/getPublisher"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "idPublisher": 1,
+        "nombrePublisher": "Nintendo"
+    },
+    {
+        "idPublisher": 2,
+        "nombrePublisher": "2k"
+    },
+    {
+        "idPublisher": 3,
+        "nombrePublisher": "Bungie"
+    },
+    {
+        "idPublisher": 4,
+        "nombrePublisher": "Microsoft"
+    },
+    {
+        "idPublisher": 5,
+        "nombrePublisher": "Activision Blizzard"
+    },
+    {
+        "idPublisher": 6,
+        "nombrePublisher": "Electronic Arts"
+    },
+    {
+        "idPublisher": 7,
+        "nombrePublisher": "Sony"
+    },
+    {
+        "idPublisher": 8,
+        "nombrePublisher": "SEGA"
+    },
+    {
+        "idPublisher": 9,
+        "nombrePublisher": "Bioware"
+    },
+    {
+        "idPublisher": 10,
+        "nombrePublisher": "Ubisoft"
+    },
+    {
+        "idPublisher": 11,
+        "nombrePublisher": "Capcom"
+    },
+    {
+        "idPublisher": 12,
+        "nombrePublisher": "Bandai Namco"
+    },
+    {
+        "idPublisher": 13,
+        "nombrePublisher": "Mojang"
+    }
+]</code></pre>
+<div id="execution-results-GETapi-publisher-getPublisher" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-publisher-getPublisher"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-publisher-getPublisher"></code></pre>
+</div>
+<div id="execution-error-GETapi-publisher-getPublisher" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-publisher-getPublisher"></code></pre>
+</div>
+<form id="form-GETapi-publisher-getPublisher" data-method="GET" data-path="api/publisher/getPublisher" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-publisher-getPublisher', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/publisher/getPublisher</code></b>
+</p>
+<p>
+<label id="auth-GETapi-publisher-getPublisher" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-publisher-getPublisher" data-component="header"></label>
+</p>
+</form><h1>Title management</h1>
+<p>APIs for consulting titles.</p>
+<h2>Get filter titles</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Display the specified titles under the search parameter.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/titulo/getTitulo/enim"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "busqueda": "explicabo"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "idTitulo": 1,
+ "nombreTitulo": "",
+ "nombreGenero": "",
+ "nombreDesarrollador: "",
+ "nombrePublisher": "",
+ "nombreConsola": "",
+ "urlImagen": "",
+}</code></pre>
+<div id="execution-results-GETapi-titulo-getTitulo--titulo--" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-getTitulo--titulo--"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-titulo-getTitulo--titulo--"></code></pre>
+</div>
+<div id="execution-error-GETapi-titulo-getTitulo--titulo--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-titulo-getTitulo--titulo--"></code></pre>
+</div>
+<form id="form-GETapi-titulo-getTitulo--titulo--" data-method="GET" data-path="api/titulo/getTitulo/{titulo?}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulo--titulo--', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/titulo/getTitulo/{titulo?}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-titulo-getTitulo--titulo--" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-getTitulo--titulo--" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>titulo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="titulo" data-endpoint="GETapi-titulo-getTitulo--titulo--" data-component="url"  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>busqueda</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="busqueda" data-endpoint="GETapi-titulo-getTitulo--titulo--" data-component="body" required  hidden>
+<br>
+string to make the search of the titles.</p>
+
+</form>
+<h2>Get title</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Display the specified title.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/titulo/mostrarTitulo/suscipit"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "idTitulo": 4
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "idTitulo": 1,
+ "nombreTitulo": "",
+ "edicion": "",
+ "version": "",
+ "urlImagen": "",
+}</code></pre>
+<div id="execution-results-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-mostrarTitulo--idTitulo-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-titulo-mostrarTitulo--idTitulo-"></code></pre>
+</div>
+<div id="execution-error-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-titulo-mostrarTitulo--idTitulo-"></code></pre>
+</div>
+<form id="form-GETapi-titulo-mostrarTitulo--idTitulo-" data-method="GET" data-path="api/titulo/mostrarTitulo/{idTitulo}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-mostrarTitulo--idTitulo-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/titulo/mostrarTitulo/{idTitulo}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-titulo-mostrarTitulo--idTitulo-" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-mostrarTitulo--idTitulo-" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>idTitulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="idTitulo" data-endpoint="GETapi-titulo-mostrarTitulo--idTitulo-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>idTitulo</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="idTitulo" data-endpoint="GETapi-titulo-mostrarTitulo--idTitulo-" data-component="body" required  hidden>
+<br>
+id of the selected title.</p>
+
+</form>
+<h2>Get titles.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>This endpoint allows you to retrive all the titles in the system.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/titulo/getTitulos"
+);
+
+let headers = {
+    "Authorization": "Bearer JWT_token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "idTitulo": 1,
+        "nombreTitulo": "Reverse-engineered hybrid instructionset"
+    },
+    {
+        "idTitulo": 2,
+        "nombreTitulo": "Future-proofed maximized blockchain"
+    },
+    {
+        "idTitulo": 3,
+        "nombreTitulo": "Pre-emptive incremental openarchitecture"
+    },
+    {
+        "idTitulo": 4,
+        "nombreTitulo": "Synergistic value-added instructionset"
+    },
+    {
+        "idTitulo": 5,
+        "nombreTitulo": "Up-sized client-driven artificialintelligence"
+    },
+    {
+        "idTitulo": 6,
+        "nombreTitulo": "Adaptive multimedia website"
+    },
+    {
+        "idTitulo": 7,
+        "nombreTitulo": "Versatile local task-force"
+    },
+    {
+        "idTitulo": 8,
+        "nombreTitulo": "Pre-emptive real-time middleware"
+    },
+    {
+        "idTitulo": 9,
+        "nombreTitulo": "Managed real-time GraphicalUserInterface"
+    },
+    {
+        "idTitulo": 10,
+        "nombreTitulo": "Synchronised motivating knowledgebase"
+    },
+    {
+        "idTitulo": 11,
+        "nombreTitulo": "Multi-lateral assymetric moratorium"
+    },
+    {
+        "idTitulo": 12,
+        "nombreTitulo": "Streamlined homogeneous hardware"
+    },
+    {
+        "idTitulo": 13,
+        "nombreTitulo": "Triple-buffered bottom-line utilisation"
+    },
+    {
+        "idTitulo": 14,
+        "nombreTitulo": "Advanced secondary superstructure"
+    },
+    {
+        "idTitulo": 15,
+        "nombreTitulo": "Profit-focused global neural-net"
+    },
+    {
+        "idTitulo": 16,
+        "nombreTitulo": "Upgradable discrete monitoring"
+    },
+    {
+        "idTitulo": 17,
+        "nombreTitulo": "Vision-oriented global toolset"
+    },
+    {
+        "idTitulo": 18,
+        "nombreTitulo": "Synchronised system-worthy info-mediaries"
+    },
+    {
+        "idTitulo": 19,
+        "nombreTitulo": "Multi-layered system-worthy contingency"
+    },
+    {
+        "idTitulo": 20,
+        "nombreTitulo": "Multi-tiered eco-centric blockchain"
+    }
+]</code></pre>
+<div id="execution-results-GETapi-titulo-getTitulos" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-titulo-getTitulos"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-titulo-getTitulos"></code></pre>
+</div>
+<div id="execution-error-GETapi-titulo-getTitulos" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-titulo-getTitulos"></code></pre>
+</div>
+<form id="form-GETapi-titulo-getTitulos" data-method="GET" data-path="api/titulo/getTitulos" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer JWT_token","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-titulo-getTitulos', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/titulo/getTitulos</code></b>
+</p>
+<p>
+<label id="auth-GETapi-titulo-getTitulos" hidden>Authorization header: <b><code></code></b><input type="text" name="Authorization" data-prefix="" data-endpoint="GETapi-titulo-getTitulos" data-component="header"></label>
 </p>
 </form>
     </div>

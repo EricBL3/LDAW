@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facade\File;
 use Illuminate\Http\Request;
 
+
+/**
+ * @group File management
+ *
+ * APIs for managing files.
+ */
 class ArchivoController extends Controller
 {
     /**

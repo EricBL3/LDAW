@@ -6,79 +6,14 @@ use App\Models\Titulo;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\Cast\String_;
 
+/**
+ * @group Title management
+ *
+ * APIs for consulting titles.
+ */
 class TituloController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //$titulo = Titulo::all();
-        /*$titulo = Titulo::where('idTitulo', 3)->first();
-        $nombreGenero= $titulo->genero->nombreGenero;
-        $nombreConsola= $titulo->consola->nombreConsola;
-        $nombrePublisher= $titulo->publisher->nombrePublisher;
-        $nombreDesarrollador= $titulo->desarrollador->nombreDesarrollador;
 
-        echo $nombreGenero;
-        echo $nombreConsola;
-        echo $nombrePublisher;
-        echo $nombreDesarrollador;
-        */
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Titulo  $titulo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Titulo $titulo)
-    {
-        //
-        $data = Titulo::select('titulo.nombreTitulo', 'consola.nombreConsola', 'genero.nombreGenero', 'publisher.nombrePublisher')
-            ->leftjoin('genero', 'genero.idGenero', '=', 'titulo.idGenero')
-            ->leftjoin('publisher', 'publisher.idPublisher', '=', 'titulo.idPublisher')
-            ->leftjoin('consola', 'consola.idConsola', '=', 'consola.idConsola')
-            ->get();
-        echo $data;
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Titulo  $titulo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Titulo $titulo)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Titulo  $titulo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Titulo $titulo)
-    {
-        //
-    }
     /**
      * Get filter titles
      * 
@@ -94,8 +29,9 @@ class TituloController extends Controller
      *  "nombreConsola": "",
      *  "urlImagen": "",
      * }
+     * 
+     * @authenticated
      */
-
     public function getTitulo(String $busqueda = '')
     {
 
@@ -145,20 +81,6 @@ class TituloController extends Controller
 
         return $titulos;
     }
-    public function getData(String $busqueda = '')
-    {
-        $data = explode("-", $busqueda);
-        $comparadorPublisher = '!=';
-        $titulos = Titulo::join('genero', 'genero.idGenero', '=', 'titulo.idGenero')
-            ->join('consola', 'consola.idConsola', '=', 'titulo.idConsola')
-            ->join('desarrollador', 'desarrollador.idDesarrollador', '=', 'titulo.idDesarrollador')
-            ->join('publisher', 'publisher.idPublisher', '=', 'titulo.idPublisher')
-            ->select('idTitulo', 'nombreTitulo', 'urlImagen', 'nombreGenero', 'nombreDesarrollador', 'nombrePublisher', 'nombreConsola')
-            ->orderBy('idTitulo')
-            ->where('nombreGenero', $comparadorPublisher, 'Acción')
-            ->get();
-        return $titulos;
-    }
 
     /**
      * Get title
@@ -173,8 +95,9 @@ class TituloController extends Controller
      *  "version": "",
      *  "urlImagen": "",
      * }
+     * 
+     * @authenticated
      */
-
     public function mostrarTitulo( int $idTitulo)
     {
         $titulo = Titulo::where('idTitulo','=',$idTitulo)
@@ -188,7 +111,7 @@ class TituloController extends Controller
      *
      * This endpoint allows you to retrive all the titles in the system.
      * 
-     * 
+     * @authenticated
      * @return \Illuminate\Http\JsonResponse
      */
     public function getTitulos(){
