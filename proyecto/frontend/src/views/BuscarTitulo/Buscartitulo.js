@@ -129,7 +129,7 @@ export const Buscartitulo = () => {
     } else {
         loginButton = <Grid container spacing="3">
             {data.map((titulo) => (
-                <Grid item xs={4}>
+                <Grid item sm={6}>
                     <Card className={classes.Card} style={{ backgroundColor: '#78C1CC' }}>
                         <Box align="center" color="white" mb={1} style={{ backgroundColor: '#2D484D' }}>
                             <Typography gutterBottom variant="h5" component="h2">{titulo.nombreTitulo}</Typography>

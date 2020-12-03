@@ -18,7 +18,8 @@ const useStyle = makeStyles(theme => ({
         margin: theme.spacing(5),
         padding: theme.spacing(3),
         height: 900,
-        backgroundColor: '#B0C0C1'
+        backgroundColor: '#B0C0C1',
+        textAlign: "center",
     },
     inputs: {
         width: "50%",
@@ -127,9 +128,11 @@ export const RegistrarJuego = (props) => {
                     "tituloRecibir3": values.idTituloRecibir3,
                 }, { headers: { "Accept": "application/json" } }
                 ).then(res => {
+                    props.history.push("/misJuegos?agregarJuego=1")
                 })
                     .catch(err => {
                         console.log(err);
+                        props.history.push("/misJuegos?agregarJuego=0")
                     });
             })
                 .catch(err => {
@@ -144,25 +147,8 @@ export const RegistrarJuego = (props) => {
     }, [])
     return (
         <div>
-            <Navbar titulo="Detalle Titulo" />
+            <Navbar history={props.history} titulo="Detalle Titulo" />
             <Paper className={classes.title}>
-                <Box align="center">
-                    <FormControl variant="outlined" className={classes.inputs}>
-                        <InputLabel>Consola</InputLabel>
-                        <MuiSelect
-                            MenuProps={MenuProps}
-                            variant="filled"
-                            name="consola"
-                            value={values.consola}
-                            onChange={handleInputChange}>
-                            <MenuItem value=''>Ninguno</MenuItem>
-                            {consola.map((consola) => (
-                                <MenuItem key={consola.idConsola} value={consola.idConsola}>{consola.nombreConsola}</MenuItem>
-                            ))}
-                        </MuiSelect>
-                        {errors && <FormHelperText>{errors.consola}</FormHelperText>}
-                    </FormControl>
-                </Box>
                 <Box align="center">
                     <FormControl variant="outlined" className={classes.inputs}>
                         <InputLabel>Titulo</InputLabel>
@@ -202,7 +188,7 @@ export const RegistrarJuego = (props) => {
                     >
                     </TextField>
                 </Box>
-                <Box ml={41}>
+                <Box>
                     <Container>
                         <Typography>Titulos dispuestos a intercambiar:</Typography>
                     </Container>
@@ -254,13 +240,13 @@ export const RegistrarJuego = (props) => {
                         {errors && <FormHelperText>{errors.idTituloRecibir3}</FormHelperText>}
                     </FormControl>
                 </Box>
-                <Box ml={41}>
+                <Box >
                     <Container>
                         <Typography>Imagen del juego:</Typography>
                     </Container>
                 </Box>
                 <Box align="center">
-                    <Input
+                    <Input style={{width: "80%"}}
                         className={classes.inputs}
                         variant="outlined"
                         type="file"

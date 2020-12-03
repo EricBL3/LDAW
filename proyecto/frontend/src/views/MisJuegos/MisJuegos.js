@@ -7,6 +7,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { Link } from 'react-router-dom';
 import { typography } from '@material-ui/system';
 import GetAppIcon from '@material-ui/icons/GetApp';
+import Mensaje from '../../components/Mensaje';
 const id = Cookies.get('idCuenta');
 const styles = makeStyles(theme => ({
     Card: {
@@ -36,11 +37,12 @@ const styles = makeStyles(theme => ({
     },
 }))
 
-export const MisJuegos = () => {
+export const MisJuegos = (props) => {
 
     const classes = styles()
     const [data, setData] = useState([]);
-
+    const args = props.location.search;
+    
     const peticionDeletejuego = async (idJuego) => {
         axios.delete('http://localhost:8000/api/juego/borrarJuego/' + idJuego, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
             .then(res => {
@@ -150,7 +152,7 @@ export const MisJuegos = () => {
     }
     return (
         <div>
-            <Navbar titulo="Detalle Titulo" />
+            <Navbar history={props.history} titulo="Detalle Titulo" />
             <Box align="center" mt={4}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={3} >
@@ -172,6 +174,15 @@ export const MisJuegos = () => {
             <Box mt={10}>
                 {result}
             </Box>
+
+
+            
+            <Mensaje
+            success={args.includes("agregarJuego") ? args.slice(-1) : -1} 
+            mensajeExito={"Se registró el juego en el sistema de manera exitosa."}
+            mensajeError={"Hubo un error al registrar el juego en el sistema"}
+            />
+
         </div>
     )
 }

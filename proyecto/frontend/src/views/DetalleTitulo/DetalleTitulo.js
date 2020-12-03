@@ -98,7 +98,7 @@ export const DetalleTitulo = (props) => {
     }
     return (
         <div>
-            <Navbar titulo="Detalle Titulo" />
+            <Navbar history={props.history} titulo="Detalle Titulo" />
             <Grid container>
                 <Grid item xs={4} sm={6}>
                     <Box ml={3} mt={10}>

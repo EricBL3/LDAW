@@ -118,6 +118,7 @@ export default function Navbar(props) {
     
     const handleClose = () => {
         setAnchorEl(null);
+        
     };
 
     const handleCuentasClick = (event) => {
@@ -155,7 +156,7 @@ export default function Navbar(props) {
                     </Menu>
 
                     {/*BOTONES WEB */}
-                    <IconButton edge="start" className={classes.homeButton} color="inherit" aria-label="menu">
+                    <IconButton edge="start" onClick={() => {props.history.push("/")}} className={classes.homeButton} color="inherit" aria-label="menu">
                         <HomeIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
@@ -181,8 +182,9 @@ export default function Navbar(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                     >
-                    <MenuItem onClick={handleClose}>Mis Juegos</MenuItem>
-                    <MenuItem onClick={handleClose}>Mis Ofertas</MenuItem>
+                    <MenuItem name="menu" onClick={() => {props.history.push("/"); handleClose();}}>Página Principal</MenuItem>
+                    <MenuItem name="juegos" onClick={() => {props.history.push("/misJuegos"); handleClose();}}>Mis Juegos</MenuItem>
+                    <MenuItem name="ofertas" onClick={() => {props.history.push("/misOfertas/"+Cookies.get("idCuenta")); handleClose();}}>Mis Ofertas</MenuItem>
                     {Cookies.get('rol') == 'admin' ?
                         <MenuItem onClick={handleCuentasClick}>Cuentas</MenuItem>
                     :
@@ -193,7 +195,7 @@ export default function Navbar(props) {
 
 
                     {/*BOTONES WEB */}
-                    <IconButton edge="start" className={classes.homeButton} color="inherit" aria-label="menu">
+                    <IconButton edge="start" className={classes.homeButton} onClick={() => {props.history.push("/")}} color="inherit" aria-label="menu">
                         <HomeIcon />
                     </IconButton>
 
