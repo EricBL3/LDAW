@@ -39,7 +39,7 @@ export default function OfertasEnviadasConsultar(props) {
         <div>
           <Grid container spacing="3">
           {values.map( (oferta) => (
-              <Grid item xs="4">
+              <Grid item sm="6">
               <Card>
               <CardContent>
                 <Typography variant="h5" gutterBottom>

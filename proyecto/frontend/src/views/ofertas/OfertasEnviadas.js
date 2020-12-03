@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { Paper, makeStyles, Container, Typography } from '@material-ui/core';
 import OfertasEnviadasConsultar from "./OfertasEnviadasConsultar"
+import Mensaje from "../../components/Mensaje";
+import Cookies from 'js-cookie'
 
 
 const useStyle = makeStyles(theme => ({
@@ -23,6 +25,14 @@ const useStyle = makeStyles(theme => ({
 
 const OfertasEnviadas = (props) => {
   const classes = useStyle();
+  const args = props.location.search;
+
+  useEffect(() => {
+      if(!Cookies.get('rol'))
+      {
+          props.history.goBack();
+      }
+  }, []);
   console.log(props);
     return (
       <div>
@@ -35,6 +45,12 @@ const OfertasEnviadas = (props) => {
                <OfertasEnviadasConsultar idCuentaEnviar={props.match.params.idJuego}/>
           </Paper>
         </Container>
+
+        <Mensaje
+            success={args.includes("agregarOferta") ? args.slice(-1) : -1} 
+            mensajeExito={"Se registró la oferta en el sistema de manera exitosa."}
+            mensajeError={"Hubo un error al registrar la oferta en el sistema"}
+            />
       </div>
     );
 

@@ -1,1 +1,13 @@
-GET http://127.0.0.1:8000/api/ofertas/2
+POST http://localhost:8000/api/auth/register HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "idRol": 1,
+    "nombre": "Eric Admin",
+    "correoCuenta": "admin@gmail.com",
+    "telefonoCuenta": "4428718934",
+    "usuario": "admin",
+    "password": "admin123",
+    "password_confirmation": "admin123"
+}

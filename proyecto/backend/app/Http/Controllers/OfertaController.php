@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oferta;
+use App\Http\Resources\Oferta as OfertaResource;
 use App\Http\Resources\OfertaCollection;
 use Illuminate\Support\Facades\DB;
 
@@ -48,7 +49,7 @@ class OfertaController extends Controller
 
         $oferta = Oferta::create($request->all());
 
-        return (new OfertaCollection($oferta))
+        return (new OfertaResource($oferta))
             ->response()
             ->setStatusCode(201);
     }
@@ -68,14 +69,14 @@ class OfertaController extends Controller
      */
     public function show($oferta)
     {
-        return DB::table('oferta')->leftJoin('cuenta', 'oferta.idCuentaRecibir', '=','cuenta.id')
-                                  ->leftJoin('juego', 'oferta.idJuegoPorRecibir', '=','juego.idJuego')
+        return DB::table('oferta')->leftJoin('cuenta', 'oferta.idCuentaEnviar', '=','cuenta.id')
+                                  ->leftJoin('juego', 'oferta.idJuegoPorEnviar', '=','juego.idJuego')
                                   ->leftJoin('titulo', 'juego.idTitulo', '=','titulo.idTitulo')
                                   ->leftJoin('consola', 'titulo.idConsola', '=','consola.idConsola')
                                   ->leftJoin('genero', 'titulo.idGenero', '=','genero.idGenero')
                                   ->leftJoin('desarrollador', 'titulo.idDesarrollador', '=','desarrollador.idDesarrollador')
                                   ->leftJoin('publisher', 'titulo.idPublisher', '=','publisher.idPublisher')
-                                   -> where('idJuegoPorEnviar', '=', $oferta) -> get();
+                                   -> where('idJuegoPorRecibir', '=', $oferta) -> get();
     }
     /**
      * Display the offers that an account has sent.

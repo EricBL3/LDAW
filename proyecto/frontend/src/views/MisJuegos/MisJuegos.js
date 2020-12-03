@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, CardContent, CardMedia, Button, Container, Box, makeStyles, TextField } from '@material-ui/core'
+import { Grid, Typography, Card, CardContent, CardMedia, Button, Container, Box, makeStyles, TextField, IconButton } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import Navbar from "../../components/Navbar";
 import axios from 'axios';
@@ -81,6 +81,10 @@ export const MisJuegos = (props) => {
     }
 
     useEffect(() => {
+        if(!Cookies.get('rol'))
+        {
+            props.history.goBack();
+        }
         peticionGetMisJuegos();
         setData(data);
     }, []);
@@ -131,7 +135,9 @@ export const MisJuegos = (props) => {
                                         <Typography variant="h6">Condiciones:</Typography>
                                         <Typography variant="subtitle2">{juego.condiciones}</Typography>
                                         <Typography variant="h6">Imagen:</Typography>
-                                        <GetAppIcon onClick={()=>descargarImagen(juego.pathImagen)} style={{ fontSize: 30 }}></GetAppIcon>
+                                        <IconButton>
+                                            <GetAppIcon onClick={()=>descargarImagen(juego.pathImagen)} style={{ fontSize: 30 }}></GetAppIcon>
+                                        </IconButton>
                                     </Box>
                                 </Grid>
                             </Grid>

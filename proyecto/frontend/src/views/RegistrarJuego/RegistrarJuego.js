@@ -65,8 +65,6 @@ export const RegistrarJuego = (props) => {
         let temp = { ...errors }
         if ('titulo' in fieldValues)
             temp.titulo = fieldValues.titulo ? "" : "Este campo es obligatorio."
-        if ('consola' in fieldValues)
-            temp.consola = fieldValues.consola ? "" : "Este campo es obligatorio."
         if ('condiciones' in fieldValues)
             temp.condiciones = fieldValues.condiciones ? "" : "Este campo es obligatorio."
         if ('idTituloRecibir1' in fieldValues)
@@ -142,6 +140,10 @@ export const RegistrarJuego = (props) => {
     }
 
     useEffect(() => {
+        if(!Cookies.get('rol'))
+        {
+            props.history.goBack();
+        }
         peticionGetConsola();
         peticionGetTitulo();
     }, [])

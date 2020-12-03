@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Navbar from "../../components/Navbar";
 import { Paper, makeStyles, Container, Typography } from '@material-ui/core';
 import OfertasRecibidasConsultar from "./OfertasRecibidasConsultar"
-
+import { useEffect } from "react";
+import Cookies from 'js-cookie'
 
 const useStyle = makeStyles(theme => ({
   pageContent:{
@@ -23,6 +24,12 @@ const useStyle = makeStyles(theme => ({
 
 const OfertasRecibidas = (props) => {
   const classes = useStyle();
+  useEffect(() => {
+      if(!Cookies.get('rol'))
+      {
+          props.history.goBack();
+      }
+  }, []);
     return (
       <div>
         <Navbar history={props.history}/>        
