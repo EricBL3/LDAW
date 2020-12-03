@@ -1,12 +1,11 @@
-POST http://localhost:8000/api/auth/register HTTP/1.1
+POST  http://localhost:8000/api/ofertas HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
 {
-    "idRol" : 1,
-    "nombre" : " Eric Torres",
-    "correoCuenta" : "eric@gmail.com",
-    "telefonoCuenta" : "4422198977",
-    "usuario" : "eric27",
-    "password" : "erictorres27",
+    "idCuentaEnviar" : 1,
+    "idCuentaRecibir": 3,
+    "idJuegoPorEnviar" : 2,
+    "idJuegoPorRecibir" : 1,
+    "estado" : "pendiente"
 }

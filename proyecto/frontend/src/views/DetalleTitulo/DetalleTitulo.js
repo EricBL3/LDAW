@@ -1,9 +1,10 @@
-import { Grid, Typography, Card, CardContent, CardMedia, Button, Container, Box, makeStyles, TextField } from '@material-ui/core'
+import { Grid, Typography, Card, CardContent, CardMedia, Button, Container, Box, makeStyles, TextField, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import Navbar from "../../components/Navbar";
 import axios from 'axios';
 import Cookies from 'js-cookie'
 import Image from 'material-ui-image'
+import SelectJuego from '../../components/SelectJuego'
 
 const styles = makeStyles(theme => ({
     Card: {
@@ -33,8 +34,61 @@ export const DetalleTitulo = (props) => {
         version: '',
         urlImagen: '',
     }
+    const valuesOferta = {
+        idCuentaEnviar: '',
+        idCuentaRecibir: '',
+        idJuegoPorEnviar: '',
+        idJuegoPorRecibir: '',
+        estado: 'pendiente'
+    }
+
+
     const [values, setValues] = useState(initialValues);
     const [data, setData] = useState([]);
+    const [oferta, setOferta] = useState(valuesOferta);
+    const[misJuegos, setMisJuegos] = useState([]);
+    const [open, setOpen] = React.useState(false);
+
+    
+
+    const handleInputChange= e => {
+        const {name , value} = e.target
+        setOferta({
+            ...oferta,
+            [name]:value 
+        })
+    }
+
+    const handleClickOpen = (idJuegoPorRecibir, idCuentaRecibir) => {
+        setOpen(true);  
+        axios.get('http://localhost:8000/api/misJuegos/' + Cookies.get('idCuenta'))
+        .then(res => {
+             setMisJuegos(res.data);
+        }) 
+        .catch( e => {
+            console.log(e);
+        })
+        oferta.idCuentaEnviar = Cookies.get('idCuenta');
+        oferta.idCuentaRecibir = idCuentaRecibir;
+        oferta.idJuegoPorRecibir =  idJuegoPorRecibir;
+        console.log(oferta)            
+      }
+    
+      const handleClose = () => {
+        setOpen(false);
+      }
+
+   const handleHacerOferta = () => {
+        axios.post('http://localhost:8000/api/ofertas', oferta)
+        .then( res => {
+        })
+        .catch (e => {
+            console.log(e);
+        })
+        //window.location.replace("/misOfertas/" + Cookies.get('idCuenta'))
+
+   }
+
     const peticionGet = async () => {
         axios.get('http://localhost:8000/api/titulo/mostrarTitulo/' + match.params.tituloId, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
             .then(res => {
@@ -52,6 +106,7 @@ export const DetalleTitulo = (props) => {
         axios.get('http://localhost:8000/api/juego/listarJuegos/' + match.params.tituloId, { headers: { "Authorization": "Bearer " + Cookies.get('jwt') } })
             .then(res => {
                 setData(res.data);
+                console.log(res.data)
             })
             .catch(err => {
                 console.log(err);
@@ -63,7 +118,10 @@ export const DetalleTitulo = (props) => {
         peticionGetJuegos();
         setValues(initialValues);
         setData(data);
+        console.log(oferta)
     }, []);
+
+
     var result;
     if (Object.keys(data).length === 0) {
         result = <Grid container spacing="3">
@@ -89,7 +147,32 @@ export const DetalleTitulo = (props) => {
                             />
                         </CardContent>
                         <Box align="center">
-                            <Button variant="contained">Enviar Oferta</Button>
+                        <Button variant="contained" onClick={() => handleClickOpen(juego.idJuego, juego.idCuenta)}>Enviar Oferta</Button>
+                        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title"  PaperProps={{style: {overflowY: 'visible'}}}>
+                            <DialogTitle id="form-dialog-title">Intercambio de Juego</DialogTitle>
+                            <DialogContent style={{ overflowY: 'visible' }}>
+                            <DialogContentText>
+                                Seleccion el juego que quieras cambiar por este
+                            </DialogContentText>
+                            <SelectJuego
+                                name="idJuegoPorEnviar"
+                                label="Juego a intercambiar"
+                                value={oferta.idJuegoPorEnviar}
+                                onChange={handleInputChange}
+                                options={misJuegos}
+                                />  
+                                {console.log(oferta)}                   
+                            </DialogContent>
+                            <br/>
+                            <DialogActions>
+                            <Button onClick={handleHacerOferta} color="primary">
+                                Aceptar
+                            </Button>
+                            <Button onClick={handleClose} color="primary">
+                                Cancelar
+                            </Button>
+                            </DialogActions>
+                        </Dialog>
                         </Box>
                     </Card>
                 </Grid>
@@ -110,7 +193,6 @@ export const DetalleTitulo = (props) => {
                     <Box ml={3} mt={4}>
                         <Typography variant="h4">Versión:{values.version}</Typography>
                     </Box>
-                    {console.log(values)}
                 </Grid>
                 <Grid item xs={4} sm={6}>
                     <Box align="center" mt={9}>
